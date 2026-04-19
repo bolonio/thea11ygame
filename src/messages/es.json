@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "The A11y Game",
+    "description": "Un juego de aventura grafica disenado para lectores de pantalla"
+  },
+  "menu": {
+    "title": "The A11y Game",
+    "subtitle": "Una aventura de misterio para lectores de pantalla",
+    "newGame": "Nueva Partida",
+    "continue": "Continuar",
+    "settings": "Ajustes"
+  },
+  "episodes": {
+    "title": "Selecciona un Episodio",
+    "play": "Jugar",
+    "language": "Idioma"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "displayMode": "Modo de Pantalla",
+    "screenreaderMode": "Modo Lector de Pantalla",
+    "visualMode": "Modo Visual",
+    "textSpeed": "Velocidad del Texto",
+    "instant": "Instantaneo",
+    "slow": "Lento",
+    "medium": "Medio",
+    "fast": "Rapido",
+    "language": "Idioma",
+    "english": "English",
+    "spanish": "Español",
+    "sound": "Efectos de Sonido",
+    "on": "Activado",
+    "off": "Desactivado",
+    "back": "Volver al Menu"
+  },
+  "game": {
+    "inventory": "Inventario",
+    "inventoryEmpty": "Sin pistas todavia.",
+    "examine": "Examinar {object}",
+    "talkTo": "Hablar con {character}",
+    "goTo": "Ir a {room}",
+    "back": "Volver",
+    "confront": "Confrontar a alguien",
+    "continueButton": "Continuar",
+    "actions": "Acciones Disponibles",
+    "clueFound": "Pista encontrada: {clue}",
+    "skipToNarration": "Ir a la narracion",
+    "skipToActions": "Ir a las acciones",
+    "skipToInventory": "Ir al inventario"
+  },
+  "confrontation": {
+    "title": "Confrontacion",
+    "whoDoYouAccuse": "A quien acusas?",
+    "selectEvidence": "Selecciona las pruebas contra {suspect}",
+    "presentEvidence": "Presentar Pruebas",
+    "backToSuspects": "Volver a los sospechosos"
+  },
+  "ending": {
+    "title": "Fin",
+    "playAgain": "Jugar de Nuevo",
+    "backToMenu": "Volver al Menu"
+  }
+}

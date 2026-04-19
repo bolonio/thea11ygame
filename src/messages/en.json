@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "The A11y Game",
+    "description": "A screen-reader-first graphic adventure game"
+  },
+  "menu": {
+    "title": "The A11y Game",
+    "subtitle": "A screen-reader-first mystery adventure",
+    "newGame": "New Game",
+    "continue": "Continue",
+    "settings": "Settings"
+  },
+  "episodes": {
+    "title": "Select an Episode",
+    "play": "Play",
+    "language": "Language"
+  },
+  "settings": {
+    "title": "Settings",
+    "displayMode": "Display Mode",
+    "screenreaderMode": "Screen Reader Mode",
+    "visualMode": "Visual Mode",
+    "textSpeed": "Text Speed",
+    "instant": "Instant",
+    "slow": "Slow",
+    "medium": "Medium",
+    "fast": "Fast",
+    "language": "Language",
+    "english": "English",
+    "spanish": "Español",
+    "sound": "Sound Effects",
+    "on": "On",
+    "off": "Off",
+    "back": "Back to Menu"
+  },
+  "game": {
+    "inventory": "Inventory",
+    "inventoryEmpty": "No clues yet.",
+    "examine": "Examine {object}",
+    "talkTo": "Talk to {character}",
+    "goTo": "Go to {room}",
+    "back": "Back",
+    "confront": "Confront someone",
+    "continueButton": "Continue",
+    "actions": "Available Actions",
+    "clueFound": "Clue found: {clue}",
+    "skipToNarration": "Skip to narration",
+    "skipToActions": "Skip to actions",
+    "skipToInventory": "Skip to inventory"
+  },
+  "confrontation": {
+    "title": "Confrontation",
+    "whoDoYouAccuse": "Who do you accuse?",
+    "selectEvidence": "Select evidence to present against {suspect}",
+    "presentEvidence": "Present Evidence",
+    "backToSuspects": "Back to suspects"
+  },
+  "ending": {
+    "title": "The End",
+    "playAgain": "Play Again",
+    "backToMenu": "Back to Menu"
+  }
+}

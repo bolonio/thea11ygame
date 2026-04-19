@@ -1,0 +1,143 @@
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
+import { useSettings } from "@/contexts/SettingsContext";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
+import type { DisplayMode, TextSpeed } from "@/engine/types";
+
+export default function SettingsPage() {
+  const t = useTranslations("settings");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const { settings, setDisplayMode, setTextSpeed, setSoundEnabled } = useSettings();
+
+  const languages = routing.locales.map((loc) => ({
+    value: loc,
+    label: loc === "en" ? t("english") : t("spanish"),
+  }));
+
+  const displayModes: { value: DisplayMode; label: string }[] = [
+    { value: "screenreader", label: t("screenreaderMode") },
+    { value: "visual", label: t("visualMode") },
+  ];
+
+  const textSpeeds: { value: TextSpeed; label: string }[] = [
+    { value: "instant", label: t("instant") },
+    { value: "slow", label: t("slow") },
+    { value: "medium", label: t("medium") },
+    { value: "fast", label: t("fast") },
+  ];
+
+  return (
+    <main className="flex flex-col items-center justify-center flex-1 p-6">
+      <h1 className="text-xl sm:text-2xl text-yellow-400 text-center mb-8">
+        {t("title")}
+      </h1>
+      <div className="w-full max-w-md flex flex-col gap-6">
+        {/* Language */}
+        <fieldset>
+          <legend className="text-cyan-400 text-sm mb-2">{t("language")}</legend>
+          <div className="flex flex-col gap-2">
+            {languages.map((lang) => (
+              <label
+                key={lang.value}
+                className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
+                  locale === lang.value
+                    ? "border-yellow-400 text-yellow-400"
+                    : "border-gray-700 text-white"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="language"
+                  value={lang.value}
+                  checked={locale === lang.value}
+                  onChange={() => router.replace(pathname, { locale: lang.value })}
+                  className="accent-yellow-400"
+                />
+                {lang.label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        {/* Display Mode */}
+        <fieldset>
+          <legend className="text-cyan-400 text-sm mb-2">{t("displayMode")}</legend>
+          <div className="flex flex-col gap-2">
+            {displayModes.map((mode) => (
+              <label
+                key={mode.value}
+                className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
+                  settings.displayMode === mode.value
+                    ? "border-yellow-400 text-yellow-400"
+                    : "border-gray-700 text-white"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="displayMode"
+                  value={mode.value}
+                  checked={settings.displayMode === mode.value}
+                  onChange={() => setDisplayMode(mode.value)}
+                  className="accent-yellow-400"
+                />
+                {mode.label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        {/* Text Speed */}
+        <fieldset>
+          <legend className="text-cyan-400 text-sm mb-2">{t("textSpeed")}</legend>
+          <div className="flex flex-col gap-2">
+            {textSpeeds.map((speed) => (
+              <label
+                key={speed.value}
+                className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
+                  settings.textSpeed === speed.value
+                    ? "border-yellow-400 text-yellow-400"
+                    : "border-gray-700 text-white"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="textSpeed"
+                  value={speed.value}
+                  checked={settings.textSpeed === speed.value}
+                  onChange={() => setTextSpeed(speed.value)}
+                  className="accent-yellow-400"
+                />
+                {speed.label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        {/* Sound */}
+        <fieldset>
+          <legend className="text-cyan-400 text-sm mb-2">{t("sound")}</legend>
+          <label className="flex items-center gap-2 px-3 py-2 border border-gray-700 cursor-pointer text-xs text-white">
+            <input
+              type="checkbox"
+              checked={settings.soundEnabled}
+              onChange={(e) => setSoundEnabled(e.target.checked)}
+              className="accent-yellow-400"
+            />
+            {settings.soundEnabled ? t("on") : t("off")}
+          </label>
+        </fieldset>
+
+        <Link
+          href="/"
+          className="block text-center px-6 py-3 border border-gray-700 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-sm mt-4"
+        >
+          {t("back")}
+        </Link>
+      </div>
+    </main>
+  );
+}
