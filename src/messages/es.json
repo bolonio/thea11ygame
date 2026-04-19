@@ -46,7 +46,8 @@
     "clueFound": "Pista encontrada: {clue}",
     "skipToNarration": "Ir a la narracion",
     "skipToActions": "Ir a las acciones",
-    "skipToInventory": "Ir al inventario"
+    "skipToInventory": "Ir al inventario",
+    "exitToMenu": "Salir al Menu"
   },
   "confrontation": {
     "title": "Confrontacion",

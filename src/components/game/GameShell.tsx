@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useGame } from "@/contexts/GameContext";
+import { Link } from "@/i18n/navigation";
 import SkipLinks from "@/components/SkipLinks";
 import RoomView from "./RoomView";
 import ActionList from "./ActionList";
@@ -10,6 +11,18 @@ import DialogueView from "./DialogueView";
 import ConfrontationView from "./ConfrontationView";
 import EndingView from "./EndingView";
 import SubtitleDisplay from "./SubtitleDisplay";
+
+function ExitToMenuLink() {
+  const t = useTranslations("game");
+  return (
+    <Link
+      href="/"
+      className="self-center mt-4 text-xs text-gray-500 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
+    >
+      {t("exitToMenu")}
+    </Link>
+  );
+}
 
 export default function GameShell() {
   const { state, episode, dispatch } = useGame();
@@ -51,6 +64,7 @@ export default function GameShell() {
         <div className="mt-6">
           <InventoryPanel />
         </div>
+        <ExitToMenuLink />
       </main>
     );
   }
@@ -64,6 +78,7 @@ export default function GameShell() {
         <div className="mt-6">
           <InventoryPanel />
         </div>
+        <ExitToMenuLink />
       </main>
     );
   }
@@ -75,6 +90,7 @@ export default function GameShell() {
       <RoomView />
       {state.phase === "exploration" && <ActionList />}
       <InventoryPanel />
+      <ExitToMenuLink />
     </main>
   );
 }

@@ -46,7 +46,8 @@
     "clueFound": "Clue found: {clue}",
     "skipToNarration": "Skip to narration",
     "skipToActions": "Skip to actions",
-    "skipToInventory": "Skip to inventory"
+    "skipToInventory": "Skip to inventory",
+    "exitToMenu": "Exit to Menu"
   },
   "confrontation": {
     "title": "Confrontation",
