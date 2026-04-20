@@ -50,3 +50,13 @@ export function deleteSave(episodeId: string): void {
   if (typeof window === "undefined") return;
   localStorage.removeItem(`${SAVE_PREFIX}${episodeId}`);
 }
+
+export function deleteAllSaves(): void {
+  if (typeof window === "undefined") return;
+  for (let i = localStorage.length - 1; i >= 0; i--) {
+    const key = localStorage.key(i);
+    if (key?.startsWith(SAVE_PREFIX)) {
+      localStorage.removeItem(key);
+    }
+  }
+}

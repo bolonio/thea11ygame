@@ -31,6 +31,12 @@
     "sound": "Efectos de Sonido",
     "on": "Activado",
     "off": "Desactivado",
+    "savedProgress": "Partida Guardada",
+    "eraseProgress": "Borrar Partida",
+    "confirmErase": "Seguro? Haz clic de nuevo para borrar",
+    "cancel": "Cancelar",
+    "progressErased": "Partida borrada.",
+    "noSavedProgress": "No hay partida guardada",
     "back": "Volver al Menu"
   },
   "game": {

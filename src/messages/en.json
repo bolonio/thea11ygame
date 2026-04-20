@@ -31,6 +31,12 @@
     "sound": "Sound Effects",
     "on": "On",
     "off": "Off",
+    "savedProgress": "Saved Progress",
+    "eraseProgress": "Erase Saved Progress",
+    "confirmErase": "Are you sure? Click again to erase",
+    "cancel": "Cancel",
+    "progressErased": "Progress erased.",
+    "noSavedProgress": "No saved progress",
     "back": "Back to Menu"
   },
   "game": {
