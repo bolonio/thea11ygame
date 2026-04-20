@@ -60,8 +60,8 @@ body.display-screenreader .game-shell {
   text-align: center;
 }
 
-body.display-screenreader .game-shell button,
-body.display-screenreader .game-shell a,
+body.display-screenreader .game-shell button:not([data-keep-visible]),
+body.display-screenreader .game-shell a:not([data-keep-visible]),
 body.display-screenreader .game-shell [data-role="ui"] {
   position: absolute;
   width: 1px;
