@@ -6,14 +6,14 @@ import { useSettings } from "@/contexts/SettingsContext";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { deleteAllSaves, hasSave } from "@/engine/save";
-import type { DisplayMode, TextSpeed } from "@/engine/types";
+import type { DisplayMode, TextSpeed, FontStyle } from "@/engine/types";
 
 export default function SettingsPage() {
   const t = useTranslations("settings");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const { settings, setDisplayMode, setTextSpeed } = useSettings();
+  const { settings, setDisplayMode, setTextSpeed, setFontStyle } = useSettings();
 
   const languages = routing.locales.map((loc) => ({
     value: loc,
@@ -30,6 +30,11 @@ export default function SettingsPage() {
     { value: "slow", label: t("slow") },
     { value: "medium", label: t("medium") },
     { value: "fast", label: t("fast") },
+  ];
+
+  const fontStyles: { value: FontStyle; label: string }[] = [
+    { value: "pixel", label: t("pixelFont") },
+    { value: "inter", label: t("accessibleFont") },
   ];
 
   const [hasProgress, setHasProgress] = useState(false);
@@ -139,6 +144,33 @@ export default function SettingsPage() {
                   className="accent-yellow-400"
                 />
                 {speed.label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        {/* Font Style */}
+        <fieldset>
+          <legend className="text-cyan-400 text-sm mb-2">{t("fontStyle")}</legend>
+          <div className="flex flex-col gap-2">
+            {fontStyles.map((font) => (
+              <label
+                key={font.value}
+                className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
+                  settings.fontStyle === font.value
+                    ? "border-yellow-400 text-yellow-400"
+                    : "border-gray-400 text-white"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="fontStyle"
+                  value={font.value}
+                  checked={settings.fontStyle === font.value}
+                  onChange={() => setFontStyle(font.value)}
+                  className="accent-yellow-400"
+                />
+                {font.label}
               </label>
             ))}
           </div>

@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Press_Start_2P, Geist } from "next/font/google";
+import { Press_Start_2P, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const interFont = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${pixelFont.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-black text-white font-[family-name:var(--font-pixel)]">
+    <html lang="en" suppressHydrationWarning className={`${interFont.variable} ${pixelFont.variable} h-full`}>
+      <body className="min-h-full flex flex-col bg-black text-white font-pixel">
         {children}
       </body>
     </html>
