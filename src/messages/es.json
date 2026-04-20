@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "The A11y Game",
-    "description": "Un juego de aventura grafica disenado para lectores de pantalla"
+    "description": "Un juego de aventura gráfica diseñado para lectores de pantalla"
   },
   "menu": {
     "title": "The A11y Game",
@@ -21,10 +21,10 @@
     "screenreaderMode": "Modo Lector de Pantalla",
     "visualMode": "Modo Visual",
     "textSpeed": "Velocidad del Texto",
-    "instant": "Instantaneo",
+    "instant": "Instantáneo",
     "slow": "Lento",
     "medium": "Medio",
-    "fast": "Rapido",
+    "fast": "Rápido",
     "fontStyle": "Tipo de Letra",
     "pixelFont": "Pixelado",
     "accessibleFont": "Accesible",
@@ -33,15 +33,15 @@
     "spanish": "Español",
     "savedProgress": "Partida Guardada",
     "eraseProgress": "Borrar Partida",
-    "confirmErase": "Seguro? Haz clic de nuevo para borrar",
+    "confirmErase": "¿Seguro? Haz clic de nuevo para borrar",
     "cancel": "Cancelar",
     "progressErased": "Partida borrada.",
     "noSavedProgress": "No hay partida guardada",
-    "back": "Volver al Menu"
+    "back": "Volver al Menú"
   },
   "game": {
     "inventory": "Inventario",
-    "inventoryEmpty": "Sin pistas todavia.",
+    "inventoryEmpty": "Sin pistas todavía.",
     "examine": "Examinar {object}",
     "talkTo": "Hablar con {character}",
     "back": "Volver",
@@ -49,14 +49,14 @@
     "continueButton": "Continuar",
     "actions": "Acciones Disponibles",
     "clueFound": "Pista encontrada: {clue}",
-    "skipToNarration": "Ir a la narracion",
+    "skipToNarration": "Ir a la narración",
     "skipToActions": "Ir a las acciones",
     "skipToInventory": "Ir al inventario",
-    "exitToMenu": "Salir al Menu"
+    "exitToMenu": "Salir al Menú"
   },
   "confrontation": {
-    "title": "Confrontacion",
-    "whoDoYouAccuse": "A quien acusas?",
+    "title": "Confrontación",
+    "whoDoYouAccuse": "¿A quién acusas?",
     "selectEvidence": "Selecciona las pruebas contra {suspect}",
     "presentEvidence": "Presentar Pruebas",
     "backToSuspects": "Volver a los sospechosos"
@@ -64,6 +64,6 @@
   "ending": {
     "title": "Fin",
     "playAgain": "Jugar de Nuevo",
-    "backToMenu": "Volver al Menu"
+    "backToMenu": "Volver al Menú"
   }
 }

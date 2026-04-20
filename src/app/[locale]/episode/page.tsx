@@ -1,11 +1,12 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { getEpisodeGroups } from "@/engine/registry";
 import "@/episodes";
 import EpisodeListClient from "./EpisodeListClient";
 
 export default async function EpisodeSelect() {
   const t = await getTranslations("episodes");
-  const groups = getEpisodeGroups();
+  const locale = await getLocale();
+  const groups = getEpisodeGroups(locale);
 
   return (
     <main className="flex flex-col items-center justify-center flex-1 p-6">

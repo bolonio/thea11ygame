@@ -22,21 +22,23 @@ export interface EpisodeGroup {
   languages: string[];
 }
 
-export function getEpisodeGroups(): EpisodeGroup[] {
-  const groups = new Map<string, EpisodeGroup>();
+export function getEpisodeGroups(locale?: string): EpisodeGroup[] {
+  const byId = new Map<string, Episode[]>();
   for (const ep of episodes.values()) {
-    if (!groups.has(ep.id)) {
-      groups.set(ep.id, {
-        id: ep.id,
-        title: ep.title,
-        description: ep.description,
-        languages: [],
-      });
-    }
-    const group = groups.get(ep.id)!;
-    if (!group.languages.includes(ep.language)) {
-      group.languages.push(ep.language);
-    }
+    const list = byId.get(ep.id) ?? [];
+    list.push(ep);
+    byId.set(ep.id, list);
   }
-  return Array.from(groups.values());
+
+  const groups: EpisodeGroup[] = [];
+  for (const [id, eps] of byId) {
+    const preferred = (locale && eps.find((e) => e.language === locale)) || eps[0];
+    groups.push({
+      id,
+      title: preferred.title,
+      description: preferred.description,
+      languages: eps.map((e) => e.language),
+    });
+  }
+  return groups;
 }
