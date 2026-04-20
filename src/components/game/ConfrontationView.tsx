@@ -45,28 +45,30 @@ export default function ConfrontationView() {
     return (
       <section id="narration" tabIndex={-1} ref={sectionRef} className="focus:outline-none">
         <SubtitleDisplay text={confrontation.introText} />
-        <h2 className="text-lg text-red-400 mt-4 mb-3">{t("whoDoYouAccuse")}</h2>
-        <ul className="flex flex-col gap-2" role="list">
-          {confrontation.suspects.map((suspect) => {
-            const character = episode.characters.find(
-              (c) => c.id === suspect.characterId,
-            );
-            if (!character) return null;
-            return (
-              <li key={suspect.characterId}>
-                <button
-                  onClick={() => {
-                    setSelectedSuspect(suspect.characterId);
-                    setSelectedClueIds([]);
-                  }}
-                  className="w-full text-left px-3 py-2 border border-gray-400 hover:border-red-400 focus:border-red-400 focus:outline-2 focus:outline-red-400 text-white transition-colors"
-                >
-                  {character.name}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+        <div data-role="ui">
+          <h2 className="text-lg text-red-400 mt-4 mb-3">{t("whoDoYouAccuse")}</h2>
+          <ul className="flex flex-col gap-2" role="list">
+            {confrontation.suspects.map((suspect) => {
+              const character = episode.characters.find(
+                (c) => c.id === suspect.characterId,
+              );
+              if (!character) return null;
+              return (
+                <li key={suspect.characterId}>
+                  <button
+                    onClick={() => {
+                      setSelectedSuspect(suspect.characterId);
+                      setSelectedClueIds([]);
+                    }}
+                    className="w-full text-left px-3 py-2 border border-gray-400 hover:border-red-400 focus:border-red-400 focus:outline-2 focus:outline-red-400 text-white transition-colors"
+                  >
+                    {character.name}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </section>
     );
   }
@@ -78,7 +80,7 @@ export default function ConfrontationView() {
   const suspectName = suspectCharacter?.name ?? selectedSuspect;
 
   return (
-    <section id="narration" tabIndex={-1} ref={sectionRef} className="focus:outline-none">
+    <section id="narration" tabIndex={-1} ref={sectionRef} className="focus:outline-none" data-role="ui">
       <h2 className="text-lg text-red-400 mb-3">
         {t("selectEvidence", { suspect: suspectName })}
       </h2>

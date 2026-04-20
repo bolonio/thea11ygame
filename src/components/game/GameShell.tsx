@@ -31,7 +31,7 @@ export default function GameShell() {
   // Intro phase
   if (state.phase === "intro") {
     return (
-      <main className="flex flex-col items-center justify-center flex-1 p-6 max-w-2xl mx-auto w-full">
+      <main className="game-shell flex flex-col items-center justify-center flex-1 p-6 max-w-2xl mx-auto w-full">
         <section id="narration" tabIndex={-1} className="focus:outline-none w-full">
           <SubtitleDisplay text={episode.introNarration} />
         </section>
@@ -49,7 +49,7 @@ export default function GameShell() {
   // Ending phase
   if (state.phase === "ending") {
     return (
-      <main className="flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full">
+      <main className="game-shell flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full">
         <EndingView />
       </main>
     );
@@ -58,7 +58,7 @@ export default function GameShell() {
   // Confrontation phase
   if (state.phase === "confrontation") {
     return (
-      <main className="flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full">
+      <main className="game-shell flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full">
         <SkipLinks />
         <ConfrontationView />
         <div className="mt-6">
@@ -72,7 +72,7 @@ export default function GameShell() {
   // Dialogue phase
   if (state.phase === "dialogue") {
     return (
-      <main className="flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full">
+      <main className="game-shell flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full">
         <SkipLinks />
         <DialogueView />
         <div className="mt-6">
@@ -85,7 +85,7 @@ export default function GameShell() {
 
   // Exploration / Examining phase
   return (
-    <main className="flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full gap-6">
+    <main className="game-shell flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full gap-6">
       <SkipLinks />
       <RoomView />
       {state.phase === "exploration" && <ActionList />}

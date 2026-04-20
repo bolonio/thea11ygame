@@ -4,6 +4,7 @@ import { getMessages } from "next-intl/server";
 import { SettingsProvider } from "@/contexts/SettingsContext";
 import SetHtmlLang from "./SetHtmlLang";
 import SetBodyFont from "./SetBodyFont";
+import SetBodyDisplay from "./SetBodyDisplay";
 
 export default async function LocaleLayout({
   children,
@@ -20,6 +21,7 @@ export default async function LocaleLayout({
       <SetHtmlLang locale={locale} />
       <SettingsProvider>
         <SetBodyFont />
+        <SetBodyDisplay />
         {children}
       </SettingsProvider>
     </NextIntlClientProvider>

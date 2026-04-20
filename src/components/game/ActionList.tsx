@@ -20,7 +20,7 @@ export default function ActionList() {
   });
 
   return (
-    <section id="actions" aria-label={t("actions")}>
+    <section id="actions" aria-label={t("actions")} data-role="ui">
       <h2 className="text-lg text-cyan-400 mb-3">{t("actions")}</h2>
       <ul className="flex flex-col gap-2" role="list">
         {visibleObjects.map((obj) => (

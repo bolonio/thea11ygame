@@ -12,7 +12,7 @@ export default function InventoryPanel() {
     .filter(Boolean);
 
   return (
-    <section id="inventory" aria-label={t("inventory")}>
+    <section id="inventory" aria-label={t("inventory")} data-role="ui">
       <h2 className="text-lg text-cyan-400 mb-3">
         {t("inventory")} ({clues.length})
       </h2>
