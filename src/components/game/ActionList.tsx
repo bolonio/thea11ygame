@@ -66,7 +66,7 @@ export default function ActionList() {
               onClick={() => dispatch({ type: "MOVE_TO_ROOM", roomId: exit.roomId })}
               className="w-full text-left px-3 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
             >
-              {t("goTo", { room: exit.label })}
+              {exit.label}
             </button>
           </li>
         ))}

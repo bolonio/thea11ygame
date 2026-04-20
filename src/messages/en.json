@@ -44,7 +44,6 @@
     "inventoryEmpty": "No clues yet.",
     "examine": "Examine {object}",
     "talkTo": "Talk to {character}",
-    "goTo": "Go to {room}",
     "back": "Back",
     "confront": "Confront someone",
     "continueButton": "Continue",

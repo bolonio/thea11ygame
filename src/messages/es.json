@@ -44,7 +44,6 @@
     "inventoryEmpty": "Sin pistas todavia.",
     "examine": "Examinar {object}",
     "talkTo": "Hablar con {character}",
-    "goTo": "Ir a {room}",
     "back": "Volver",
     "confront": "Confrontar a alguien",
     "continueButton": "Continuar",
