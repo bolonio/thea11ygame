@@ -29,7 +29,7 @@ export default function EndingView() {
       <div className="mt-6 flex gap-3">
         <button
           onClick={() => {
-            deleteSave(episode.id);
+            deleteSave(episode.id, episode.language);
             const initial = createInitialState(episode.id, episode.startingRoomId);
             dispatch({ type: "RESET" });
             // Re-initialize by reloading
@@ -41,7 +41,7 @@ export default function EndingView() {
         </button>
         <button
           onClick={() => {
-            deleteSave(episode.id);
+            deleteSave(episode.id, episode.language);
             router.push("/");
           }}
           className="px-4 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"

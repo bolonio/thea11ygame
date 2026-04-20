@@ -2,19 +2,24 @@ import type { GameState, SaveData } from "./types";
 
 const SAVE_PREFIX = "thea11ygame_save_";
 
-export function saveGame(state: GameState): void {
+function keyFor(episodeId: string, language: string): string {
+  return `${SAVE_PREFIX}${episodeId}_${language}`;
+}
+
+export function saveGame(state: GameState, language: string): void {
   if (typeof window === "undefined") return;
   const data: SaveData = {
     episodeId: state.episodeId,
+    language,
     gameState: state,
     timestamp: Date.now(),
   };
-  localStorage.setItem(`${SAVE_PREFIX}${state.episodeId}`, JSON.stringify(data));
+  localStorage.setItem(keyFor(state.episodeId, language), JSON.stringify(data));
 }
 
-export function loadGame(episodeId: string): SaveData | null {
+export function loadGame(episodeId: string, language: string): SaveData | null {
   if (typeof window === "undefined") return null;
-  const raw = localStorage.getItem(`${SAVE_PREFIX}${episodeId}`);
+  const raw = localStorage.getItem(keyFor(episodeId, language));
   if (!raw) return null;
   try {
     return JSON.parse(raw) as SaveData;
@@ -31,6 +36,7 @@ export function getLatestSave(): SaveData | null {
     if (key?.startsWith(SAVE_PREFIX)) {
       try {
         const data = JSON.parse(localStorage.getItem(key)!) as SaveData;
+        if (!data.language) continue; // ignore legacy saves
         if (!latest || data.timestamp > latest.timestamp) {
           latest = data;
         }
@@ -46,9 +52,14 @@ export function hasSave(): boolean {
   return getLatestSave() !== null;
 }
 
-export function deleteSave(episodeId: string): void {
+export function hasSaveFor(episodeId: string, language: string): boolean {
+  if (typeof window === "undefined") return false;
+  return localStorage.getItem(keyFor(episodeId, language)) !== null;
+}
+
+export function deleteSave(episodeId: string, language: string): void {
   if (typeof window === "undefined") return;
-  localStorage.removeItem(`${SAVE_PREFIX}${episodeId}`);
+  localStorage.removeItem(keyFor(episodeId, language));
 }
 
 export function deleteAllSaves(): void {

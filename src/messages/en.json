@@ -6,13 +6,13 @@
   "menu": {
     "title": "The A11y Game",
     "subtitle": "A screen-reader-first mystery adventure",
-    "newGame": "New Game",
-    "continue": "Continue",
+    "episodes": "Episodes",
     "settings": "Settings"
   },
   "episodes": {
     "title": "Select an Episode",
     "play": "Play",
+    "continue": "Continue",
     "language": "Language"
   },
   "settings": {

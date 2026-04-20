@@ -19,7 +19,8 @@ interface GameProviderProps {
 }
 
 export function GameProvider({ episode, children }: GameProviderProps) {
-  const saved = typeof window !== "undefined" ? loadGame(episode.id) : null;
+  const saved =
+    typeof window !== "undefined" ? loadGame(episode.id, episode.language) : null;
   const initial = saved?.gameState ?? createInitialState(episode.id, episode.startingRoomId);
 
   const [state, rawDispatch] = useReducer(gameReducer, initial);
@@ -34,9 +35,9 @@ export function GameProvider({ episode, children }: GameProviderProps) {
   // Auto-save on room transitions
   useEffect(() => {
     if (state.phase !== "intro" && state.phase !== "ending") {
-      saveGame(state);
+      saveGame(state, episode.language);
     }
-  }, [state.currentRoomId, state]);
+  }, [state.currentRoomId, state, episode.language]);
 
   return (
     <GameContext.Provider value={{ state, episode, dispatch }}>

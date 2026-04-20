@@ -6,13 +6,13 @@
   "menu": {
     "title": "The A11y Game",
     "subtitle": "Una aventura de misterio para lectores de pantalla",
-    "newGame": "Nueva Partida",
-    "continue": "Continuar",
+    "episodes": "Episodios",
     "settings": "Ajustes"
   },
   "episodes": {
     "title": "Selecciona un Episodio",
     "play": "Jugar",
+    "continue": "Continuar",
     "language": "Idioma"
   },
   "settings": {

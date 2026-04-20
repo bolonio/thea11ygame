@@ -124,6 +124,7 @@ export type GameAction =
 
 export interface SaveData {
   episodeId: string;
+  language: string;
   gameState: GameState;
   timestamp: number;
 }

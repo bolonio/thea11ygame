@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import MainMenuClient from "./MainMenuClient";
 
 export default async function MainMenu() {
   const t = await getTranslations("menu");
@@ -21,9 +20,8 @@ export default async function MainMenu() {
           href="/episode"
           className="block text-center px-6 py-3 border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black focus:outline-2 focus:outline-yellow-400 transition-colors"
         >
-          {t("newGame")}
+          {t("episodes")}
         </Link>
-        <MainMenuClient />
         <Link
           href="/settings"
           className="block text-center px-6 py-3 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
