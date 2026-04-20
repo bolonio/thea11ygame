@@ -52,8 +52,8 @@ body {
 }
 
 /* Display Mode: Screen Reader
-   Hide non-narrative UI visually while keeping it keyboard/SR accessible.
-   Focusing a hidden element reveals it. */
+   Non-narrative UI is hidden visually even on focus. Screen readers still read it.
+   Elements with data-keep-visible are exempt. */
 body.display-screenreader .game-shell {
   justify-content: center;
   align-items: center;
@@ -62,28 +62,28 @@ body.display-screenreader .game-shell {
 
 body.display-screenreader .game-shell button:not([data-keep-visible]),
 body.display-screenreader .game-shell a:not([data-keep-visible]),
-body.display-screenreader .game-shell [data-role="ui"] {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+body.display-screenreader .game-shell [data-role="ui"],
+body.display-screenreader .game-shell nav[aria-label="Skip links"] {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  opacity: 0 !important;
 }
 
-body.display-screenreader .game-shell button:focus-visible,
-body.display-screenreader .game-shell a:focus-visible,
-body.display-screenreader .game-shell [data-role="ui"]:focus-within {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: revert;
-  margin: revert;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-  border: revert;
+body.display-screenreader .game-shell button:not([data-keep-visible]):focus,
+body.display-screenreader .game-shell button:not([data-keep-visible]):focus-visible,
+body.display-screenreader .game-shell a:not([data-keep-visible]):focus,
+body.display-screenreader .game-shell a:not([data-keep-visible]):focus-visible,
+body.display-screenreader .game-shell [data-role="ui"] :focus,
+body.display-screenreader .game-shell [data-role="ui"] :focus-visible,
+body.display-screenreader .game-shell nav[aria-label="Skip links"] :focus,
+body.display-screenreader .game-shell nav[aria-label="Skip links"] :focus-visible {
+  outline: none !important;
 }

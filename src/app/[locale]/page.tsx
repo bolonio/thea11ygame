@@ -23,6 +23,12 @@ export default async function MainMenu() {
           {t("episodes")}
         </Link>
         <Link
+          href="/how-to-play"
+          className="block text-center px-6 py-3 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
+        >
+          {t("howToPlay")}
+        </Link>
+        <Link
           href="/settings"
           className="block text-center px-6 py-3 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
         >

@@ -7,7 +7,21 @@
     "title": "The A11y Game",
     "subtitle": "A screen-reader-first mystery adventure",
     "episodes": "Episodes",
+    "howToPlay": "How to play",
     "settings": "Settings"
+  },
+  "howToPlay": {
+    "title": "How to play",
+    "intro": "This game is designed to be played with a screen reader. Every mechanic has a text equivalent and every interactive element is reachable with the keyboard.",
+    "tipNavigation": "Use Tab and Shift+Tab to move between actions. Press Enter or Space to activate the focused button.",
+    "tipNarration": "The story is told through narration. When you enter a room, start a conversation, or examine an object, the new text is announced automatically.",
+    "tipActions": "Under Available Actions you can examine objects, talk to characters, and move between rooms. Once you have enough clues, you can accuse a suspect.",
+    "tipInventory": "Clues you discover are stored in the Inventory. Each clue has a short description you can review at any time.",
+    "tipSkipLinks": "Skip Links at the top of the page let you jump straight to narration, actions, or inventory.",
+    "tipExit": "Use Exit to Menu to leave a case at any time. Your progress is preserved.",
+    "tipSaves": "Progress is saved automatically per episode and per language. You can resume from the Episodes screen, or erase all saves from Settings.",
+    "tipSettings": "Settings lets you switch Display Mode (Screen Reader or Visual), text speed, font style, and language.",
+    "back": "Back to Menu"
   },
   "episodes": {
     "title": "Select an Episode",
@@ -52,7 +66,8 @@
     "skipToNarration": "Skip to narration",
     "skipToActions": "Skip to actions",
     "skipToInventory": "Skip to inventory",
-    "exitToMenu": "Exit to Menu"
+    "exitToMenu": "Exit to Menu",
+    "characterIntro": "You lost your sight years ago. In the darkness that followed, you discovered that the world never truly goes quiet — it simply asks to be listened to. You became an investigator because someone has to notice what others miss. You investigate by sound, smell, touch, and the silences between words. Your screen reader is your main tool. Your senses are your weapons."
   },
   "confrontation": {
     "title": "Confrontation",
