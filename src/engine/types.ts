@@ -136,5 +136,4 @@ export type TextSpeed = "instant" | "slow" | "medium" | "fast";
 export interface Settings {
   displayMode: DisplayMode;
   textSpeed: TextSpeed;
-  soundEnabled: boolean;
 }

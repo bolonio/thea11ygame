@@ -8,14 +8,12 @@ const STORAGE_KEY = "thea11ygame_settings";
 const defaultSettings: Settings = {
   displayMode: "screenreader",
   textSpeed: "medium",
-  soundEnabled: false,
 };
 
 interface SettingsContextValue {
   settings: Settings;
   setDisplayMode: (mode: DisplayMode) => void;
   setTextSpeed: (speed: TextSpeed) => void;
-  setSoundEnabled: (enabled: boolean) => void;
 }
 
 const SettingsContext = createContext<SettingsContextValue | null>(null);
@@ -50,12 +48,8 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     setSettings((s) => ({ ...s, textSpeed }));
   }, []);
 
-  const setSoundEnabled = useCallback((soundEnabled: boolean) => {
-    setSettings((s) => ({ ...s, soundEnabled }));
-  }, []);
-
   return (
-    <SettingsContext.Provider value={{ settings, setDisplayMode, setTextSpeed, setSoundEnabled }}>
+    <SettingsContext.Provider value={{ settings, setDisplayMode, setTextSpeed }}>
       {children}
     </SettingsContext.Provider>
   );

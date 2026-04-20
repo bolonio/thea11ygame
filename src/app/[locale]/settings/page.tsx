@@ -13,7 +13,7 @@ export default function SettingsPage() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const { settings, setDisplayMode, setTextSpeed, setSoundEnabled } = useSettings();
+  const { settings, setDisplayMode, setTextSpeed } = useSettings();
 
   const languages = routing.locales.map((loc) => ({
     value: loc,
@@ -142,20 +142,6 @@ export default function SettingsPage() {
               </label>
             ))}
           </div>
-        </fieldset>
-
-        {/* Sound */}
-        <fieldset>
-          <legend className="text-cyan-400 text-sm mb-2">{t("sound")}</legend>
-          <label className="flex items-center gap-2 px-3 py-2 border border-gray-400 cursor-pointer text-xs text-white">
-            <input
-              type="checkbox"
-              checked={settings.soundEnabled}
-              onChange={(e) => setSoundEnabled(e.target.checked)}
-              className="accent-yellow-400"
-            />
-            {settings.soundEnabled ? t("on") : t("off")}
-          </label>
         </fieldset>
 
         {/* Saved Progress */}
