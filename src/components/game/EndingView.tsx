@@ -44,7 +44,7 @@ export default function EndingView() {
             deleteSave(episode.id);
             router.push("/");
           }}
-          className="px-4 py-2 border border-gray-700 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
+          className="px-4 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
         >
           {t("backToMenu")}
         </button>

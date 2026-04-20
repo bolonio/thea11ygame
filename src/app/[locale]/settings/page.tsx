@@ -73,7 +73,7 @@ export default function SettingsPage() {
                 className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
                   locale === lang.value
                     ? "border-yellow-400 text-yellow-400"
-                    : "border-gray-700 text-white"
+                    : "border-gray-400 text-white"
                 }`}
               >
                 <input
@@ -100,7 +100,7 @@ export default function SettingsPage() {
                 className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
                   settings.displayMode === mode.value
                     ? "border-yellow-400 text-yellow-400"
-                    : "border-gray-700 text-white"
+                    : "border-gray-400 text-white"
                 }`}
               >
                 <input
@@ -127,7 +127,7 @@ export default function SettingsPage() {
                 className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
                   settings.textSpeed === speed.value
                     ? "border-yellow-400 text-yellow-400"
-                    : "border-gray-700 text-white"
+                    : "border-gray-400 text-white"
                 }`}
               >
                 <input
@@ -147,7 +147,7 @@ export default function SettingsPage() {
         {/* Sound */}
         <fieldset>
           <legend className="text-cyan-400 text-sm mb-2">{t("sound")}</legend>
-          <label className="flex items-center gap-2 px-3 py-2 border border-gray-700 cursor-pointer text-xs text-white">
+          <label className="flex items-center gap-2 px-3 py-2 border border-gray-400 cursor-pointer text-xs text-white">
             <input
               type="checkbox"
               checked={settings.soundEnabled}
@@ -165,7 +165,7 @@ export default function SettingsPage() {
             {justErased ? (
               <p className="px-3 py-2 text-xs text-gray-400">{t("progressErased")}</p>
             ) : !hasProgress ? (
-              <p className="px-3 py-2 text-xs text-gray-500">{t("noSavedProgress")}</p>
+              <p className="px-3 py-2 text-xs text-gray-400">{t("noSavedProgress")}</p>
             ) : (
               <div className="flex flex-col gap-2">
                 <button
@@ -183,7 +183,7 @@ export default function SettingsPage() {
                   <button
                     type="button"
                     onClick={() => setConfirming(false)}
-                    className="px-3 py-2 border border-gray-700 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-xs"
+                    className="px-3 py-2 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-xs"
                   >
                     {t("cancel")}
                   </button>
@@ -195,7 +195,7 @@ export default function SettingsPage() {
 
         <Link
           href="/"
-          className="block text-center px-6 py-3 border border-gray-700 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-sm mt-4"
+          className="block text-center px-6 py-3 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-sm mt-4"
         >
           {t("back")}
         </Link>

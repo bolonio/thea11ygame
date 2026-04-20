@@ -17,7 +17,7 @@ function ExitToMenuLink() {
   return (
     <Link
       href="/"
-      className="self-center mt-4 text-xs text-gray-500 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
+      className="self-center mt-4 text-xs text-gray-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
     >
       {t("exitToMenu")}
     </Link>

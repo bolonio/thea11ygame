@@ -59,7 +59,7 @@ export default function ConfrontationView() {
                     setSelectedSuspect(suspect.characterId);
                     setSelectedClueIds([]);
                   }}
-                  className="w-full text-left px-3 py-2 border border-gray-700 hover:border-red-400 focus:border-red-400 focus:outline-2 focus:outline-red-400 text-white transition-colors"
+                  className="w-full text-left px-3 py-2 border border-gray-400 hover:border-red-400 focus:border-red-400 focus:outline-2 focus:outline-red-400 text-white transition-colors"
                 >
                   {character.name}
                 </button>
@@ -91,7 +91,7 @@ export default function ConfrontationView() {
             const checked = selectedClueIds.includes(clueId);
             return (
               <li key={clueId}>
-                <label className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors ${checked ? "border-yellow-400 text-yellow-400" : "border-gray-700 text-white"}`}>
+                <label className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors ${checked ? "border-yellow-400 text-yellow-400" : "border-gray-400 text-white"}`}>
                   <input
                     type="checkbox"
                     checked={checked}
@@ -118,7 +118,7 @@ export default function ConfrontationView() {
         </button>
         <button
           onClick={() => setSelectedSuspect(null)}
-          className="px-4 py-2 border border-gray-700 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
+          className="px-4 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
         >
           {t("backToSuspects")}
         </button>

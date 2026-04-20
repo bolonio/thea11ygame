@@ -36,7 +36,7 @@ export default function RoomView() {
         />
         <button
           onClick={() => dispatch({ type: "DISMISS_EXAMINATION" })}
-          className="mt-4 px-4 py-2 border border-gray-700 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
+          className="mt-4 px-4 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
         >
           {t("back")}
         </button>

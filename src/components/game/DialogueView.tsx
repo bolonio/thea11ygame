@@ -55,7 +55,7 @@ export default function DialogueView() {
                   setFlags: choice.setFlags,
                 })
               }
-              className="w-full text-left px-3 py-2 border border-gray-700 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white text-xs transition-colors"
+              className="w-full text-left px-3 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white text-xs transition-colors"
             >
               {choice.text}
             </button>
@@ -63,7 +63,7 @@ export default function DialogueView() {
         ) : (
           <button
             onClick={() => dispatch({ type: "END_DIALOGUE" })}
-            className="px-4 py-2 border border-gray-700 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
+            className="px-4 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
           >
             End conversation
           </button>

@@ -26,7 +26,7 @@ export default async function MainMenu() {
         <MainMenuClient />
         <Link
           href="/settings"
-          className="block text-center px-6 py-3 border border-gray-700 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
+          className="block text-center px-6 py-3 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
         >
           {t("settings")}
         </Link>

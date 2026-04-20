@@ -32,7 +32,7 @@ export default function ActionList() {
                   dispatch({ type: "COLLECT_CLUE", clueId: obj.clueId });
                 }
               }}
-              className="w-full text-left px-3 py-2 border border-gray-700 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
+              className="w-full text-left px-3 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
             >
               {t("examine", { object: obj.name })}
             </button>
@@ -52,7 +52,7 @@ export default function ActionList() {
                     startNodeId: character.defaultDialogueNodeId,
                   })
                 }
-                className="w-full text-left px-3 py-2 border border-gray-700 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
+                className="w-full text-left px-3 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
               >
                 {t("talkTo", { character: character.name })}
               </button>
@@ -64,7 +64,7 @@ export default function ActionList() {
           <li key={exit.roomId}>
             <button
               onClick={() => dispatch({ type: "MOVE_TO_ROOM", roomId: exit.roomId })}
-              className="w-full text-left px-3 py-2 border border-gray-700 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
+              className="w-full text-left px-3 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
             >
               {t("goTo", { room: exit.label })}
             </button>
