@@ -3,6 +3,9 @@
     "title": "The A11y Game",
     "description": "Un juego de aventura gráfica diseñado para lectores de pantalla"
   },
+  "footer": {
+    "createdBy": "Creado por"
+  },
   "menu": {
     "title": "The A11y Game",
     "subtitle": "Una aventura de misterio para lectores de pantalla",

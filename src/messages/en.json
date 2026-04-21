@@ -3,6 +3,9 @@
     "title": "The A11y Game",
     "description": "A screen-reader-first graphic adventure game"
   },
+  "footer": {
+    "createdBy": "Created by"
+  },
   "menu": {
     "title": "The A11y Game",
     "subtitle": "A screen-reader-first mystery adventure",

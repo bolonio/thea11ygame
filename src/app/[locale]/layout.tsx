@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { SettingsProvider } from "@/contexts/SettingsContext";
+import Footer from "@/components/Footer";
 import SetHtmlLang from "./SetHtmlLang";
 import SetBodyFont from "./SetBodyFont";
 import SetBodyDisplay from "./SetBodyDisplay";
@@ -23,6 +24,7 @@ export default async function LocaleLayout({
         <SetBodyFont />
         <SetBodyDisplay />
         {children}
+        <Footer />
       </SettingsProvider>
     </NextIntlClientProvider>
   );
