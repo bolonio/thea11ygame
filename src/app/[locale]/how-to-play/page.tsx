@@ -31,7 +31,7 @@ export default async function HowToPlay() {
         </ul>
         <Link
           href="/"
-          className="block text-center px-6 py-3 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-sm"
+          className="block text-center px-6 py-3 border border-gray-400 text-white hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-sm"
         >
           {t("back")}
         </Link>

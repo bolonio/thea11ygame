@@ -12,7 +12,7 @@ export default async function MainMenu() {
       >
         {t("title")}
       </h1>
-      <p className="text-gray-400 text-xs sm:text-sm text-center mb-10 max-w-md">
+      <p className="text-white text-xs sm:text-sm text-center mb-10 max-w-md">
         {t("subtitle")}
       </p>
       <nav aria-label="Main menu" className="flex flex-col gap-4 w-full max-w-xs">
@@ -24,13 +24,13 @@ export default async function MainMenu() {
         </Link>
         <Link
           href="/how-to-play"
-          className="block text-center px-6 py-3 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
+          className="block text-center px-6 py-3 border border-gray-400 text-white hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
         >
           {t("howToPlay")}
         </Link>
         <Link
           href="/settings"
-          className="block text-center px-6 py-3 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
+          className="block text-center px-6 py-3 border border-gray-400 text-white hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
         >
           {t("settings")}
         </Link>

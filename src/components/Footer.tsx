@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 export default async function Footer() {
   const t = await getTranslations("footer");
   return (
-    <footer className="px-6 py-4 text-center text-xs text-gray-400">
+    <footer className="px-6 py-4 text-center text-xs text-white">
       {t("createdBy")}{" "}
       <a
         href="https://www.adrianbolonio.com/"

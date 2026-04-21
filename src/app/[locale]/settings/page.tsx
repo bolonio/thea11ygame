@@ -181,9 +181,9 @@ export default function SettingsPage() {
           <legend className="text-cyan-400 text-sm mb-2">{t("savedProgress")}</legend>
           <div aria-live="polite">
             {justErased ? (
-              <p className="px-3 py-2 text-xs text-gray-400">{t("progressErased")}</p>
+              <p className="px-3 py-2 text-xs text-white">{t("progressErased")}</p>
             ) : !hasProgress ? (
-              <p className="px-3 py-2 text-xs text-gray-400">{t("noSavedProgress")}</p>
+              <p className="px-3 py-2 text-xs text-white">{t("noSavedProgress")}</p>
             ) : (
               <div className="flex flex-col gap-2">
                 <button
@@ -201,7 +201,7 @@ export default function SettingsPage() {
                   <button
                     type="button"
                     onClick={() => setConfirming(false)}
-                    className="px-3 py-2 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-xs"
+                    className="px-3 py-2 border border-gray-400 text-white hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-xs"
                   >
                     {t("cancel")}
                   </button>
@@ -213,7 +213,7 @@ export default function SettingsPage() {
 
         <Link
           href="/"
-          className="block text-center px-6 py-3 border border-gray-400 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-sm mt-4"
+          className="block text-center px-6 py-3 border border-gray-400 text-white hover:border-yellow-400 hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors text-sm mt-4"
         >
           {t("back")}
         </Link>

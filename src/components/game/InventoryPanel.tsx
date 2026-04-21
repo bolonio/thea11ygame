@@ -17,17 +17,17 @@ export default function InventoryPanel() {
         {t("inventory")} ({clues.length})
       </h2>
       {clues.length === 0 ? (
-        <p className="text-gray-400 text-xs">{t("inventoryEmpty")}</p>
+        <p className="text-white text-xs">{t("inventoryEmpty")}</p>
       ) : (
         <ul className="flex flex-col gap-1" role="list">
           {clues.map((clue) =>
             clue ? (
               <li
                 key={clue.id}
-                className="text-xs text-gray-300 px-2 py-1 border border-gray-400"
+                className="text-xs text-white px-2 py-1 border border-gray-400"
               >
                 <span className="text-yellow-400">{clue.name}</span>
-                <span className="block text-gray-400 mt-0.5">{clue.description}</span>
+                <span className="block text-white mt-0.5">{clue.description}</span>
               </li>
             ) : null,
           )}
