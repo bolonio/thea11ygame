@@ -15,15 +15,38 @@
   },
   "howToPlay": {
     "title": "Cómo jugar",
-    "intro": "Este juego está diseñado para jugarse con un lector de pantalla. Cada mecánica tiene un equivalente textual y cada elemento interactivo es accesible con el teclado.",
-    "tipNavigation": "Usa Tab y Shift+Tab para moverte entre acciones. Pulsa Enter o Espacio para activar el botón enfocado.",
-    "tipNarration": "La historia se cuenta a través de la narración. Cuando entras en una habitación, inicias una conversación o examinas un objeto, el texto nuevo se anuncia automáticamente.",
-    "tipActions": "En Acciones Disponibles puedes examinar objetos, hablar con personajes y moverte entre habitaciones. Cuando tengas suficientes pistas podrás acusar a un sospechoso.",
-    "tipInventory": "Las pistas que descubres se guardan en el Inventario. Cada pista tiene una breve descripción que puedes consultar en cualquier momento.",
-    "tipSkipLinks": "Los enlaces de salto al principio de la página te llevan directamente a la narración, las acciones o el inventario.",
-    "tipExit": "Usa Salir al Menú para abandonar un caso en cualquier momento. Tu progreso se conserva.",
-    "tipSaves": "El progreso se guarda automáticamente por episodio y por idioma. Puedes retomar desde la pantalla de Episodios o borrar todas las partidas desde Ajustes.",
-    "tipSettings": "En Ajustes puedes cambiar el Modo de Pantalla (Lector de Pantalla o Visual), la velocidad del texto, el tipo de letra y el idioma.",
+    "intro": "Este juego está diseñado pensando primero en los lectores de pantalla. Todos los elementos interactivos son accesibles con el teclado, las narraciones son regiones en vivo, y cada página usa encabezados y landmarks apropiados para que puedas navegar con tu herramienta preferida.",
+    "game": {
+      "title": "El juego",
+      "body": "Exploras habitaciones, examinas objetos, hablas con personajes y recoges pistas. Cada episodio se guarda automáticamente por idioma — sal cuando quieras y retoma donde lo dejaste. Cuando tengas pistas suficientes, podrás acusar a un sospechoso y llegar a uno de los posibles desenlaces."
+    },
+    "keyboard": {
+      "title": "Navegación por teclado",
+      "tip1": "Tab mueve el foco hacia adelante entre las acciones; Shift+Tab lo mueve hacia atrás.",
+      "tip2": "Pulsa Enter o Espacio para activar el botón o enlace enfocado.",
+      "tip3": "En Ajustes, usa las flechas para moverte entre las opciones de un mismo grupo de radios.",
+      "tip4": "El elemento enfocado siempre se marca con un contorno amarillo.",
+      "tip5": "Los enlaces de salto aparecen al principio de las páginas del juego — pulsa Tab desde el inicio de la página para mostrarlos.",
+      "tip6": "Salir al Menú está siempre disponible al final de un caso, también en Modo Lector de Pantalla."
+    },
+    "voiceover": {
+      "title": "VoiceOver (macOS)",
+      "tip1": "Activa o desactiva VoiceOver con Comando+F5.",
+      "tip2": "VO es el modificador: mantén pulsadas las teclas Control+Opción junto a otra tecla.",
+      "tip3": "Leer todo desde aquí: VO+A. Leer el siguiente elemento: VO+Flecha derecha. Leer el anterior: VO+Flecha izquierda.",
+      "tip4": "Abre el Rotor con VO+U y usa las flechas izquierda/derecha para cambiar entre Encabezados, Landmarks, Controles de formulario o Enlaces, y arriba/abajo para saltar.",
+      "tip5": "Activa un botón o enlace con VO+Espacio.",
+      "tip6": "Las narraciones se anuncian automáticamente a través de una región en vivo cortés — no tienes que hacer nada."
+    },
+    "nvda": {
+      "title": "NVDA (Windows)",
+      "tip1": "Inicia NVDA con Control+Alt+N.",
+      "tip2": "Insert es el modificador NVDA (o BloqMayús si lo has configurado así).",
+      "tip3": "Leer todo: NVDA+Flecha abajo. Siguiente línea: Flecha abajo. Línea anterior: Flecha arriba.",
+      "tip4": "Salta por estructura en Modo Exploración: H para el siguiente encabezado, D para el siguiente landmark, F para el siguiente campo de formulario, K para el siguiente enlace.",
+      "tip5": "Activa un control con Enter. Para los controles de formulario quizá necesites entrar en Modo Foco (NVDA+Espacio).",
+      "tip6": "Las narraciones se anuncian automáticamente a través de una región en vivo cortés — no tienes que hacer nada."
+    },
     "back": "Volver al Menú"
   },
   "episodes": {

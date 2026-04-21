@@ -15,15 +15,38 @@
   },
   "howToPlay": {
     "title": "How to play",
-    "intro": "This game is designed to be played with a screen reader. Every mechanic has a text equivalent and every interactive element is reachable with the keyboard.",
-    "tipNavigation": "Use Tab and Shift+Tab to move between actions. Press Enter or Space to activate the focused button.",
-    "tipNarration": "The story is told through narration. When you enter a room, start a conversation, or examine an object, the new text is announced automatically.",
-    "tipActions": "Under Available Actions you can examine objects, talk to characters, and move between rooms. Once you have enough clues, you can accuse a suspect.",
-    "tipInventory": "Clues you discover are stored in the Inventory. Each clue has a short description you can review at any time.",
-    "tipSkipLinks": "Skip Links at the top of the page let you jump straight to narration, actions, or inventory.",
-    "tipExit": "Use Exit to Menu to leave a case at any time. Your progress is preserved.",
-    "tipSaves": "Progress is saved automatically per episode and per language. You can resume from the Episodes screen, or erase all saves from Settings.",
-    "tipSettings": "Settings lets you switch Display Mode (Screen Reader or Visual), text speed, font style, and language.",
+    "intro": "This game is built screen-reader-first. Every interactive element is reachable with the keyboard, every narration region is a live region, and every page uses proper headings and landmarks so you can navigate with your preferred tool.",
+    "game": {
+      "title": "The game",
+      "body": "You explore rooms, examine objects, talk to characters, and collect clues. Each episode auto-saves per language — leave whenever and pick up where you left off. When you have enough clues, confront a suspect to reach one of several endings."
+    },
+    "keyboard": {
+      "title": "Keyboard navigation",
+      "tip1": "Tab moves focus forward through actions; Shift+Tab moves it back.",
+      "tip2": "Press Enter or Space to activate the focused button or link.",
+      "tip3": "In Settings, use Arrow keys to move between radio options within a group.",
+      "tip4": "A yellow outline always marks the currently focused element.",
+      "tip5": "Skip links appear at the top of game pages — press Tab from the very start of the page to reveal them.",
+      "tip6": "Exit to Menu is always available at the bottom of a case, even in Screen Reader mode."
+    },
+    "voiceover": {
+      "title": "VoiceOver (macOS)",
+      "tip1": "Toggle VoiceOver with Command+F5.",
+      "tip2": "VO is the modifier: hold Control+Option together with another key.",
+      "tip3": "Read all from here: VO+A. Read next item: VO+Right Arrow. Read previous: VO+Left Arrow.",
+      "tip4": "Open the Rotor with VO+U, then use Left/Right Arrows to switch between Headings, Landmarks, Form Controls, or Links, and Up/Down to jump.",
+      "tip5": "Activate a button or link with VO+Space.",
+      "tip6": "New narration is announced automatically through a polite live region — no action needed on your side."
+    },
+    "nvda": {
+      "title": "NVDA (Windows)",
+      "tip1": "Start NVDA with Control+Alt+N.",
+      "tip2": "Insert is the NVDA modifier (or CapsLock if you configured it that way).",
+      "tip3": "Read all: NVDA+Down Arrow. Next line: Down Arrow. Previous line: Up Arrow.",
+      "tip4": "Jump by structure in Browse Mode: H for next heading, D for next landmark, F for next form field, K for next link.",
+      "tip5": "Activate a control with Enter. For form controls you may need to enter Focus Mode (NVDA+Space).",
+      "tip6": "New narration is announced automatically through a polite live region — no action needed on your side."
+    },
     "back": "Back to Menu"
   },
   "episodes": {
