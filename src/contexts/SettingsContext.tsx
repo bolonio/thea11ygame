@@ -26,7 +26,9 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
-        setSettings({ ...defaultSettings, ...JSON.parse(raw) });
+        const parsed = JSON.parse(raw);
+        if (parsed.fontStyle === "inter") parsed.fontStyle = "inclusive";
+        setSettings({ ...defaultSettings, ...parsed });
       }
     } catch {
       // use defaults

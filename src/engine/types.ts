@@ -132,7 +132,7 @@ export interface SaveData {
 // ---- Settings ----
 
 export type DisplayMode = "screenreader" | "visual";
-export type FontStyle = "pixel" | "inter";
+export type FontStyle = "pixel" | "inclusive";
 
 export interface Settings {
   displayMode: DisplayMode;

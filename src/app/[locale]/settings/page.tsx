@@ -27,7 +27,7 @@ export default function SettingsPage() {
 
   const fontStyles: { value: FontStyle; label: string }[] = [
     { value: "pixel", label: t("pixelFont") },
-    { value: "inter", label: t("accessibleFont") },
+    { value: "inclusive", label: t("accessibleFont") },
   ];
 
   const [hasProgress, setHasProgress] = useState(false);
