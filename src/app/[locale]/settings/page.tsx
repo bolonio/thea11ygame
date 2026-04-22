@@ -6,14 +6,14 @@ import { useSettings } from "@/contexts/SettingsContext";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { deleteAllSaves, hasSave } from "@/engine/save";
-import type { DisplayMode, FontStyle } from "@/engine/types";
+import type { DisplayMode, FontStyle, TextSpeed } from "@/engine/types";
 
 export default function SettingsPage() {
   const t = useTranslations("settings");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const { settings, setDisplayMode, setFontStyle } = useSettings();
+  const { settings, setDisplayMode, setFontStyle, setTextSpeed } = useSettings();
 
   const languages = routing.locales.map((loc) => ({
     value: loc,
@@ -28,6 +28,11 @@ export default function SettingsPage() {
   const fontStyles: { value: FontStyle; label: string }[] = [
     { value: "pixel", label: t("pixelFont") },
     { value: "inclusive", label: t("accessibleFont") },
+  ];
+
+  const textSpeeds: { value: TextSpeed; label: string }[] = [
+    { value: "instant", label: t("instant") },
+    { value: "typewriter", label: t("typewriter") },
   ];
 
   const [hasProgress, setHasProgress] = useState(false);
@@ -114,6 +119,45 @@ export default function SettingsPage() {
             ))}
           </div>
         </fieldset>
+
+        {/* Text Speed — in Screen Reader mode it's forced to instant, disabled, and hidden from SR */}
+        {(() => {
+          const speedDisabled = settings.displayMode === "screenreader";
+          const displayedSpeed = speedDisabled ? "instant" : settings.textSpeed;
+          return (
+            <fieldset
+              disabled={speedDisabled}
+              aria-hidden={speedDisabled || undefined}
+              className={speedDisabled ? "opacity-50" : undefined}
+            >
+              <legend className="text-cyan-400 text-sm mb-2">{t("textSpeed")}</legend>
+              <div className="flex flex-col gap-2">
+                {textSpeeds.map((speed) => (
+                  <label
+                    key={speed.value}
+                    className={`flex items-center gap-2 px-3 py-2 border transition-colors text-xs ${
+                      speedDisabled ? "cursor-not-allowed" : "cursor-pointer"
+                    } ${
+                      displayedSpeed === speed.value
+                        ? "border-yellow-400 text-yellow-400"
+                        : "border-gray-400 text-white"
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="textSpeed"
+                      value={speed.value}
+                      checked={displayedSpeed === speed.value}
+                      onChange={() => setTextSpeed(speed.value)}
+                      className="accent-yellow-400"
+                    />
+                    {speed.label}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          );
+        })()}
 
         {/* Font Style */}
         <fieldset>

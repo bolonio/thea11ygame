@@ -1,19 +1,21 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
-import type { Settings, DisplayMode, FontStyle } from "@/engine/types";
+import type { Settings, DisplayMode, FontStyle, TextSpeed } from "@/engine/types";
 
 const STORAGE_KEY = "thea11ygame_settings";
 
 const defaultSettings: Settings = {
   displayMode: "screenreader",
   fontStyle: "pixel",
+  textSpeed: "typewriter",
 };
 
 interface SettingsContextValue {
   settings: Settings;
   setDisplayMode: (mode: DisplayMode) => void;
   setFontStyle: (style: FontStyle) => void;
+  setTextSpeed: (speed: TextSpeed) => void;
 }
 
 const SettingsContext = createContext<SettingsContextValue | null>(null);
@@ -50,8 +52,12 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     setSettings((s) => ({ ...s, fontStyle }));
   }, []);
 
+  const setTextSpeed = useCallback((textSpeed: TextSpeed) => {
+    setSettings((s) => ({ ...s, textSpeed }));
+  }, []);
+
   return (
-    <SettingsContext.Provider value={{ settings, setDisplayMode, setFontStyle }}>
+    <SettingsContext.Provider value={{ settings, setDisplayMode, setFontStyle, setTextSpeed }}>
       {children}
     </SettingsContext.Provider>
   );

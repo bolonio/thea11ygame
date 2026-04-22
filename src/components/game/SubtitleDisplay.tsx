@@ -10,7 +10,8 @@ interface SubtitleDisplayProps {
 
 export default function SubtitleDisplay({ text, id }: SubtitleDisplayProps) {
   const { settings } = useSettings();
-  const speed = settings.displayMode === "visual" ? 30 : 0;
+  const speed =
+    settings.displayMode === "visual" && settings.textSpeed === "typewriter" ? 30 : 0;
   const [displayed, setDisplayed] = useState(speed === 0 ? text : "");
 
   useEffect(() => {
