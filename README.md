@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The A11y Game
 
-## Getting Started
+A screen-reader-first detective game built with Next.js. Explore rooms by sound, smell, and touch. Collect clues, interrogate suspects, and piece together what happened — all without a single image.
 
-First, run the development server:
+🎮 **Play it**: [English](https://thea11ygame.netlify.app/en) · [Español](https://thea11ygame.netlify.app/es)
+
+## What makes it different
+
+- **Accessibility-first design.** Every interactive element is reachable by keyboard, every narration region is a live region, every page uses semantic landmarks and headings.
+- **Two display modes.** Screen Reader Mode centers only the narrative on screen and hides decorative UI from sight while keeping it fully accessible to assistive tech. Visual Mode shows the traditional game layout.
+- **Tested with real tools.** Works with VoiceOver (macOS), NVDA (Windows), and pure keyboard navigation. In-game tips cover all three.
+- **Fully localized.** English and Spanish, with separate per-language saves so you can replay a case in another language without losing your English progress.
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org) (App Router) + TypeScript
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [next-intl](https://next-intl.dev) for i18n
+- React Context for game / settings state
+- `localStorage` for save data (no backend)
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The app redirects to `/en` by default.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Useful scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev     # start dev server
+npm run build   # production build
+npm run lint    # ESLint
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/[locale]/           # Next.js routes (main menu, settings, how-to-play, episode pages)
+├── components/game/        # Gameplay UI (RoomView, ActionList, InventoryPanel, ...)
+├── contexts/               # GameContext, SettingsContext
+├── engine/                 # Pure TS: reducer, types, save, episode registry
+├── episodes/               # Episode data files (one folder per episode, one file per locale)
+├── i18n/                   # next-intl routing + request config
+└── messages/               # UI translation JSON (en.json, es.json)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The engine is fully decoupled from React: `src/engine/*` has no imports from `react` or Next.js. Episodes are plain data.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are very welcome — bug fixes, accessibility improvements, new translations, and especially **new episodes**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [CONTRIBUTING.md](CONTRIBUTING.md) — how to get involved, coding style, PR checklist
+- [docs/ADDING_EPISODES.md](docs/ADDING_EPISODES.md) — step-by-step guide to writing and wiring a new episode, with a template
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+## Author
+
+Built by [Adrián Bolonio](https://www.adrianbolonio.com).
