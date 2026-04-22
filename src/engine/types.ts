@@ -132,11 +132,9 @@ export interface SaveData {
 // ---- Settings ----
 
 export type DisplayMode = "screenreader" | "visual";
-export type TextSpeed = "instant" | "slow" | "medium" | "fast";
 export type FontStyle = "pixel" | "inter";
 
 export interface Settings {
   displayMode: DisplayMode;
-  textSpeed: TextSpeed;
   fontStyle: FontStyle;
 }

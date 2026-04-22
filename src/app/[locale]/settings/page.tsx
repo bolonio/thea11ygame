@@ -6,14 +6,14 @@ import { useSettings } from "@/contexts/SettingsContext";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { deleteAllSaves, hasSave } from "@/engine/save";
-import type { DisplayMode, TextSpeed, FontStyle } from "@/engine/types";
+import type { DisplayMode, FontStyle } from "@/engine/types";
 
 export default function SettingsPage() {
   const t = useTranslations("settings");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const { settings, setDisplayMode, setTextSpeed, setFontStyle } = useSettings();
+  const { settings, setDisplayMode, setFontStyle } = useSettings();
 
   const languages = routing.locales.map((loc) => ({
     value: loc,
@@ -23,13 +23,6 @@ export default function SettingsPage() {
   const displayModes: { value: DisplayMode; label: string }[] = [
     { value: "screenreader", label: t("screenreaderMode") },
     { value: "visual", label: t("visualMode") },
-  ];
-
-  const textSpeeds: { value: TextSpeed; label: string }[] = [
-    { value: "instant", label: t("instant") },
-    { value: "slow", label: t("slow") },
-    { value: "medium", label: t("medium") },
-    { value: "fast", label: t("fast") },
   ];
 
   const fontStyles: { value: FontStyle; label: string }[] = [
@@ -117,33 +110,6 @@ export default function SettingsPage() {
                   className="accent-yellow-400"
                 />
                 {mode.label}
-              </label>
-            ))}
-          </div>
-        </fieldset>
-
-        {/* Text Speed */}
-        <fieldset>
-          <legend className="text-cyan-400 text-sm mb-2">{t("textSpeed")}</legend>
-          <div className="flex flex-col gap-2">
-            {textSpeeds.map((speed) => (
-              <label
-                key={speed.value}
-                className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
-                  settings.textSpeed === speed.value
-                    ? "border-yellow-400 text-yellow-400"
-                    : "border-gray-400 text-white"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="textSpeed"
-                  value={speed.value}
-                  checked={settings.textSpeed === speed.value}
-                  onChange={() => setTextSpeed(speed.value)}
-                  className="accent-yellow-400"
-                />
-                {speed.label}
               </label>
             ))}
           </div>
