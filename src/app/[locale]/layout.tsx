@@ -1,11 +1,25 @@
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { SettingsProvider } from "@/contexts/SettingsContext";
 import Footer from "@/components/Footer";
 import SetHtmlLang from "./SetHtmlLang";
 import SetBodyFont from "./SetBodyFont";
 import SetBodyDisplay from "./SetBodyDisplay";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default async function LocaleLayout({
   children,
