@@ -2,7 +2,7 @@
 
 A screen-reader-first detective game built with Next.js. Explore rooms by sound, smell, and touch. Collect clues, interrogate suspects, and piece together what happened — all without a single image.
 
-🎮 **Play it**: [English](https://thea11ygame.netlify.app/en) · [Español](https://thea11ygame.netlify.app/es)
+🎮 **Play it**: [English](https://thea11ygame.com/en) · [Español](https://thea11ygame.com/es)
 
 ## What makes it different
 
