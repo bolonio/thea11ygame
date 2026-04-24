@@ -7,7 +7,7 @@ Thanks for your interest in helping out! This is a small, accessible, open-sourc
 - **Report bugs or accessibility issues.** Open an [issue](../../issues) with what you were doing, what you expected, what happened, and your OS + screen reader if relevant.
 - **Suggest improvements.** Open an issue for discussion before large changes so we don't waste your time.
 - **Translate the UI** into another language (see below).
-- **Write a new episode** — a new mystery, new rooms, new suspects. See [docs/ADDING_EPISODES.md](docs/ADDING_EPISODES.md) for the full guide and template.
+- **Write a new episode** — a new mystery, new rooms, new suspects. See [docs/ADDING_EPISODES.md](docs/ADDING_EPISODES.md) for the full guide and template. Every episode credits its author on the Episode Selection screen (with an optional link to wherever you want players to find you).
 - **Fix a typo, tweak copy, improve a translation.** PRs welcome, no issue required.
 
 ## Development workflow

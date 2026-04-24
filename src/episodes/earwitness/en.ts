@@ -6,6 +6,8 @@ const earwitness: Episode = {
   title: "Earwitness",
   description:
     "A quiet evening shattered by violence next door. You heard everything through the thin walls — the voices, the argument, the crash, the silence. Now the police are here, and three people have three different stories. But you know what you heard.",
+  author: "Adrián Bolonio",
+  authorLink: "https://www.adrianbolonio.com",
   language: "en",
   introNarration:
     "It was a quiet Tuesday evening. You were sitting in your apartment, the familiar hum of the refrigerator your only company. Then, through the thin walls, voices began to rise. First calm, then sharp. A crash — metallic and final — followed by a thud that shook the floor beneath your feet. Then silence. The kind of silence that presses against your ears and makes your heart pound. Now the hallway is full of footsteps, radio static, and the low murmur of police. They knocked on your door. They want to know what you heard. You step out into a night that smells of rain and dread.",

@@ -53,7 +53,8 @@
     "title": "Selecciona un Episodio",
     "play": "Jugar",
     "continue": "Continuar",
-    "language": "Idioma"
+    "language": "Idioma",
+    "by": "Creado por"
   },
   "settings": {
     "title": "Ajustes",

@@ -6,6 +6,8 @@ const theGatheringEn: Episode = {
   title: "The Gathering",
   description:
     "A dinner party at a grand old house. A storm. A blackout. When the lights return, the host is dead — poisoned. Nobody can leave. Four guests, four stories, and a truth hidden in the things you can smell, touch, and hear.",
+  author: "Adrián Bolonio",
+  authorLink: "https://www.adrianbolonio.com",
   language: "en",
   introNarration:
     "The evening had started so well. Ashworth Manor smelled of roasted lamb and old wood. You sat among friends — or people who called themselves friends — as wine flowed and conversation drifted. Victor Ashworth, your host, held court at the head of the table, his booming laugh filling the dining room. Then the storm hit. The lights died. In the darkness, you heard footsteps, doors opening and closing, the clink of glass. When the power returned, Victor was in his study. Slumped in his chair. A wine glass on the desk. The room smelled of old books and something bitter. He was dead. Now the rain hammers the windows and the road is washed out. Nobody leaves until morning. And you — who cannot see but miss nothing — begin to listen.",

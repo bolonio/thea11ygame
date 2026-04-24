@@ -36,7 +36,22 @@ export default function EpisodeListClient({ groups }: { groups: EpisodeGroup[] }
         {groups.map((group) => (
           <li key={group.id} className="border border-gray-400 p-4">
             <h2 className="text-lg text-yellow-400 mb-1">{group.title}</h2>
-            <p className="text-white text-xs mb-4">{group.description}</p>
+            <p className="text-white text-xs mb-2">{group.description}</p>
+            <p className="text-white text-xs mb-4">
+              {t("by")}{" "}
+              {group.authorLink ? (
+                <a
+                  href={group.authorLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-yellow-400 focus:outline-2 focus:outline-yellow-400 transition-colors"
+                >
+                  {group.author}
+                </a>
+              ) : (
+                group.author
+              )}
+            </p>
             <div className="flex gap-3" role="group" aria-label={`${t("play")} ${group.title}`}>
               {group.languages.map((lang) => {
                 const hasSave = savedKeys.has(`${group.id}:${lang}`);

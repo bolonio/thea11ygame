@@ -16,6 +16,10 @@ const templateEs: Episode = {
   title: "Episodio Plantilla",
   description:
     "Un gancho de una frase sobre tu caso. Insinúa el misterio sin resolverlo.",
+  // Crédito: tu nombre (obligatorio) y un enlace opcional (web, redes
+  // sociales, GitHub, lo que prefieras).
+  author: "Tu nombre",
+  authorLink: "https://example.com",
   language: "es",
   introNarration:
     "Establece la escena. ¿Qué oye el personaje? ¿Qué huele, qué siente? Ánclalo en el espacio y dale una razón para escuchar.",

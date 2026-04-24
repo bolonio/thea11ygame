@@ -16,6 +16,10 @@ const templateEn: Episode = {
   title: "Template Episode",
   description:
     "A one-sentence hook for your case. Tease the mystery without spoiling the setup.",
+  // Credit: your name (required) and an optional link to wherever you want
+  // players to find you — website, social media, GitHub, etc.
+  author: "Your Name",
+  authorLink: "https://example.com",
   language: "en",
   introNarration:
     "Set the scene. What does the player hear, smell, feel? Anchor them in the space and give them a reason to listen.",

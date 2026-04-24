@@ -6,6 +6,8 @@ const theGatheringEs: Episode = {
   title: "La reunión",
   description:
     "Una cena en una gran casona antigua. Una tormenta. Un apagón. Cuando vuelve la luz, el anfitrión está muerto — envenenado. Nadie puede irse. Cuatro invitados, cuatro historias, y una verdad oculta en lo que puedes oler, tocar y escuchar.",
+  author: "Adrián Bolonio",
+  authorLink: "https://www.adrianbolonio.com",
   language: "es",
   introNarration:
     "La velada había empezado tan bien. La Mansión Ashworth olia a cordero asado y madera vieja. Estabas sentado entre amigos — o personas que se llamaban amigos — mientras el vino fluia y la conversación derivaba. Victor Ashworth, tu anfitrión, presidia la mesa, su risa estruendosa llenando el comedor. Entonces llegó la tormenta. Las luces se apagaron. En la oscuridad, escuchaste pasos, puertas abriendose y cerrandose, el tintineo de cristal. Cuando volvió la luz, Victor estaba en su estudio. Desplomado en su silla. Una copa de vino sobre el escritorio. La habitación olia a libros viejos y a algo amargo. Estaba muerto. Ahora la lluvia golpea las ventanas y la carretera está cortada. Nadie se va hasta el amanecer. Y tu — que no puedes ver pero no te pierdes nada — empiezas a escuchar.",

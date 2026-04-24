@@ -19,6 +19,8 @@ export interface EpisodeGroup {
   id: string;
   title: string;
   description: string;
+  author: string;
+  authorLink?: string;
   languages: string[];
 }
 
@@ -37,6 +39,8 @@ export function getEpisodeGroups(locale?: string): EpisodeGroup[] {
       id,
       title: preferred.title,
       description: preferred.description,
+      author: preferred.author,
+      authorLink: preferred.authorLink,
       languages: eps.map((e) => e.language),
     });
   }

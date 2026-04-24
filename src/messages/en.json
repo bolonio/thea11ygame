@@ -53,7 +53,8 @@
     "title": "Select an Episode",
     "play": "Play",
     "continue": "Continue",
-    "language": "Language"
+    "language": "Language",
+    "by": "Created by"
   },
   "settings": {
     "title": "Settings",

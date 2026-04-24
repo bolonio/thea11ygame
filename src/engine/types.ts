@@ -6,6 +6,8 @@ export interface Episode {
   id: string;
   title: string;
   description: string;
+  author: string;
+  authorLink?: string;
   language: Locale;
   introNarration: string;
   startingRoomId: string;

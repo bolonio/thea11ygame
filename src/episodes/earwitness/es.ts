@@ -6,6 +6,8 @@ const earwitnessEs: Episode = {
   title: "El testigo",
   description:
     "Una tarde tranquila destrozada por la violencia al otro lado de la pared. Lo escuchaste todo a través de los muros finos: las voces, la discusión, el golpe, el silencio. Ahora la policía está aquí, y tres personas cuentan tres historias distintas. Pero tu sabes lo que oíste.",
+  author: "Adrián Bolonio",
+  authorLink: "https://www.adrianbolonio.com",
   language: "es",
   introNarration:
     "Era un martes tranquilo por la noche. Estabas sentado en tu apartamento, con el zumbido familiar de la nevera como única compañía. Entonces, a través de las paredes finas, las voces empezaron a subir. Primero calmadas, luego afiladas. Un golpe metálico y definitivo, seguido de un impacto que sacudió el suelo bajo tus pies. Después, el silencio. Ese tipo de silencio que presiona tus oídos y hace que el corazón te lata con fuerza. Ahora el pasillo está lleno de pasos, estatica de radio y el murmullo grave de la policía. Llamaron a tu puerta. Quieren saber que escuchaste. Sales a una noche que huele a lluvia y a miedo.",

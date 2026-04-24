@@ -23,6 +23,8 @@ An `Episode` (defined in [`src/engine/types.ts`](../src/engine/types.ts)) has th
 | `id` | `string` | Kebab-case, unique across the game. **Same `id` for every locale.** |
 | `title` | `string` | Localized. Shown on the Episodes screen. |
 | `description` | `string` | Localized. 1–3 sentences; a hook, not a summary. |
+| `author` | `string` | Your name (or alias). Shown on the Episodes screen as "by {author}". |
+| `authorLink` | `string?` | Optional URL pointing anywhere you want players to find you — personal site, social media, GitHub profile. When set, the author name becomes a link. |
 | `language` | `"en" \| "es"` | Must match the filename. |
 | `introNarration` | `string` | Localized. The opening scene — what the player hears/feels/smells. |
 | `startingRoomId` | `string` | ID of the room the player starts in. |
@@ -196,7 +198,7 @@ Then:
 
 ## Checklist before opening a PR
 
-- [ ] Every locale file has the same `id`, the same room IDs, the same character IDs, the same clue IDs, and the same ending IDs. (The ids are the engine's contract across languages.)
+- [ ] Every locale file has the same `id`, the same `author` (typically also the same `authorLink`), the same room IDs, the same character IDs, the same clue IDs, and the same ending IDs. (The ids are the engine's contract across languages.)
 - [ ] Every `exit.roomId` points to an existing room.
 - [ ] Every `characterIds` entry points to an existing character.
 - [ ] Every `nextNodeId` in dialogue points to an existing dialogue node.
