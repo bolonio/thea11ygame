@@ -70,26 +70,31 @@ export default function SettingsPage() {
         <fieldset>
           <legend className="text-cyan-400 text-sm mb-2">{t("language")}</legend>
           <div className="flex flex-col gap-2">
-            {languages.map((lang) => (
-              <label
-                key={lang.value}
-                className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
-                  locale === lang.value
-                    ? "border-yellow-400 text-yellow-400"
-                    : "border-gray-400 text-white"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="language"
-                  value={lang.value}
-                  checked={locale === lang.value}
-                  onChange={() => router.replace(pathname, { locale: lang.value })}
-                  className="accent-yellow-400"
-                />
-                {lang.label}
-              </label>
-            ))}
+            {languages.map((lang) => {
+              const inputId = `settings-language-${lang.value}`;
+              return (
+                <label
+                  key={lang.value}
+                  htmlFor={inputId}
+                  className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
+                    locale === lang.value
+                      ? "border-yellow-400 text-yellow-400"
+                      : "border-gray-400 text-white"
+                  }`}
+                >
+                  <input
+                    id={inputId}
+                    type="radio"
+                    name="language"
+                    value={lang.value}
+                    checked={locale === lang.value}
+                    onChange={() => router.replace(pathname, { locale: lang.value })}
+                    className="accent-yellow-400"
+                  />
+                  {lang.label}
+                </label>
+              );
+            })}
           </div>
         </fieldset>
 
@@ -97,26 +102,31 @@ export default function SettingsPage() {
         <fieldset>
           <legend className="text-cyan-400 text-sm mb-2">{t("displayMode")}</legend>
           <div className="flex flex-col gap-2">
-            {displayModes.map((mode) => (
-              <label
-                key={mode.value}
-                className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
-                  settings.displayMode === mode.value
-                    ? "border-yellow-400 text-yellow-400"
-                    : "border-gray-400 text-white"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="displayMode"
-                  value={mode.value}
-                  checked={settings.displayMode === mode.value}
-                  onChange={() => setDisplayMode(mode.value)}
-                  className="accent-yellow-400"
-                />
-                {mode.label}
-              </label>
-            ))}
+            {displayModes.map((mode) => {
+              const inputId = `settings-displayMode-${mode.value}`;
+              return (
+                <label
+                  key={mode.value}
+                  htmlFor={inputId}
+                  className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
+                    settings.displayMode === mode.value
+                      ? "border-yellow-400 text-yellow-400"
+                      : "border-gray-400 text-white"
+                  }`}
+                >
+                  <input
+                    id={inputId}
+                    type="radio"
+                    name="displayMode"
+                    value={mode.value}
+                    checked={settings.displayMode === mode.value}
+                    onChange={() => setDisplayMode(mode.value)}
+                    className="accent-yellow-400"
+                  />
+                  {mode.label}
+                </label>
+              );
+            })}
           </div>
         </fieldset>
 
@@ -132,28 +142,33 @@ export default function SettingsPage() {
             >
               <legend className="text-cyan-400 text-sm mb-2">{t("textSpeed")}</legend>
               <div className="flex flex-col gap-2">
-                {textSpeeds.map((speed) => (
-                  <label
-                    key={speed.value}
-                    className={`flex items-center gap-2 px-3 py-2 border transition-colors text-xs ${
-                      speedDisabled ? "cursor-not-allowed" : "cursor-pointer"
-                    } ${
-                      displayedSpeed === speed.value
-                        ? "border-yellow-400 text-yellow-400"
-                        : "border-gray-400 text-white"
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="textSpeed"
-                      value={speed.value}
-                      checked={displayedSpeed === speed.value}
-                      onChange={() => setTextSpeed(speed.value)}
-                      className="accent-yellow-400"
-                    />
-                    {speed.label}
-                  </label>
-                ))}
+                {textSpeeds.map((speed) => {
+                  const inputId = `settings-textSpeed-${speed.value}`;
+                  return (
+                    <label
+                      key={speed.value}
+                      htmlFor={inputId}
+                      className={`flex items-center gap-2 px-3 py-2 border transition-colors text-xs ${
+                        speedDisabled ? "cursor-not-allowed" : "cursor-pointer"
+                      } ${
+                        displayedSpeed === speed.value
+                          ? "border-yellow-400 text-yellow-400"
+                          : "border-gray-400 text-white"
+                      }`}
+                    >
+                      <input
+                        id={inputId}
+                        type="radio"
+                        name="textSpeed"
+                        value={speed.value}
+                        checked={displayedSpeed === speed.value}
+                        onChange={() => setTextSpeed(speed.value)}
+                        className="accent-yellow-400"
+                      />
+                      {speed.label}
+                    </label>
+                  );
+                })}
               </div>
             </fieldset>
           );
@@ -163,26 +178,31 @@ export default function SettingsPage() {
         <fieldset>
           <legend className="text-cyan-400 text-sm mb-2">{t("fontStyle")}</legend>
           <div className="flex flex-col gap-2">
-            {fontStyles.map((font) => (
-              <label
-                key={font.value}
-                className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
-                  settings.fontStyle === font.value
-                    ? "border-yellow-400 text-yellow-400"
-                    : "border-gray-400 text-white"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="fontStyle"
-                  value={font.value}
-                  checked={settings.fontStyle === font.value}
-                  onChange={() => setFontStyle(font.value)}
-                  className="accent-yellow-400"
-                />
-                {font.label}
-              </label>
-            ))}
+            {fontStyles.map((font) => {
+              const inputId = `settings-fontStyle-${font.value}`;
+              return (
+                <label
+                  key={font.value}
+                  htmlFor={inputId}
+                  className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors text-xs ${
+                    settings.fontStyle === font.value
+                      ? "border-yellow-400 text-yellow-400"
+                      : "border-gray-400 text-white"
+                  }`}
+                >
+                  <input
+                    id={inputId}
+                    type="radio"
+                    name="fontStyle"
+                    value={font.value}
+                    checked={settings.fontStyle === font.value}
+                    onChange={() => setFontStyle(font.value)}
+                    className="accent-yellow-400"
+                  />
+                  {font.label}
+                </label>
+              );
+            })}
           </div>
         </fieldset>
 

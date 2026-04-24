@@ -91,10 +91,12 @@ export default function ConfrontationView() {
             const clue = episode.clues.find((c) => c.id === clueId);
             if (!clue) return null;
             const checked = selectedClueIds.includes(clueId);
+            const inputId = `evidence-${clueId}`;
             return (
               <li key={clueId}>
-                <label className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors ${checked ? "border-yellow-400 text-yellow-400" : "border-gray-400 text-white"}`}>
+                <label htmlFor={inputId} className={`flex items-center gap-2 px-3 py-2 border cursor-pointer transition-colors ${checked ? "border-yellow-400 text-yellow-400" : "border-gray-400 text-white"}`}>
                   <input
+                    id={inputId}
                     type="checkbox"
                     checked={checked}
                     onChange={() => toggleClue(clueId)}

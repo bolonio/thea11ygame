@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
-    title: t("title"),
+    title: `${t("title")} - ${t("description")}`,
     description: t("description"),
   };
 }
