@@ -12,10 +12,12 @@ export default function RoomView() {
 
   const room = episode.rooms.find((r) => r.id === state.currentRoomId);
 
-  // Focus narration on room entry for screen reader announcement
+  // Focus narration whenever the visible content changes — entering a room,
+  // entering examining mode, or returning from examining. This guarantees
+  // screen readers land on the new text instead of stale focus.
   useEffect(() => {
     narrationRef.current?.focus();
-  }, [state.currentRoomId]);
+  }, [state.currentRoomId, state.examinedObjectId, state.phase]);
 
   if (!room) return null;
 
