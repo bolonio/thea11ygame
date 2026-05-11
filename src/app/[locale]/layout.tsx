@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SetHtmlLang from "./SetHtmlLang";
 import SetBodyFont from "./SetBodyFont";
 import SetBodyDisplay from "./SetBodyDisplay";
+import FocusOnNavigate from "./FocusOnNavigate";
 
 export async function generateMetadata({
   params,
@@ -34,6 +35,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <SetHtmlLang locale={locale} />
+      <FocusOnNavigate />
       <SettingsProvider>
         <SetBodyFont />
         <SetBodyDisplay />

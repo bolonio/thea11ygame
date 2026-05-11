@@ -15,7 +15,10 @@ export default async function HowToPlay() {
 
   return (
     <main className="flex flex-col items-center flex-1 p-6">
-      <h1 className="text-xl sm:text-2xl text-yellow-400 text-center mb-8">
+      <h1
+        tabIndex={-1}
+        className="text-xl sm:text-2xl text-yellow-400 text-center mb-8 focus:outline-none"
+      >
         {t("title")}
       </h1>
       <div className="w-full max-w-lg flex flex-col gap-6">

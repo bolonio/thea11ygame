@@ -39,7 +39,7 @@ export default function DialogueView() {
       aria-label={`Conversation with ${character.name}`}
       className="focus:outline-none"
     >
-      <p className="text-cyan-400 text-xs mb-2">{character.name}</p>
+      <h2 className="text-cyan-400 text-xs mb-2">{character.name}</h2>
       <SubtitleDisplay text={node.text} />
 
       <div className="mt-4 flex flex-col gap-2" role="group" aria-label="Dialogue choices">

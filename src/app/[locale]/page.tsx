@@ -7,7 +7,8 @@ export default async function MainMenu() {
   return (
     <main className="flex flex-col items-center justify-center flex-1 p-6">
       <h1
-        className="text-2xl sm:text-4xl text-yellow-400 text-center mb-4"
+        tabIndex={-1}
+        className="text-2xl sm:text-4xl text-yellow-400 text-center mb-4 focus:outline-none"
         aria-live="polite"
       >
         {t("title")}
@@ -15,7 +16,7 @@ export default async function MainMenu() {
       <p className="text-white text-xs sm:text-sm text-center mb-10 max-w-md">
         {t("subtitle")}
       </p>
-      <nav aria-label="Main menu" className="flex flex-col gap-4 w-full max-w-xs">
+      <section aria-label={t("title")} className="flex flex-col gap-4 w-full max-w-xs">
         <Link
           href="/episode"
           className="block text-center px-6 py-3 border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black focus:outline-2 focus:outline-yellow-400 transition-colors"
@@ -34,7 +35,7 @@ export default async function MainMenu() {
         >
           {t("settings")}
         </Link>
-      </nav>
+      </section>
     </main>
   );
 }
