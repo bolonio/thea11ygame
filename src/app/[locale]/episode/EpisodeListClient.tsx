@@ -8,7 +8,7 @@ import type { EpisodeGroup } from "@/engine/registry";
 
 const LANGUAGE_LABELS: Record<string, string> = {
   en: "English",
-  es: "Espanol",
+  es: "Español",
 };
 
 export default function EpisodeListClient({ groups }: { groups: EpisodeGroup[] }) {
