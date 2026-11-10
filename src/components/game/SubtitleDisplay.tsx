@@ -29,14 +29,26 @@ export default function SubtitleDisplay({ text, id }: SubtitleDisplayProps) {
     return () => clearInterval(interval);
   }, [text, speed]);
 
+  const visualClassName =
+    "text-sm sm:text-base leading-relaxed text-yellow-300 whitespace-pre-wrap min-h-[4rem]";
+
+  if (speed === 0) {
+    return (
+      <div key="instant" id={id} aria-live="polite" aria-atomic="true" className={visualClassName}>
+        {displayed}
+      </div>
+    );
+  }
+
+  // Announce the full text once; the animated copy would re-announce every tick.
   return (
-    <div
-      id={id}
-      aria-live="polite"
-      aria-atomic="true"
-      className="text-sm sm:text-base leading-relaxed text-yellow-300 whitespace-pre-wrap min-h-[4rem]"
-    >
-      {displayed}
+    <div key="typewriter" id={id}>
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {text}
+      </div>
+      <div aria-hidden="true" className={visualClassName}>
+        {displayed}
+      </div>
     </div>
   );
 }
