@@ -11,6 +11,7 @@ import SubtitleDisplay from "./SubtitleDisplay";
 export default function EndingView() {
   const { state, episode, dispatch } = useGame();
   const t = useTranslations("ending");
+  const tGame = useTranslations("game");
   const router = useRouter();
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -22,7 +23,7 @@ export default function EndingView() {
   if (!ending) return null;
 
   return (
-    <section id="narration" tabIndex={-1} ref={sectionRef} className="focus:outline-none">
+    <section id="narration" tabIndex={-1} ref={sectionRef} aria-label={tGame("narration")} className="focus:outline-none">
       <h2 className="text-lg text-yellow-400 mb-4">{t("title")}</h2>
       <SubtitleDisplay text={ending.narration} />
 

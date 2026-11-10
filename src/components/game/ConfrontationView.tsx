@@ -8,6 +8,7 @@ import SubtitleDisplay from "./SubtitleDisplay";
 export default function ConfrontationView() {
   const { state, episode, dispatch } = useGame();
   const t = useTranslations("confrontation");
+  const tGame = useTranslations("game");
   const [selectedSuspect, setSelectedSuspect] = useState<string | null>(null);
   const [selectedClueIds, setSelectedClueIds] = useState<string[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -43,7 +44,7 @@ export default function ConfrontationView() {
   // Suspect selection phase
   if (!selectedSuspect) {
     return (
-      <section id="narration" tabIndex={-1} ref={sectionRef} className="focus:outline-none">
+      <section id="narration" tabIndex={-1} ref={sectionRef} aria-label={tGame("narration")} className="focus:outline-none">
         <SubtitleDisplay text={confrontation.introText} />
         <div data-role="ui">
           <h2 className="text-lg text-red-400 mt-4 mb-3">{t("whoDoYouAccuse")}</h2>
@@ -80,7 +81,7 @@ export default function ConfrontationView() {
   const suspectName = suspectCharacter?.name ?? selectedSuspect;
 
   return (
-    <section id="narration" tabIndex={-1} ref={sectionRef} className="focus:outline-none" data-role="ui">
+    <section id="narration" tabIndex={-1} ref={sectionRef} aria-label={tGame("narration")} className="focus:outline-none" data-role="ui">
       <h2 className="text-lg text-red-400 mb-3">
         {t("selectEvidence", { suspect: suspectName })}
       </h2>

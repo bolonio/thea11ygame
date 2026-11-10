@@ -49,6 +49,7 @@ export default function GameShell() {
             id="narration"
             tabIndex={-1}
             ref={introNarrationRef}
+            aria-label={t("narration")}
             className="focus:outline-none w-full"
           >
             <SubtitleDisplay text={t("characterIntro")} />
@@ -68,6 +69,7 @@ export default function GameShell() {
           id="narration"
           tabIndex={-1}
           ref={introNarrationRef}
+          aria-label={t("narration")}
           className="focus:outline-none w-full"
         >
           <SubtitleDisplay text={episode.introNarration} />

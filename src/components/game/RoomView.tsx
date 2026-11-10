@@ -29,7 +29,7 @@ export default function RoomView() {
     const isNew = clue && !state.collectedClueIds.includes(clue.id);
 
     return (
-      <section id="narration" tabIndex={-1} ref={narrationRef} className="focus:outline-none">
+      <section id="narration" tabIndex={-1} ref={narrationRef} aria-label={t("narration")} className="focus:outline-none">
         <SubtitleDisplay
           text={
             obj.examinationText +
@@ -47,7 +47,7 @@ export default function RoomView() {
   }
 
   return (
-    <section id="narration" tabIndex={-1} ref={narrationRef} className="focus:outline-none">
+    <section id="narration" tabIndex={-1} ref={narrationRef} aria-label={t("narration")} className="focus:outline-none">
       <SubtitleDisplay text={`${room.entryAnnouncement}\n\n${room.description}`} />
     </section>
   );
