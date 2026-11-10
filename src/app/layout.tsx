@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Press_Start_2P, Inclusive_Sans } from "next/font/google";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 const inclusiveFont = Inclusive_Sans({
@@ -20,9 +21,11 @@ export const metadata: Metadata = {
   description: "A screen-reader-first graphic adventure game",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  // SetHtmlLang still handles client-side locale switches.
+  const locale = await getLocale();
   return (
-    <html lang="en" suppressHydrationWarning className={`${inclusiveFont.variable} ${pixelFont.variable} h-full`}>
+    <html lang={locale} suppressHydrationWarning className={`${inclusiveFont.variable} ${pixelFont.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-black text-white font-pixel">
         {children}
       </body>
