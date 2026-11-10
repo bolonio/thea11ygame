@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import { useGame } from "@/contexts/GameContext";
 import SubtitleDisplay from "./SubtitleDisplay";
 
 export default function DialogueView() {
   const { state, episode, dispatch } = useGame();
+  const t = useTranslations("game");
   const dialogueRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,13 +38,13 @@ export default function DialogueView() {
       id="narration"
       tabIndex={-1}
       ref={dialogueRef}
-      aria-label={`Conversation with ${character.name}`}
+      aria-label={t("conversationWith", { character: character.name })}
       className="focus:outline-none"
     >
       <h2 className="text-cyan-400 text-xs mb-2">{character.name}</h2>
       <SubtitleDisplay text={node.text} />
 
-      <div className="mt-4 flex flex-col gap-2" role="group" aria-label="Dialogue choices">
+      <div className="mt-4 flex flex-col gap-2" role="group" aria-label={t("dialogueChoices")}>
         {availableChoices.length > 0 ? (
           availableChoices.map((choice, i) => (
             <button
@@ -65,7 +67,7 @@ export default function DialogueView() {
             onClick={() => dispatch({ type: "END_DIALOGUE" })}
             className="px-4 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
           >
-            End conversation
+            {t("endConversation")}
           </button>
         )}
       </div>
