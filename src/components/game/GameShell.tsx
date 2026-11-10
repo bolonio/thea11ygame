@@ -26,6 +26,11 @@ function ExitToMenuLink() {
   );
 }
 
+// Not focusable on purpose: the game focuses its narration region instead.
+function EpisodeHeading({ title }: { title: string }) {
+  return <h1 className="sr-only">{title}</h1>;
+}
+
 export default function GameShell() {
   const { state, episode, dispatch } = useGame();
   const t = useTranslations("game");
@@ -45,6 +50,7 @@ export default function GameShell() {
     if (!characterIntroDone) {
       return (
         <main className="game-shell flex flex-col items-center justify-center flex-1 p-6 max-w-2xl mx-auto w-full">
+          <EpisodeHeading title={episode.title} />
           <section
             id="narration"
             tabIndex={-1}
@@ -64,6 +70,7 @@ export default function GameShell() {
     }
     return (
       <main className="game-shell flex flex-col items-center justify-center flex-1 p-6 max-w-2xl mx-auto w-full">
+        <EpisodeHeading title={episode.title} />
         <section
           id="narration"
           tabIndex={-1}
@@ -86,6 +93,7 @@ export default function GameShell() {
   if (state.phase === "ending") {
     return (
       <main className="game-shell flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full">
+        <EpisodeHeading title={episode.title} />
         <EndingView />
       </main>
     );
@@ -96,6 +104,7 @@ export default function GameShell() {
     return (
       <main className="game-shell flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full">
         <SkipLinks />
+        <EpisodeHeading title={episode.title} />
         <ConfrontationView />
         <div className="mt-6">
           <InventoryPanel />
@@ -110,6 +119,7 @@ export default function GameShell() {
     return (
       <main className="game-shell flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full">
         <SkipLinks />
+        <EpisodeHeading title={episode.title} />
         <DialogueView />
         <div className="mt-6">
           <InventoryPanel />
@@ -123,6 +133,7 @@ export default function GameShell() {
   return (
     <main className="game-shell flex flex-col flex-1 p-6 max-w-2xl mx-auto w-full gap-6">
       <SkipLinks />
+      <EpisodeHeading title={episode.title} />
       <RoomView />
       {state.phase === "exploration" && <ActionList />}
       <InventoryPanel />
