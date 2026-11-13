@@ -4,14 +4,16 @@
     "description": "A screen-reader-first graphic adventure game"
   },
   "footer": {
-    "createdBy": "Created by"
+    "createdBy": "Created by",
+    "viewSource": "View source on GitHub"
   },
   "menu": {
     "title": "The A11y Game",
     "subtitle": "A screen-reader-first mystery adventure",
     "episodes": "Episodes",
     "howToPlay": "How to play",
-    "settings": "Settings"
+    "settings": "Settings",
+    "about": "About"
   },
   "howToPlay": {
     "title": "How to play",
@@ -48,6 +50,26 @@
       "tip6": "New narration is announced automatically through a polite live region — no action needed on your side."
     },
     "back": "Back to Menu"
+  },
+  "about": {
+    "title": "About",
+    "intro": {
+      "p1": "The A11y Game is a screen-reader-first detective game. You explore rooms by sound, smell, and touch, collect clues, interrogate suspects, and piece together what happened — all without a single image.",
+      "p2": "Every interactive element is reachable by keyboard, every narration region is a live region, and every page uses semantic landmarks and headings. Two display modes let you choose between a screen-reader-focused layout and the traditional visual one, and both English and Spanish keep separate saves. It is tested with VoiceOver on macOS, NVDA on Windows, and pure keyboard navigation."
+    },
+    "contributing": {
+      "title": "Contributing",
+      "body": "The game is open source. Contributions are very welcome — bug fixes, accessibility improvements, new translations, and especially new episodes.",
+      "repoLink": "View the project on GitHub",
+      "episodesGuideLink": "Read the guide to writing a new episode"
+    },
+    "credits": {
+      "title": "Credits",
+      "intro": "The A11y Game is created and maintained by",
+      "episodes": "Episodes",
+      "by": "Written by",
+      "callToAction": "Want your story credited here? Write a new episode and open a pull request."
+    }
   },
   "episodes": {
     "title": "Select an Episode",

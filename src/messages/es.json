@@ -4,14 +4,16 @@
     "description": "Un juego de aventura gráfica diseñado para lectores de pantalla"
   },
   "footer": {
-    "createdBy": "Creado por"
+    "createdBy": "Creado por",
+    "viewSource": "Ver el código en GitHub"
   },
   "menu": {
     "title": "The A11y Game",
     "subtitle": "Una aventura de misterio para lectores de pantalla",
     "episodes": "Episodios",
     "howToPlay": "Cómo jugar",
-    "settings": "Ajustes"
+    "settings": "Ajustes",
+    "about": "Acerca de"
   },
   "howToPlay": {
     "title": "Cómo jugar",
@@ -48,6 +50,26 @@
       "tip6": "Las narraciones se anuncian automáticamente a través de una región en vivo cortés — no tienes que hacer nada."
     },
     "back": "Volver al Menú"
+  },
+  "about": {
+    "title": "Acerca de",
+    "intro": {
+      "p1": "The A11y Game es un juego de detectives diseñado pensando primero en los lectores de pantalla. Exploras habitaciones por el sonido, el olfato y el tacto, recoges pistas, interrogas a los sospechosos y reconstruyes lo que ocurrió, todo sin una sola imagen.",
+      "p2": "Todos los elementos interactivos son accesibles con el teclado, las narraciones son regiones en vivo y cada página usa encabezados y landmarks semánticos. Hay dos modos de visualización, uno centrado en el lector de pantalla y otro visual tradicional, y el inglés y el español guardan la partida por separado. Está probado con VoiceOver en macOS, NVDA en Windows y navegación solo con teclado."
+    },
+    "contributing": {
+      "title": "Contribuir",
+      "body": "El juego es de código abierto. Toda contribución es bienvenida: corrección de errores, mejoras de accesibilidad, nuevas traducciones y, sobre todo, nuevos episodios.",
+      "repoLink": "Ver el proyecto en GitHub",
+      "episodesGuideLink": "Leer la guía para escribir un episodio nuevo"
+    },
+    "credits": {
+      "title": "Créditos",
+      "intro": "The A11y Game está creado y mantenido por",
+      "episodes": "Episodios",
+      "by": "Escrito por",
+      "callToAction": "¿Quieres que tu historia aparezca aquí? Escribe un episodio nuevo y abre una pull request."
+    }
   },
   "episodes": {
     "title": "Selecciona un Episodio",
