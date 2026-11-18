@@ -352,18 +352,30 @@ describe("gameReducer — dialogue", () => {
     expect(next.flags).toEqual(["f1"]);
   });
 
-  // KNOWN BUG — reported in the PR description, source intentionally untouched.
-  // `ADVANCE_DIALOGUE` reads `state.activeDialogue!.characterId` behind a
-  // non-null assertion. If the action ever arrives without an active dialogue
-  // (double-click on a choice, a replayed action, a corrupted save) the reducer
-  // throws instead of degrading. This test pins the current behaviour so the
-  // fix is visible when it lands.
-  it("throws when ADVANCE_DIALOGUE arrives with no active dialogue (known bug)", () => {
+  it("ADVANCE_DIALOGUE leaves the state untouched when no dialogue is active", () => {
     const state = base({ phase: "exploration", activeDialogue: null });
 
     expect(() =>
       gameReducer(state, { type: "ADVANCE_DIALOGUE", nextNodeId: "clock-talk" }),
-    ).toThrow(TypeError);
+    ).not.toThrow();
+    expect(gameReducer(state, { type: "ADVANCE_DIALOGUE", nextNodeId: "clock-talk" })).toBe(
+      state,
+    );
+  });
+
+  it("a stray ADVANCE_DIALOGUE grants no clue and sets no flag", () => {
+    const state = base({ phase: "exploration", activeDialogue: null, flags: ["f1"] });
+
+    const next = gameReducer(state, {
+      type: "ADVANCE_DIALOGUE",
+      nextNodeId: "clock-talk",
+      grantClueId: "admission",
+      setFlags: ["knows-about-safe"],
+    });
+
+    expect(next).toBe(state);
+    expect(next.collectedClueIds).toEqual([]);
+    expect(next.flags).toEqual(["f1"]);
   });
 
   it("does not throw on the terminating branch without an active dialogue", () => {

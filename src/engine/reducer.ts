@@ -97,10 +97,14 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
         };
       }
 
+      // A stray or replayed advance — a double-click on a choice, a corrupted
+      // save — has no conversation to walk forward. Leave the state alone.
+      if (!state.activeDialogue) return state;
+
       return {
         ...state,
         activeDialogue: {
-          characterId: state.activeDialogue!.characterId,
+          characterId: state.activeDialogue.characterId,
           currentNodeId: action.nextNodeId,
         },
         flags: newFlags,
