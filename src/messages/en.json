@@ -86,6 +86,7 @@
     "textSpeed": "Text Speed",
     "instant": "Instant",
     "typewriter": "Typewriter",
+    "textSpeedLocked": "Text speed is always instant in Screen Reader Mode.",
     "fontStyle": "Font Style",
     "pixelFont": "Pixel",
     "accessibleFont": "Accessible",
