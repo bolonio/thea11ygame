@@ -27,7 +27,7 @@ header.top h1 span{display:block;color:var(--fg);font-size:.8em}
 .tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 button,.btn{font:inherit;font-size:15px;font-weight:600;color:var(--fg);background:transparent;border:2px solid var(--fg);border-radius:0;padding:8px 14px;cursor:pointer;min-height:44px;text-decoration:none;display:inline-flex;align-items:center}
 button:hover,.btn:hover{color:var(--accent);border-color:var(--accent)}
-button[disabled]{opacity:.45;cursor:not-allowed}
+button[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
 button[aria-pressed="true"]{background:var(--accent);color:#08080a;border-color:var(--accent)}
 main{flex:1;width:100%;max-width:min(1600px,calc((100vh - 200px) * 16 / 9));margin:0 auto;padding:24px clamp(16px,3vw,32px) 32px}
 .controls{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:16px;flex-wrap:wrap}
@@ -773,14 +773,14 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
       s.hidden = !showAll && i !== n;
       s.classList.toggle('enter', !showAll && i === n);
     });
-    prev.disabled = n === 0; next.disabled = n === total - 1;
+    prev.setAttribute('aria-disabled', String(n === 0)); next.setAttribute('aria-disabled', String(n === total - 1));
     counter.textContent = (n + 1) + ' / ' + total;
     if (!showAll) history.replaceState(null, '', '#slide-' + (n + 1));
     fit();
     if (announce) status.textContent = 'Slide ' + slides[n].getAttribute('aria-label');
   }
-  prev.addEventListener('click', () => go(current - 1, true));
-  next.addEventListener('click', () => go(current + 1, true));
+  prev.addEventListener('click', () => { if (prev.getAttribute('aria-disabled') === 'true') return; go(current - 1, true); });
+  next.addEventListener('click', () => { if (next.getAttribute('aria-disabled') === 'true') return; go(current + 1, true); });
 
   document.addEventListener('keydown', e => {
     if (showAll || e.altKey || e.ctrlKey || e.metaKey) return;

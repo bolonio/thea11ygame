@@ -27,6 +27,7 @@ export default function ConfrontationView() {
 
   function submitAccusation() {
     if (!selectedSuspect) return;
+    if (selectedClueIds.length === 0) return;
     const suspect = confrontation.suspects.find(
       (s) => s.characterId === selectedSuspect,
     );
@@ -116,8 +117,8 @@ export default function ConfrontationView() {
       <div className="mt-4 flex gap-3">
         <button
           onClick={submitAccusation}
-          disabled={selectedClueIds.length === 0}
-          className="px-4 py-2 border border-red-400 text-red-400 hover:bg-red-400 hover:text-black focus:outline-2 focus:outline-red-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          aria-disabled={selectedClueIds.length === 0}
+          className="px-4 py-2 border border-red-400 text-red-400 hover:bg-red-400 hover:text-black focus:outline-2 focus:outline-red-400 aria-disabled:opacity-50 aria-disabled:cursor-not-allowed transition-colors"
         >
           {t("presentEvidence")}
         </button>
