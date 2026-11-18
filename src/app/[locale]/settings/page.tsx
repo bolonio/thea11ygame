@@ -1,12 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSettings } from "@/contexts/SettingsContext";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { deleteAllSaves, hasSave } from "@/engine/save";
+import { deleteAllSaves, hasSave, subscribeToSaves } from "@/engine/save";
 import type { DisplayMode, FontStyle, TextSpeed } from "@/engine/types";
+
+/** No saves are visible on the server, so nothing is offered for erasing. */
+function getServerHasSave(): boolean {
+  return false;
+}
 
 export default function SettingsPage() {
   const t = useTranslations("settings");
@@ -35,13 +40,12 @@ export default function SettingsPage() {
     { value: "typewriter", label: t("typewriter") },
   ];
 
-  const [hasProgress, setHasProgress] = useState(false);
+  // Saves live in localStorage, an external store, so they are read through
+  // `useSyncExternalStore` rather than copied into state from an effect.
+  // `deleteAllSaves` notifies its subscribers, so erasing re-reads from here.
+  const hasProgress = useSyncExternalStore(subscribeToSaves, hasSave, getServerHasSave);
   const [confirming, setConfirming] = useState(false);
   const [justErased, setJustErased] = useState(false);
-
-  useEffect(() => {
-    setHasProgress(hasSave());
-  }, []);
 
   useEffect(() => {
     if (!justErased) return;
@@ -56,7 +60,6 @@ export default function SettingsPage() {
     }
     deleteAllSaves();
     setConfirming(false);
-    setHasProgress(false);
     setJustErased(true);
   };
 

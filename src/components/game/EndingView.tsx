@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { useGame } from "@/contexts/GameContext";
 import { useRouter } from "@/i18n/navigation";
 import { deleteSave } from "@/engine/save";
-import { createInitialState } from "@/engine/reducer";
 import SubtitleDisplay from "./SubtitleDisplay";
 
 export default function EndingView() {
@@ -31,7 +30,6 @@ export default function EndingView() {
         <button
           onClick={() => {
             deleteSave(episode.id, episode.language);
-            const initial = createInitialState(episode.id, episode.startingRoomId);
             dispatch({ type: "RESET" });
             // Re-initialize by reloading
             window.location.reload();

@@ -8,47 +8,57 @@ interface SubtitleDisplayProps {
   id?: string;
 }
 
+const TYPEWRITER_SPEED_MS = 30;
+
+const visualClassName =
+  "text-sm sm:text-base leading-relaxed text-yellow-300 whitespace-pre-wrap min-h-[4rem]";
+
 export default function SubtitleDisplay({ text, id }: SubtitleDisplayProps) {
   const { settings } = useSettings();
-  const speed =
-    settings.displayMode === "visual" && settings.textSpeed === "typewriter" ? 30 : 0;
-  const [displayed, setDisplayed] = useState(speed === 0 ? text : "");
+  const typewriter = settings.displayMode === "visual" && settings.textSpeed === "typewriter";
 
-  useEffect(() => {
-    if (speed === 0) {
-      setDisplayed(text);
-      return;
-    }
-    setDisplayed("");
-    let i = 0;
-    const interval = setInterval(() => {
-      i++;
-      setDisplayed(text.slice(0, i));
-      if (i >= text.length) clearInterval(interval);
-    }, speed);
-    return () => clearInterval(interval);
-  }, [text, speed]);
-
-  const visualClassName =
-    "text-sm sm:text-base leading-relaxed text-yellow-300 whitespace-pre-wrap min-h-[4rem]";
-
-  if (speed === 0) {
+  if (!typewriter) {
     return (
       <div key="instant" id={id} aria-live="polite" aria-atomic="true" className={visualClassName}>
-        {displayed}
+        {text}
       </div>
     );
   }
 
   // Announce the full text once; the animated copy would re-announce every tick.
+  // The live region stays mounted across text changes so the new narration is
+  // announced as a content update rather than as a brand new region, which
+  // screen readers tend to miss.
   return (
     <div key="typewriter" id={id}>
       <div className="sr-only" aria-live="polite" aria-atomic="true">
         {text}
       </div>
-      <div aria-hidden="true" className={visualClassName}>
-        {displayed}
-      </div>
+      <TypewriterText key={text} text={text} />
+    </div>
+  );
+}
+
+/**
+ * Reveals `text` one character at a time. Remounted by its `key` whenever the
+ * text changes, so it starts empty again without an effect resetting state.
+ */
+function TypewriterText({ text }: { text: string }) {
+  const [displayed, setDisplayed] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayed(text.slice(0, i));
+      if (i >= text.length) clearInterval(interval);
+    }, TYPEWRITER_SPEED_MS);
+    return () => clearInterval(interval);
+  }, [text]);
+
+  return (
+    <div aria-hidden="true" className={visualClassName}>
+      {displayed}
     </div>
   );
 }
