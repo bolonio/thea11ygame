@@ -36,6 +36,8 @@ Every PR to `main` runs three required checks: **Test and build**, **Lint**, and
 
 Test the change in **both display modes** (Screen Reader Mode and Visual Mode) and, if possible, with a screen reader. The `/how-to-play` page has tips for VoiceOver, NVDA, and keyboard-only navigation.
 
+If you're changing an existing feature, [docs/design/](docs/design/) collects the design notes written while each feature was built — worth a look to understand why something works the way it does before you change it.
+
 ## Coding style
 
 - TypeScript with strict mode. Avoid `any`.
