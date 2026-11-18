@@ -47,9 +47,6 @@ main{flex:1;width:100%;max-width:min(1600px,calc((100vh - 200px) * 16 / 9));marg
 .canvas img{max-width:none;display:block}
 /* flow content paints above pinned backdrops, as in the deck */
 .canvas>:not([style*="position:absolute"]){position:relative}
-.notes{margin-top:16px;border:1px solid var(--line);padding:0 16px;max-width:75ch}
-.notes summary{cursor:pointer;padding:12px 0;font-weight:600;min-height:44px}
-.notes p{margin:0 0 16px;line-height:1.6;color:var(--fg)}
 body.all .controls{display:none}
 body.all .slide{margin-bottom:56px}
 body.all .slide::before{content:attr(aria-label);display:block;font-family:"Press Start 2P",monospace;font-size:12px;line-height:1.6;color:var(--muted);margin-bottom:10px}
@@ -70,9 +67,9 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
   </div>
 </header>
 <main id="deck" tabindex="-1">
-  <p class="sr-only">Use the Previous and Next buttons, or the left and right arrow keys, to move between slides. Each slide has its speaker notes below it.</p>
+  <p class="sr-only">Use the Previous and Next buttons, or the left and right arrow keys, to move between slides.</p>
 
-<section class="slide" id="slide-1" role="group" aria-roledescription="slide" aria-label="1 of 31: When the screen reader is the main character" data-chapter="The case: a mystery game you play with your ears">
+<section class="slide" id="slide-1" role="group" aria-roledescription="slide" aria-label="1 of 30: When the screen reader is the main character" data-chapter="The case: a mystery game you play with your ears">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="position:absolute; top:128px; left:50%; width:572px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:44px; line-height:1.4; text-align:center; color:#f2d649; transform:translateX(-50%)">The A11y Game</p>
@@ -80,31 +77,15 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 <h2 style="position:absolute; top:378.82px; left:128px; width:1664px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:72px; font-weight:400; line-height:1.4; text-align:center; color:#efeadf">When the screen reader is the main character</h2>
 <p style="position:absolute; top:628.82px; left:50%; width:520px; padding:24px 48px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:28px; line-height:1.5; color:#f2d649; border:2px solid #f2d649; transform:translateX(-50%)">Enter the talk.</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Hi everyone, I’m Adrián. I build accessible things for a living and, on the side, I built a murder mystery game you play with a screen reader. Today I want to show you that game, show you how it works under the hood, and, more importantly, get you to turn on a screen reader yourself this week. The subtitle line is a nod to how the game announces every room: “You are now entering the kitchen.”</p></details>
 </section>
-<section class="slide" id="slide-2" role="group" aria-roledescription="slide" aria-label="2 of 31: It was a quiet Tuesday evening. Then, through the thin walls, voices began to rise. First calm, then sharp. A crash, metallic and final. A thud that shook the floor beneath your feet.">
+<section class="slide" id="slide-2" role="group" aria-roledescription="slide" aria-label="2 of 30: It was a quiet Tuesday evening. Then, through the thin walls, voices began to rise. First calm, then sharp. A crash, metallic and final. A thud that shook the floor beneath your feet.">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:50%; width:1920px; height:1080px; transform:translateX(-50%)" width="1920"/>
 <p style="position:absolute; top:calc(50% - 57.59px); left:50%; width:1664px; font-family:'Press Start 2P', sans-serif; font-size:44px; line-height:1.5; text-align:center; color:#f2d649; transform:translate(-50%, -50%)">It was a quiet Tuesday evening. Then, through the thin walls, voices began to rise. First calm, then sharp. A crash, metallic and final. A thud that shook the floor beneath your feet.</p>
 <p style="position:absolute; top:731.26px; left:calc(50% - 85.76px); width:743.51px; font-family:'Press Start 2P', sans-serif; font-size:44px; line-height:1.5; text-align:center; color:#f2d649; transform:translateX(-50%)">Then silence...</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Cold open. Before saying anything else, ask the room to close their eyes. Then read the narration slowly, in your best noir voice, and let the silence after “Then silence” sit for a couple of seconds. Then: “Keep your eyes closed. You just heard a murder. You’re blind, you live next door, and you’re the only witness. That’s the game.”</p></details>
 </section>
-<section class="slide" id="slide-3" role="group" aria-roledescription="slide" aria-label="3 of 31: Slide 3">
-  <div class="frame"><div class="canvas" style="background:#08080a">
-<img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
-<img alt="Illustration of a wheelchair user at a screen with accessibility icons" decoding="async" height="740" loading="lazy" src="/talk/assets/dfb35e0cbd.webp" style="position:absolute; top:calc(50% + 294.07px); left:calc(50% + 705.3px); width:640px; height:640px; transform:translate(-50%, -50%)" width="740"/>
-<img alt="Illustration of a globe with the accessibility symbol and web icons" decoding="async" height="672" loading="lazy" src="/talk/assets/5adb805c24.webp" style="position:absolute; top:calc(50% - 317.14px); left:calc(50% + 665.38px); width:1214.18px; height:582.43px; transform:translate(-50%, -50%)" width="1400"/>
-<img alt="And Then There Were None, by Agatha Christie" decoding="async" height="1786" loading="lazy" src="/talk/assets/4ac9c3976e.webp" style="position:absolute; top:calc(50% - 216.26px); left:0; width:537.43px; height:810.35px; transform:translateY(-50%) rotate(8deg)" width="1184"/>
-<img alt="Sherlock Holmes: A Study in Scarlet" decoding="async" height="2339" loading="lazy" src="/talk/assets/657be55577.webp" style="position:absolute; top:calc(50% + 530.79px); left:calc(50% - 804.75px); width:561.49px; height:868.56px; transform:translate(-50%, -50%) rotate(16deg)" width="1512"/>
-<img alt="Scene from a point and click adventure game" decoding="async" height="1080" loading="lazy" src="/talk/assets/da5c20bebb.webp" style="position:absolute; top:calc(50% - 20px); left:calc(50% + 128.24px); width:715.45px; height:402.44px; transform:translate(-50%, -50%)" width="1920"/>
-<img alt="Mord im Orient Express, by Agatha Christie" decoding="async" height="1200" loading="lazy" src="/talk/assets/2819044b30.webp" style="position:absolute; top:calc(50% + 269.42px); left:calc(50% - 298.8px); width:494.85px; height:752.33px; transform:translate(-50%, -50%) rotate(-5deg)" width="789"/>
-<img alt="Scene from Day of the Tentacle with its verb menu" decoding="async" height="480" loading="lazy" src="/talk/assets/17c046db30.webp" style="position:absolute; top:calc(50% - 347.13px); left:calc(50% - 102.45px); width:728.69px; height:546.52px; transform:translate(-50%, -50%) rotate(-11deg)" width="640"/>
-<img alt="Scene from The Secret of Monkey Island with its verb menu" decoding="async" height="1074" loading="lazy" src="/talk/assets/819764cbc3.webp" style="position:absolute; top:calc(50% + 331.04px); left:calc(50% + 127.98px); width:702.95px; height:523.92px; transform:translate(-50%, -50%) rotate(8deg)" width="1442"/>
-  </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>OK, eyes open. This is The A11y Game. It’s a noir mystery where you play a blind detective. Two episodes so far: in Earwitness you heard a murder through the wall of your apartment, in The Gathering the lights go out at a dinner party and the host ends up dead. Each case takes 15 to 30 minutes and has several endings depending on who you accuse and what evidence you bring. It works in English and Spanish, it’s open source under MIT, and every single clue lives in text. You never need to see anything to solve it.</p></details>
-</section>
-<section class="slide" id="slide-4" role="group" aria-roledescription="slide" aria-label="4 of 31: Why I built it">
+<section class="slide" id="slide-3" role="group" aria-roledescription="slide" aria-label="3 of 30: Why I built it">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -136,9 +117,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>So why would anyone build this? Honestly, it’s three things I love colliding. First, crime stories. I’m the person who reads the whole yellow novel in one night and pauses the film to guess the killer. Second, games. I grew up with point and click graphic adventures, exploring rooms, examining every object, talking to every character until something clicked. And third, my job. For the last 5 to 7 years I’ve been a frontend engineer focused on accessibility, including working on the accessibility teams at GitHub and Miro. And one thing kept coming up: most developers have never turned on a screen reader. Not because they don’t care, but because it feels intimidating, and nobody makes it fun. So I thought: what if learning a screen reader felt like solving a murder? A game where using the screen reader is the gameplay, and by the end you understand why accessibility and assistive technologies matter, because you’ve depended on them yourself.</p></details>
 </section>
-<section class="slide" id="slide-5" role="group" aria-roledescription="slide" aria-label="5 of 31: A mystery game you play with your senses">
+<section class="slide" id="slide-4" role="group" aria-roledescription="slide" aria-label="4 of 30: A mystery game you play with your senses">
   <div class="frame"><div class="canvas" style="background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
@@ -172,9 +152,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#fafafb">A screen-reader-first detective game. Explore rooms by sound, smell and touch, collect clues, interrogate suspects, accuse the killer.</p>
 </div>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>OK, eyes open. This is The A11y Game. It’s a noir mystery where you play a blind detective. Two episodes so far: in Earwitness you heard a murder through the wall of your apartment, in The Gathering the lights go out at a dinner party and the host ends up dead. Each case takes 15 to 30 minutes and has several endings depending on who you accuse and what evidence you bring. Four numbers I care about. Zero: not a single clue needs your eyes, everything lives in the text, so you never need to see anything to solve it. MIT: it’s open source, so anyone can join, whether that’s fixing a bug, adding a translation or writing a whole new case. Two languages for now, English and Spanish, and I’d love yours to be next. And two episodes for now, with more to come, because a new case is just data.</p></details>
 </section>
-<section class="slide" id="slide-6" role="group" aria-roledescription="slide" aria-label="6 of 31: Designed around vs. designed for" data-chapter="The motive: why the screen reader is the platform, not an afterthought">
+<section class="slide" id="slide-5" role="group" aria-roledescription="slide" aria-label="5 of 30: Designed around vs. designed for" data-chapter="The motive: why the screen reader is the platform, not an afterthought">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -201,18 +180,16 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Most of what we ship is designed around the screen reader. We build the visual thing, then near the end someone runs an audit, and we add aria-labels until the tool goes green. It technically works, but nobody designed that experience. I wanted to flip it. What happens if the screen reader is the primary platform and the visuals are the add-on? That flip changes every decision: the content model, the components, how you test.</p></details>
 </section>
-<section class="slide" id="slide-7" role="group" aria-roledescription="slide" aria-label="7 of 31: Visual mode never adds information that is not in the text.">
+<section class="slide" id="slide-6" role="group" aria-roledescription="slide" aria-label="6 of 30: Visual mode never adds information that is not in the text.">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:56px; align-items:center; justify-content:center; padding:128px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff">THE ONE RULE</p>
 <h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:64px; font-weight:400; line-height:1.5; text-align:center; color:#f2d649">Visual mode never adds information that is not<br/>in the text.</h2>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.6; text-align:center; color:#efeadf">The pixel art is decoration.<br/>Switch it off and you lose zero clues.</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>This is the one rule I wrote in the design spec before writing any code, and everything else follows from it. Visual mode is a supplementary layer, never a gameplay advantage. If a sighted player could spot something on screen that a screen reader user can’t hear, that’s a bug. Think about how often the opposite is true in our products: the chart with no data table, the icon with no label, the red border that’s the only hint a field is wrong.</p></details>
 </section>
-<section class="slide" id="slide-8" role="group" aria-roledescription="slide" aria-label="8 of 31: Meet the detective">
+<section class="slide" id="slide-7" role="group" aria-roledescription="slide" aria-label="7 of 30: Meet the detective">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:64px; align-items:center; justify-content:center; padding:128px 192px 160px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:32px; align-items:center">
@@ -222,18 +199,16 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.8; text-align:center; color:#f2d649">You lost your sight years ago. In the darkness that followed, you discovered that the world never truly goes quiet — it simply asks to be listened to. You became an investigator because someone has to notice what others miss.<br/><br/>You investigate by <u>sound</u>, <u>smell</u>, <u>touch</u>, and the silences between words. Your screen reader is your main tool. Your senses are your weapons.</p>
 </div>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Before every case the game reads this to you. This is exactly how it looks in Screen Reader Mode: a black screen and yellow pixel subtitles, nothing else. The player character is blind, so the mechanics have to be non-visual: you examine objects by touch, you catch lies by smell, you remember a voice at 9:15. In Earwitness you can tell a suspect “Your shopping bag is bone dry. It’s been raining all night.” The detective uses a screen reader in the story and the player uses one in real life. That’s what I mean by the screen reader being the main character.</p></details>
 </section>
-<section class="slide" id="slide-9" role="group" aria-roledescription="slide" aria-label="9 of 31: Every detective needs a sidekick" data-chapter="The tool: what a screen reader does and how to start using one">
+<section class="slide" id="slide-8" role="group" aria-roledescription="slide" aria-label="8 of 30: Every detective needs a sidekick" data-chapter="The tool: what a screen reader does and how to start using one">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:56px; align-items:center; justify-content:center; padding:128px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff">THE TOOL</p>
 <h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:80px; font-weight:400; line-height:1.3; text-align:center; color:#f2d649">Every detective needs a sidekick</h2>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.6; text-align:center; color:#efeadf">"Your screen reader is your main tool.<br/>Your senses are your weapons."</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Every detective needs a sidekick, and ours is the screen reader. It’s the voice that describes every room, every object and every suspect. Before we play, let’s make sure you know your partner: what a screen reader actually does, the handful of keys you need, and how people really move around a page with it.</p></details>
 </section>
-<section class="slide" id="slide-10" role="group" aria-roledescription="slide" aria-label="10 of 31: A screen reader doesn’t read your pixels">
+<section class="slide" id="slide-9" role="group" aria-roledescription="slide" aria-label="9 of 30: A screen reader doesn’t read your pixels">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -274,9 +249,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Quick screen reader 101, because I bet many of you have never turned one on. A screen reader doesn’t look at your screen. The browser turns your HTML into an accessibility tree, and the screen reader walks that tree and turns it into speech or braille. For each element it gets a name, a role and a state. So a button in the game is announced as “Examine The heavy footsteps, button”. And that name is everything. Imagine the same button called “Click here” or “Next”. Sighted users get the context from the layout around it, but a screen reader user often hears the button on its own, for example while tabbing or from a list of all the buttons on the page. “Click here, button” tells you nothing about what will happen. “Examine The heavy footsteps, button” tells you exactly what you’re about to do. So write accessible names that describe the action, and make sense out of context. Your CSS, your layout, your beautiful gradient: invisible. A div with a click handler: also invisible, because it has no role. And it’s linear. The user hears one thing at a time, so order and structure are everything.</p></details>
 </section>
-<section class="slide" id="slide-11" role="group" aria-roledescription="slide" aria-label="11 of 31: You already have one">
+<section class="slide" id="slide-10" role="group" aria-roledescription="slide" aria-label="10 of 30: You already have one">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -302,9 +276,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Here’s the good news: you don’t need to buy or install anything special. Your computer already has one, or is one free download away. On a Mac or an iPhone it’s VoiceOver, built in. On Windows, NVDA is free and open source, and Windows also comes with Narrator. JAWS exists too, it’s widely used, but it’s paid, so it’s not where I’d start. I’m not going to teach you the keyboard shortcuts on a slide, you’d forget them by lunch. Instead, the game has a How to Play page with a short tutorial for VoiceOver, NVDA and keyboard navigation, so you can learn while you play. One tip for the first time: turn the speech rate down. Screen reader users often listen at speeds that sound like noise to us, and you don’t have to start there.</p></details>
 </section>
-<section class="slide" id="slide-12" role="group" aria-roledescription="slide" aria-label="12 of 31: How screen reader users find their way">
+<section class="slide" id="slide-11" role="group" aria-roledescription="slide" aria-label="11 of 30: How screen reader users find their way">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -331,26 +304,23 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Second thing people get wrong: they imagine a screen reader user listening to the whole page from top to bottom. In reality they skim, just like you do with your eyes, only with the keyboard. WebAIM’s screen reader user survey has found for years that navigating by headings is the number one way people look for content. So headings aren’t styling, they’re navigation. Same with landmarks. In the game every panel has a heading and every page has a main, so you can jump straight to Actions or Inventory without listening to the room description again.</p></details>
 </section>
-<section class="slide" id="slide-13" role="group" aria-roledescription="slide" aria-label="13 of 31: Let’s solve a murder">
+<section class="slide" id="slide-12" role="group" aria-roledescription="slide" aria-label="12 of 30: Let’s solve a murder">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <h2 style="position:absolute; top:50%; left:50%; width:1664px; font-family:'Press Start 2P', sans-serif; font-size:80px; font-weight:700; line-height:1.1; text-align:center; color:#f2d649; transform:translate(-50%, -50%)">Let’s solve a murder</h2>
 <p style="position:absolute; top:608.41px; left:128px; width:1664px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:40px; line-height:1.4; text-align:center; color:#f2d649">www.thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Projector shows the game in Screen Reader Mode, so the audience sees a black screen with yellow subtitles, which is exactly what I want them to feel. Turn VoiceOver on, speech rate a bit slower than usual so the room can follow. Path: start Earwitness, listen to the character intro, Continue. In your apartment, examine “The argument” to collect the 9:15 clue. Go to the hallway, talk to a suspect, show that the challenge choice only appears because you hold the clue. Then switch to Visual Mode mid-game to show nothing new appears, only decoration. Ask the audience to call out what they’d examine next. If wifi or audio fails, play the recorded video. Things to point at while it runs: the list above.</p></details>
 </section>
-<section class="slide" id="slide-14" role="group" aria-roledescription="slide" aria-label="14 of 31: Anatomy of a murder" data-chapter="The engine: a decoupled, data-driven architecture">
+<section class="slide" id="slide-13" role="group" aria-roledescription="slide" aria-label="13 of 30: Anatomy of a murder" data-chapter="The engine: a decoupled, data-driven architecture">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:56px; align-items:center; justify-content:center; padding:128px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff">THE AUTOPSY</p>
 <h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:80px; font-weight:400; line-height:1.3; text-align:center; color:#f2d649">Anatomy of a murder</h2>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.6; text-align:center; color:#efeadf">Let’s open up the game and see how it’s built, from the engine to the HTML.</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>You’ve seen the game from the player’s side. Now let’s do the autopsy. I’ll open it up and show you what’s inside: first the engine, how a whole murder mystery can be just data, and then the accessibility patterns that make it playable without ever looking at the screen.</p></details>
 </section>
-<section class="slide" id="slide-15" role="group" aria-roledescription="slide" aria-label="15 of 31: From data file to screen reader">
+<section class="slide" id="slide-14" role="group" aria-roledescription="slide" aria-label="14 of 30: From data file to screen reader">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -409,9 +379,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Here’s the full path from a data file to the screen reader. One: each episode is plain data, one file per language, with rooms, characters, clues, the confrontation and the endings. When the file is imported, it calls registerEpisode. Two: the registry is just a Map, keyed by episode id and language, so earwitness:en and earwitness:es are two separate entries, and getEpisode picks the right one for the current locale. Three: GameContext holds the game state with useReducer and saves it to localStorage, with one save per episode and language, so playing in Spanish never overwrites your English progress. Four: the engine is a pure TypeScript reducer. It takes the state and an action like MOVE_TO_ROOM, EXAMINE_OBJECT or ADVANCE_DIALOGUE, and returns the new state. No React, no DOM, easy to test. And five: GameShell looks at state.phase and renders exactly one view: the intro, the room with its actions, a dialogue, the confrontation or the ending. Every one of those views is where the accessibility lives: headings, live regions and focus. The engine never has to know.</p></details>
 </section>
-<section class="slide" id="slide-16" role="group" aria-roledescription="slide" aria-label="16 of 31: The engine is just a function">
+<section class="slide" id="slide-15" role="group" aria-roledescription="slide" aria-label="15 of 30: The engine is just a function">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -431,9 +400,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>The heart of the game is one function. The engine is a pure TypeScript reducer: it takes the current state and an action, like MOVE_TO_ROOM, EXAMINE_OBJECT or ADVANCE_DIALOGUE, and returns the new state. Moving to a room just sets the current room. Examining an object switches the phase and remembers which object you’re looking at. That’s it. There’s no React in here, no DOM, no fetch, no timers, nothing that needs a browser. Which means it’s easy to test: give it a state and an action, check what comes out. And it keeps the accessibility work where it belongs, in the views that render this state.</p></details>
 </section>
-<section class="slide" id="slide-17" role="group" aria-roledescription="slide" aria-label="17 of 31: A room is just data">
+<section class="slide" id="slide-16" role="group" aria-roledescription="slide" aria-label="16 of 30: A room is just data">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -452,9 +420,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>This is a real room from Earwitness, trimmed. Look at what’s in the schema: an entry announcement, a sensory description, objects with an examination text and maybe a clue, exits with a label. Look at what’s not there: x and y, an image, a colour, a hover state. The content model is the accessibility strategy. If you want a game that works without a screen, design a data model that can’t express “look at this”. The entry announcement is also deliberate: every room starts with “You are now entering…” so a screen reader user always knows the context changed.</p></details>
 </section>
-<section class="slide" id="slide-18" role="group" aria-roledescription="slide" aria-label="18 of 31: Catching liars, in data">
+<section class="slide" id="slide-17" role="group" aria-roledescription="slide" aria-label="17 of 30: Catching liars, in data">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -476,9 +443,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>This is my favourite part of the design. Dialogue choices can require clues. If you touched the shopping bag and noticed it was dry, you unlock the line “Your shopping bag is bone dry. It’s been raining all night.” The DialogueView simply filters choices you can’t use yet. I chose to hide them instead of rendering disabled buttons, because a list full of disabled options is a lot of noise when you hear them one by one. That’s a real design trade-off you face in forms and menus too.</p></details>
 </section>
-<section class="slide" id="slide-19" role="group" aria-roledescription="slide" aria-label="19 of 31: Case closed? Not so fast...">
+<section class="slide" id="slide-18" role="group" aria-roledescription="slide" aria-label="18 of 30: Case closed? Not so fast...">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -498,9 +464,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>So when can you solve the murder? Not straight away. Every episode sets a minimum number of clues in its data: five in Earwitness, four in The Gathering. The ActionList simply compares how many clues you’ve collected with that number. Until you reach it, the “Confront someone” button doesn’t exist, it’s not disabled, it’s just not in the list. Same idea as the dialogue choices: a screen reader user never has to listen to an option they can’t use yet. The moment you find the last clue you need, a new button appears at the end of the actions. And it’s still data all the way down: in the confrontation, each suspect lists which clues lead to which ending, so the evidence you present decides which of the endings you reach, from catching the killer to accusing the wrong person.</p></details>
 </section>
-<section class="slide" id="slide-20" role="group" aria-roledescription="slide" aria-label="20 of 31: A new case without touching the engine">
+<section class="slide" id="slide-19" role="group" aria-roledescription="slide" aria-label="19 of 30: A new case without touching the engine">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -525,9 +490,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Each episode file calls registerEpisode when it’s imported, and the registry stores it under id plus locale, so earwitness:en and earwitness:es are two entries. Adding a case is three steps and zero engine changes. And here’s the accessibility angle: whoever writes the next episode doesn’t need to know anything about ARIA. They write prose and clues, and the platform makes it accessible. That’s the pattern I’d love to see in our design systems: make the accessible path the default path, so content authors can’t break it.</p></details>
 </section>
-<section class="slide" id="slide-21" role="group" aria-roledescription="slide" aria-label="21 of 31: The state never lies">
+<section class="slide" id="slide-20" role="group" aria-roledescription="slide" aria-label="20 of 30: The state never lies">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -547,9 +511,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Once we have the episode, GameContext takes over. It looks for a saved game for this episode and this language in localStorage. If there is one, you continue where you left off; if not, it creates a fresh initial state in the starting room. Then it hands that to useReducer with the game reducer, and every time you move between rooms it saves again. The reducer itself is pure TypeScript: it takes the current state and an action, like START_CONFRONTATION, and returns a new state, here just switching the phase. No React, no DOM, no side effects, so it’s trivial to test, and the UI just renders whatever phase the state is in.</p></details>
 </section>
-<section class="slide" id="slide-22" role="group" aria-roledescription="slide" aria-label="22 of 31: Semantic HTML is the best feature" data-chapter="The evidence: semantics, live regions, focus, display modes and language">
+<section class="slide" id="slide-21" role="group" aria-roledescription="slide" aria-label="21 of 30: Semantic HTML is the best feature" data-chapter="The evidence: semantics, live regions, focus, display modes and language">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -572,9 +535,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Now the patterns. The first one is the least exciting and the most important. Every action in the game is a real button, inside a real list, inside a labelled section with a heading. No divs with onClick. That gives you the role, the count, the position, keyboard support and focus for free. One gotcha worth stealing: role=&quot;list&quot; on the ul. When you remove bullets with list-style none, which Tailwind does by default, Safari and VoiceOver stop announcing it as a list. Adding the role back restores “list, 2 items”. [Double-check the exact VoiceOver output wording on stage hardware before the talk.]</p></details>
 </section>
-<section class="slide" id="slide-23" role="group" aria-roledescription="slide" aria-label="23 of 31: Typewriter text, one announcement">
+<section class="slide" id="slide-22" role="group" aria-roledescription="slide" aria-label="22 of 30: Typewriter text, one announcement">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -602,9 +564,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Let’s talk about narration speed. The game has two text speeds. Instant is the default, and in Screen Reader Mode it’s forced: the full text lands in a polite, atomic live region and gets announced once. In Visual Mode you can switch to Typewriter, where the text types itself out every 30 milliseconds, like an old adventure game. Plenty of low-vision players use Visual Mode with a screen reader on, so the typewriter has to work for both. If the animated text were the live region, it would change every 30ms, and an atomic region would re-read the whole sentence on every tick. So the two jobs are split. The full text goes once into a visually hidden live region, that’s what the screen reader hears. The animated copy is aria-hidden, that’s what the eyes see. Same content, two channels, each doing one thing. Lesson: animations aren’t only a motion problem, they can be a screen reader problem too. Separate what you show from what you announce.</p></details>
 </section>
-<section class="slide" id="slide-24" role="group" aria-roledescription="slide" aria-label="24 of 31: When content swaps, focus has to move">
+<section class="slide" id="slide-23" role="group" aria-roledescription="slide" aria-label="23 of 30: When content swaps, focus has to move">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -626,9 +587,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>This is the pattern I’d tattoo on every SPA developer. When you click a button and the content around it is replaced, the button you were focused on no longer exists. The browser drops focus to the body, and a screen reader user is suddenly at the top of the page, or hears nothing at all. In the game, whenever the room, the examined object or the phase changes, I move focus to the narration section. tabIndex minus one makes it focusable by script without adding it to the Tab order. Sighted keyboard users benefit too: their next Tab goes to the first action, not back to the top.</p></details>
 </section>
-<section class="slide" id="slide-25" role="group" aria-roledescription="slide" aria-label="25 of 31: Route changes need focus too">
+<section class="slide" id="slide-24" role="group" aria-roledescription="slide" aria-label="24 of 30: Route changes need focus too">
   <div class="frame"><div class="canvas" style="background:#F7F9FB;color:#13294B;font-family:Montserrat, Verdana, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover" width="1920"/>
 <div style="display:flex;flex-direction:column;gap:24px">
@@ -657,9 +617,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#44566C">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Same problem as the last slide, one level up: whole pages instead of parts of a page. On a classic website, every click on a link loads a new page. The browser resets focus to the top and the screen reader announces the new title, so you always know where you landed. Single page apps like Next.js don’t reload. The URL changes, the content changes, but focus stays on the link you just clicked, which might not even exist anymore. For a screen reader user, nothing happened. Silence. The solution in the game is a tiny component in the layout. Every time the pathname changes, it finds the h1 inside main and moves focus to it. The screen reader reads the heading, “How to play”, and now you know the page changed and where you are. The h1 has tabIndex minus one, so it can receive focus from code without becoming a stop when you press Tab. The game screen itself skips this, because it already moves focus to the narration. If your app uses client-side routing, check this today: click a link with a screen reader on and listen.</p></details>
 </section>
-<section class="slide" id="slide-26" role="group" aria-roledescription="slide" aria-label="26 of 31: Two display modes, one accessibility tree">
+<section class="slide" id="slide-25" role="group" aria-roledescription="slide" aria-label="25 of 30: Two display modes, one accessibility tree">
   <div class="frame"><div class="canvas" style="background:#F7F9FB;color:#13294B;font-family:Montserrat, Verdana, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover" width="1920"/>
 <div style="display:flex;flex-direction:column;gap:24px">
@@ -689,9 +648,8 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#44566C">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Screen Reader Mode is the default. The screen is black, you only see the yellow subtitles, and every button, list and panel is hidden with the classic visually-hidden pattern: 1 pixel, clipped, absolutely positioned. It’s gone for the eyes and still fully there for the screen reader. Visual Mode just removes those rules. The key lesson for your own code: visually hidden and display none are completely different things. display none, visibility hidden and the hidden attribute remove the element from the accessibility tree as well.</p></details>
 </section>
-<section class="slide" id="slide-27" role="group" aria-roledescription="slide" aria-label="27 of 31: Speak the right language">
+<section class="slide" id="slide-26" role="group" aria-roledescription="slide" aria-label="26 of 30: Speak the right language">
   <div class="frame"><div class="canvas" style="background:#F7F9FB;color:#13294B;font-family:Montserrat, Verdana, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover" width="1920"/>
 <div style="display:flex;flex-direction:column;gap:24px">
@@ -722,18 +680,16 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#44566C">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>The last pattern is one attribute, and it’s one of the most forgotten. The lang attribute on html tells the screen reader which voice and pronunciation rules to use. Spanish read with an English voice is close to unusable, and you can’t fix it with CSS or a nicer UI. So in the game it’s set in two places. On the server, the root layout reads the locale with getLocale from next-intl and renders html lang with it, so the very first HTML the screen reader gets is already right. A screen reader starts reading as soon as the page arrives, it doesn’t wait for React. And on the client, a tiny effect called SetHtmlLang updates it whenever you switch language mid-session, because Next.js keeps the root layout between those navigations. If it matters to assistive tech, make it right in the server HTML. On top of that, episodes are registered per locale and saves are keyed per episode and language, so you can play Earwitness in English and in Spanish without one save overwriting the other. Quick demo option: switch the game to /es and let VoiceOver read a line.</p></details>
 </section>
-<section class="slide" id="slide-28" role="group" aria-roledescription="slide" aria-label="28 of 31: Your turn,detective." data-chapter="The verdict: what to take home on Monday">
+<section class="slide" id="slide-27" role="group" aria-roledescription="slide" aria-label="27 of 30: Your turn,detective." data-chapter="The verdict: what to take home on Monday">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:56px; align-items:center; justify-content:center; padding:128px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff">THE VERDICT</p>
 <h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:80px; font-weight:400; line-height:1.3; color:#f2d649">Your turn,detective.</h2>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.6; text-align:center; color:#efeadf">Five things you can do on Monday, no new library or game needed.</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>That’s the case file: the game, the screen reader basics, the engine and the patterns. Now it’s your turn to investigate, and the crime scene is your own product. I don’t want you to leave with a checklist you’ll never open. I want five small things you can try on Monday morning, with the tools you already have.</p></details>
 </section>
-<section class="slide" id="slide-29" role="group" aria-roledescription="slide" aria-label="29 of 31: Investigate your own product">
+<section class="slide" id="slide-28" role="group" aria-roledescription="slide" aria-label="28 of 30: Investigate your own product">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -764,17 +720,15 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>So here’s your case. Your product is the crime scene, and the bugs are hiding in plain sight, you just can’t see them with your eyes. One: go undercover. Turn on VoiceOver or NVDA and use your own product for ten minutes without looking. You’ll find the first unlabelled icon button in the first minute, I promise. Two: follow the headings. Jump through them with H or the rotor. If they don’t tell the story of the page, that’s your first clue. Three: track the focus. Every time the route changes or content gets swapped, ask where focus went. If the answer is “the body”, you’ve found your victim. Four: listen for silences. Toasts, errors, loading states that nobody announces are witnesses that never talk. Give them a polite live region. Five: check the accent. If lang on html is wrong, the screen reader reads your page with the wrong voice. None of this needs a new library. And if you want to practise the keys first, go play The A11y Game tonight.</p></details>
 </section>
-<section class="slide" id="slide-30" role="group" aria-roledescription="slide" aria-label="30 of 31: Design for the screen reader, not around it.">
+<section class="slide" id="slide-29" role="group" aria-roledescription="slide" aria-label="29 of 30: Design for the screen reader, not around it.">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="position:absolute; top:360.34px; left:50%; width:264px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff; transform:translateX(-50%)">CASE CLOSED</p>
 <h2 style="position:absolute; top:458.34px; left:128px; width:1664px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:64px; font-weight:400; line-height:1.5; text-align:center; color:#f2d649">Design <u>for</u> the screen reader, not around it.</h2>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Let that sit. The screen reader isn’t an edge case you patch at the end. It’s a platform with millions of users, and when you design for it from the start, the code gets simpler, not harder. My game proves it in the most extreme way I could think of: the screen reader is literally the main character.</p></details>
 </section>
-<section class="slide" id="slide-31" role="group" aria-roledescription="slide" aria-label="31 of 31: Thank you">
+<section class="slide" id="slide-30" role="group" aria-roledescription="slide" aria-label="30 of 30: Thank you">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="position:absolute; top:156.99px; left:50%; width:192px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff; transform:translateX(-50%)">THE END?</p>
@@ -783,11 +737,10 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 <p style="position:absolute; top:864.07px; left:50%; width:1200px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:30px; line-height:1.4; text-align:center; color:#ffffff; transform:translateX(-50%)">Code: www.github.com/bolonio/thea11ygame</p>
 <p style="position:absolute; top:926.07px; left:585px; width:750px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:30px; line-height:1.4; text-align:center; color:#ffffff">Me: www.adrianbolonio.com</p>
   </div></div>
-  <details class="notes"><summary>Speaker notes</summary><p>Thank you! The game is free at thea11ygame.com, in English and Spanish. The code is on GitHub under MIT, and the thing I’d love most is new episodes: if you write mysteries, or want to translate a case into your language, the guide is in the repo. Happy to take questions, and if you want to try the game with a screen reader after the talk, come find me.</p></details>
 </section>
   <nav class="controls" aria-label="Slides">
     <button type="button" id="prev">Previous<span class="sr-only"> slide</span></button>
-    <span class="counter" id="counter" aria-hidden="true">1 / 31</span>
+    <span class="counter" id="counter" aria-hidden="true">1 / 30</span>
     <button type="button" id="next">Next<span class="sr-only"> slide</span></button>
   </nav>
   <div class="sr-only" aria-live="polite" id="status"></div>
@@ -831,7 +784,7 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 
   document.addEventListener('keydown', e => {
     if (showAll || e.altKey || e.ctrlKey || e.metaKey) return;
-    if (e.target.closest('input, textarea, select, [contenteditable], summary')) return;
+    if (e.target.closest('input, textarea, select, [contenteditable]')) return;
     const k = e.key;
     if (k === 'ArrowRight' || k === 'PageDown') go(current + 1, true);
     else if (k === 'ArrowLeft' || k === 'PageUp') go(current - 1, true);
