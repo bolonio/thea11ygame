@@ -6,6 +6,24 @@ function keyFor(episodeId: string, language: string): string {
   return `${SAVE_PREFIX}${episodeId}_${language}`;
 }
 
+const listeners = new Set<() => void>();
+
+/**
+ * Subscribes to save-file changes so components can read saves through
+ * `useSyncExternalStore`. The browser only fires a `storage` event for writes
+ * made by *other* tabs, so every mutation below notifies subscribers itself.
+ */
+export function subscribeToSaves(listener: () => void): () => void {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function notifySaveChange(): void {
+  for (const listener of listeners) listener();
+}
+
 export function saveGame(state: GameState, language: string): void {
   if (typeof window === "undefined") return;
   const data: SaveData = {
@@ -15,6 +33,7 @@ export function saveGame(state: GameState, language: string): void {
     timestamp: Date.now(),
   };
   localStorage.setItem(keyFor(state.episodeId, language), JSON.stringify(data));
+  notifySaveChange();
 }
 
 export function loadGame(episodeId: string, language: string): SaveData | null {
@@ -60,6 +79,7 @@ export function hasSaveFor(episodeId: string, language: string): boolean {
 export function deleteSave(episodeId: string, language: string): void {
   if (typeof window === "undefined") return;
   localStorage.removeItem(keyFor(episodeId, language));
+  notifySaveChange();
 }
 
 export function deleteAllSaves(): void {
@@ -70,4 +90,5 @@ export function deleteAllSaves(): void {
       localStorage.removeItem(key);
     }
   }
+  notifySaveChange();
 }

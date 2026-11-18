@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useMemo, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
-import { hasSaveFor } from "@/engine/save";
+import { hasSaveFor, subscribeToSaves } from "@/engine/save";
 import type { EpisodeGroup } from "@/engine/registry";
 
 const LANGUAGE_LABELS: Record<string, string> = {
@@ -11,24 +11,40 @@ const LANGUAGE_LABELS: Record<string, string> = {
   es: "Español",
 };
 
+const SEPARATOR = "|";
+
+/** No saves are visible on the server, so nothing is marked as continuable. */
+function getServerSavedKeys(): string {
+  return "";
+}
+
 export default function EpisodeListClient({ groups }: { groups: EpisodeGroup[] }) {
   const t = useTranslations("episodes");
   const tSettings = useTranslations("settings");
   const router = useRouter();
 
-  const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
+  // Saves live in localStorage, an external store, so they are read through
+  // `useSyncExternalStore` rather than copied into state from an effect. The
+  // snapshot is a joined string because it is compared by value, which a Set
+  // rebuilt on every render would not be.
+  const getSavedKeys = useCallback(
+    () =>
+      groups
+        .flatMap((group) =>
+          group.languages
+            .filter((lang) => hasSaveFor(group.id, lang))
+            .map((lang) => `${group.id}:${lang}`),
+        )
+        .join(SEPARATOR),
+    [groups],
+  );
 
-  useEffect(() => {
-    const keys = new Set<string>();
-    for (const group of groups) {
-      for (const lang of group.languages) {
-        if (hasSaveFor(group.id, lang)) {
-          keys.add(`${group.id}:${lang}`);
-        }
-      }
-    }
-    setSavedKeys(keys);
-  }, [groups]);
+  const savedKeyList = useSyncExternalStore(subscribeToSaves, getSavedKeys, getServerSavedKeys);
+
+  const savedKeys = useMemo(
+    () => new Set(savedKeyList ? savedKeyList.split(SEPARATOR) : []),
+    [savedKeyList],
+  );
 
   return (
     <div className="w-full max-w-lg flex flex-col gap-6">
