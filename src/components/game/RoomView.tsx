@@ -26,7 +26,7 @@ export default function RoomView() {
     if (!obj) return null;
 
     const clue = obj.clueId ? episode.clues.find((c) => c.id === obj.clueId) : null;
-    const isNew = clue && !state.collectedClueIds.includes(clue.id);
+    const isNew = clue && state.revealedClueId === clue.id;
 
     return (
       <section id="narration" tabIndex={-1} ref={narrationRef} aria-label={t("narration")} className="focus:outline-none">
