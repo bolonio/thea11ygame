@@ -1,0 +1,33 @@
+name: Feature or episode proposal
+description: Suggest an improvement, or pitch a new episode.
+title: "[Proposal]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Pitching a whole episode? [docs/ADDING_EPISODES.md](https://github.com/bolonio/thea11ygame/blob/main/docs/ADDING_EPISODES.md) has the guide and a template — you are welcome to open the PR straight away, but an issue first is a good way to get feedback on the idea cheaply.
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to see?
+      description: Describe the idea in your own words. For an episode, a rough premise and cast is plenty.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: What does it make better — more playable, more accessible, more fun, easier to contribute to?
+    validations:
+      required: false
+
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else?
+      description: Prior art, links, or a note that you would like to build it yourself.
+    validations:
+      required: false

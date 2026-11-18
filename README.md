@@ -31,10 +31,25 @@ Open [http://localhost:3000](http://localhost:3000). The app redirects to `/en` 
 ### Useful scripts
 
 ```bash
-npm run dev     # start dev server
-npm run build   # production build
-npm run lint    # ESLint
+npm run dev         # start dev server
+npm run build       # production build
+npm run lint        # ESLint
+npm run typecheck   # next typegen + tsc --noEmit
+npm test            # run the test suite once (Vitest)
+npm run test:watch  # run the test suite in watch mode
 ```
+
+## Continuous integration
+
+Every pull request to `main` runs three required checks:
+
+| Check | Runs |
+| --- | --- |
+| **Test and build** | `npm test`, then `npm run build` |
+| **Lint** | `npm run lint` |
+| **Typecheck** | `npm run typecheck` |
+
+All three have to pass before a PR can be merged, so running those commands locally before you push is the quickest way to avoid a red build.
 
 ## Project structure
 
@@ -49,14 +64,31 @@ src/
 └── messages/               # UI translation JSON (en.json, es.json)
 ```
 
+Tests live in their own top-level directory, mirroring the layout of `src/`:
+
+```
+tests/
+├── a11y/                   # Cross-cutting accessibility tests (live regions, ...)
+├── app/                    # Client components used by the routes
+├── components/game/        # Gameplay UI
+├── contexts/               # GameContext, SettingsContext
+├── engine/                 # Reducer, registry, save
+├── episodes/               # Episode data integrity
+├── fixtures/               # Shared test episode data
+├── mocks/                  # Module mocks (next-intl navigation, ...)
+├── setup.ts                # Vitest setup (jest-dom, jest-axe matchers)
+└── test-utils.tsx          # Render helpers with the app's providers
+```
+
 The engine is fully decoupled from React: `src/engine/*` has no imports from `react` or Next.js. Episodes are plain data.
 
 ## Contributing
 
 Contributions are very welcome — bug fixes, accessibility improvements, new translations, and especially **new episodes**.
 
-- [CONTRIBUTING.md](CONTRIBUTING.md) — how to get involved, coding style, PR checklist
+- [CONTRIBUTING.md](CONTRIBUTING.md) — how to get involved, coding style, tests, PR checklist
 - [docs/ADDING_EPISODES.md](docs/ADDING_EPISODES.md) — step-by-step guide to writing and wiring a new episode, with a template
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — what we expect of each other
 
 ## License
 
