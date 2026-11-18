@@ -32,7 +32,8 @@ export function GameProvider({ episode, children }: GameProviderProps) {
     [],
   );
 
-  // Auto-save on room transitions
+  // Auto-save after every state change, not just room transitions: `state` is in
+  // the deps and the reducer returns a new object for every handled action.
   useEffect(() => {
     if (state.phase !== "intro" && state.phase !== "ending") {
       saveGame(state, episode.language);
