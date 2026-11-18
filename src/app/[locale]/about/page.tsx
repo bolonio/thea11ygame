@@ -5,7 +5,7 @@ import "@/episodes";
 
 const REPO_URL = "https://github.com/bolonio/thea11ygame";
 const EPISODES_GUIDE_URL =
-  "https://github.com/bolonio/thea11ygame/blob/master/docs/ADDING_EPISODES.md";
+  "https://github.com/bolonio/thea11ygame/blob/main/docs/ADDING_EPISODES.md";
 const AUTHOR_URL = "https://www.adrianbolonio.com/";
 
 const LINK_CLASSES =
