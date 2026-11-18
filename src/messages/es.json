@@ -86,6 +86,7 @@
     "textSpeed": "Velocidad del Texto",
     "instant": "Instantáneo",
     "typewriter": "Máquina de escribir",
+    "textSpeedLocked": "La velocidad del texto es siempre instantánea en el Modo Lector de Pantalla.",
     "fontStyle": "Tipo de Letra",
     "pixelFont": "Pixelado",
     "accessibleFont": "Accesible",

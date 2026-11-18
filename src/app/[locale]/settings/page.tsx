@@ -133,17 +133,20 @@ export default function SettingsPage() {
           </div>
         </fieldset>
 
-        {/* Text Speed — in Screen Reader mode it's forced to instant, disabled, and hidden from SR */}
+        {/* Text Speed — in Screen Reader mode it's pinned to instant and marked aria-disabled, but stays discoverable and announced */}
         {(() => {
           const speedDisabled = settings.displayMode === "screenreader";
           const displayedSpeed = speedDisabled ? "instant" : settings.textSpeed;
           return (
             <fieldset
-              disabled={speedDisabled}
-              aria-hidden={speedDisabled || undefined}
+              aria-disabled={speedDisabled || undefined}
+              aria-describedby={speedDisabled ? "textSpeed-hint" : undefined}
               className={speedDisabled ? "opacity-50" : undefined}
             >
               <legend className="text-cyan-400 text-sm mb-2">{t("textSpeed")}</legend>
+              {speedDisabled && (
+                <p id="textSpeed-hint" className="text-xs text-gray-400 mb-2">{t("textSpeedLocked")}</p>
+              )}
               <div className="flex flex-col gap-2">
                 {textSpeeds.map((speed) => {
                   const inputId = `settings-textSpeed-${speed.value}`;
@@ -165,7 +168,11 @@ export default function SettingsPage() {
                         name="textSpeed"
                         value={speed.value}
                         checked={displayedSpeed === speed.value}
-                        onChange={() => setTextSpeed(speed.value)}
+                        aria-disabled={speedDisabled || undefined}
+                        onChange={() => {
+                          if (speedDisabled) return;
+                          setTextSpeed(speed.value);
+                        }}
                         className="accent-yellow-400"
                       />
                       {speed.label}
