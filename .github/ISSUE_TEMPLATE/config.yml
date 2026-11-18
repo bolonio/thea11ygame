@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Writing a new episode
+    url: https://github.com/bolonio/thea11ygame/blob/main/docs/ADDING_EPISODES.md
+    about: Step-by-step guide and template for adding a new episode.
+  - name: Contributing guide
+    url: https://github.com/bolonio/thea11ygame/blob/main/CONTRIBUTING.md
+    about: Development workflow, tests, and the accessibility checklist.
+  - name: Play the game
+    url: https://thea11ygame.com/en
+    about: The live game, in English and Spanish.
