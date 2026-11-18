@@ -27,6 +27,7 @@ describe("createInitialState", () => {
       phase: "intro",
       activeDialogue: null,
       examinedObjectId: null,
+      revealedClueId: null,
       endingId: null,
     });
   });
@@ -91,12 +92,17 @@ describe("gameReducer — MOVE_TO_ROOM", () => {
   });
 
   it("clears an in-progress examination", () => {
-    const state = base({ phase: "examining", examinedObjectId: "clock" });
+    const state = base({
+      phase: "examining",
+      examinedObjectId: "clock",
+      revealedClueId: "stopped-clock",
+    });
 
     const next = gameReducer(state, { type: "MOVE_TO_ROOM", roomId: "study" });
 
     expect(next.phase).toBe("exploration");
     expect(next.examinedObjectId).toBeNull();
+    expect(next.revealedClueId).toBeNull();
   });
 
   it("keeps collected clues and flags", () => {
@@ -135,6 +141,53 @@ describe("gameReducer — examination", () => {
     const next = gameReducer(state, { type: "EXAMINE_OBJECT", objectId: "coat" });
 
     expect(next.examinedObjectId).toBe("coat");
+  });
+
+  it("EXAMINE_OBJECT banks the object's clue and records it as just revealed", () => {
+    const next = gameReducer(base({ phase: "exploration" }), {
+      type: "EXAMINE_OBJECT",
+      objectId: "clock",
+      clueId: "stopped-clock",
+    });
+
+    expect(next.collectedClueIds).toEqual(["stopped-clock"]);
+    expect(next.revealedClueId).toBe("stopped-clock");
+  });
+
+  it("EXAMINE_OBJECT reveals nothing for an object that carries no clue", () => {
+    const state = base({ phase: "exploration", collectedClueIds: ["c1"] });
+
+    const next = gameReducer(state, { type: "EXAMINE_OBJECT", objectId: "coat" });
+
+    expect(next.collectedClueIds).toBe(state.collectedClueIds);
+    expect(next.revealedClueId).toBeNull();
+  });
+
+  it("EXAMINE_OBJECT does not reveal a clue the player already holds", () => {
+    const state = base({ phase: "exploration", collectedClueIds: ["stopped-clock"] });
+
+    const next = gameReducer(state, {
+      type: "EXAMINE_OBJECT",
+      objectId: "clock",
+      clueId: "stopped-clock",
+    });
+
+    expect(next.collectedClueIds).toBe(state.collectedClueIds);
+    expect(next.revealedClueId).toBeNull();
+  });
+
+  it("DISMISS_EXAMINATION forgets the revealed clue but keeps it collected", () => {
+    const state = base({
+      phase: "examining",
+      examinedObjectId: "clock",
+      collectedClueIds: ["stopped-clock"],
+      revealedClueId: "stopped-clock",
+    });
+
+    const next = gameReducer(state, { type: "DISMISS_EXAMINATION" });
+
+    expect(next.revealedClueId).toBeNull();
+    expect(next.collectedClueIds).toEqual(["stopped-clock"]);
   });
 });
 
@@ -393,6 +446,7 @@ describe("gameReducer — invariants", () => {
       { type: "FINISH_INTRO" },
       { type: "MOVE_TO_ROOM", roomId: "study" },
       { type: "EXAMINE_OBJECT", objectId: "clock" },
+      { type: "EXAMINE_OBJECT", objectId: "clock", clueId: "c9" },
       { type: "DISMISS_EXAMINATION" },
       { type: "COLLECT_CLUE", clueId: "c9" },
       { type: "START_DIALOGUE", characterId: "mara", startNodeId: "start" },
@@ -420,7 +474,7 @@ describe("gameReducer — invariants", () => {
       expect(frozen.visitedRoomIds).toEqual(["hall"]);
     }
 
-    expect(actions).toHaveLength(12);
+    expect(actions).toHaveLength(13);
   });
 
   it("drives a full playthrough from intro to ending", () => {
@@ -454,6 +508,7 @@ describe("gameReducer — invariants", () => {
       phase: "ending",
       activeDialogue: null,
       examinedObjectId: null,
+      revealedClueId: null,
       endingId: "correct-full",
     });
   });

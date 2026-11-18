@@ -106,13 +106,19 @@ export interface GameState {
     currentNodeId: string;
   } | null;
   examinedObjectId: string | null;
+  /**
+   * The clue the examination in progress just revealed, or null. Recorded by the
+   * transition that collects it so the UI never has to diff `collectedClueIds`
+   * across renders to work out whether a find is new.
+   */
+  revealedClueId: string | null;
   endingId: string | null;
 }
 
 export type GameAction =
   | { type: "FINISH_INTRO" }
   | { type: "MOVE_TO_ROOM"; roomId: string }
-  | { type: "EXAMINE_OBJECT"; objectId: string }
+  | { type: "EXAMINE_OBJECT"; objectId: string; clueId?: string }
   | { type: "DISMISS_EXAMINATION" }
   | { type: "COLLECT_CLUE"; clueId: string }
   | { type: "START_DIALOGUE"; characterId: string; startNodeId: string }

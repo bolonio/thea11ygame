@@ -76,7 +76,12 @@ describe("RoomView — examining an object", () => {
   });
 
   it("announces a clue the first time it is found", () => {
-    renderExamining({ collectedClueIds: [] });
+    // The state an examination leaves behind: the clue is banked *and* flagged
+    // as just revealed, which is what the announcement keys off.
+    renderExamining({
+      collectedClueIds: ["stopped-clock"],
+      revealedClueId: "stopped-clock",
+    });
 
     expect(screen.getByRole("region", { name: "Narration" })).toHaveTextContent(
       "Clue found: Stopped clock",

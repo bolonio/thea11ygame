@@ -10,6 +10,7 @@ export function createInitialState(episodeId: string, startingRoomId: string): G
     phase: "intro",
     activeDialogue: null,
     examinedObjectId: null,
+    revealedClueId: null,
     endingId: null,
   };
 }
@@ -29,20 +30,36 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
         phase: "exploration",
         activeDialogue: null,
         examinedObjectId: null,
+        revealedClueId: null,
       };
 
-    case "EXAMINE_OBJECT":
+    case "EXAMINE_OBJECT": {
+      // Examining an object is what uncovers its clue, so the clue is collected
+      // as part of this one transition and the find is recorded here. Deciding
+      // it in the reducer keeps the announcement tied to the action's result
+      // instead of to a render-time comparison of already-updated state.
+      const revealedClueId =
+        action.clueId && !state.collectedClueIds.includes(action.clueId)
+          ? action.clueId
+          : null;
+
       return {
         ...state,
         phase: "examining",
         examinedObjectId: action.objectId,
+        collectedClueIds: revealedClueId
+          ? [...state.collectedClueIds, revealedClueId]
+          : state.collectedClueIds,
+        revealedClueId,
       };
+    }
 
     case "DISMISS_EXAMINATION":
       return {
         ...state,
         phase: "exploration",
         examinedObjectId: null,
+        revealedClueId: null,
       };
 
     case "COLLECT_CLUE":

@@ -26,12 +26,9 @@ export default function ActionList() {
         {visibleObjects.map((obj) => (
           <li key={obj.id}>
             <button
-              onClick={() => {
-                dispatch({ type: "EXAMINE_OBJECT", objectId: obj.id });
-                if (obj.clueId && !state.collectedClueIds.includes(obj.clueId)) {
-                  dispatch({ type: "COLLECT_CLUE", clueId: obj.clueId });
-                }
-              }}
+              onClick={() =>
+                dispatch({ type: "EXAMINE_OBJECT", objectId: obj.id, clueId: obj.clueId })
+              }
               className="w-full text-left px-3 py-2 border border-gray-400 hover:border-yellow-400 focus:border-yellow-400 focus:outline-2 focus:outline-yellow-400 text-white transition-colors"
             >
               {t("examine", { object: obj.name })}

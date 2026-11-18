@@ -96,27 +96,45 @@ describe("Live region politeness", () => {
     expect(regions[0]).toHaveTextContent("The clock has stopped.");
   });
 
-  // KNOWN BUG — reported in the PR description, source intentionally untouched.
-  //
-  // RoomView appends "Clue found: {clue}" only while the clue is NOT yet in
-  // `collectedClueIds`. ActionList dispatches EXAMINE_OBJECT and COLLECT_CLUE
-  // from the same click handler, and React batches them, so by the time
-  // RoomView renders the clue is already collected and the announcement is
-  // skipped. In a screen-reader-first game the player is therefore never told
-  // they picked up a clue. This test pins the broken behaviour so the fix is
-  // visible when it lands; the RoomView unit test above proves the string is
-  // rendered correctly when the state really is "not yet collected".
-  it("never tells the player a clue was found when examining from the action list", async () => {
+  it("tells the player a clue was found when examining from the action list", async () => {
     const user = userEvent.setup();
     const { container } = render({ phase: "exploration" });
 
     await user.click(screen.getByRole("button", { name: "Examine the clock" }));
 
-    expect(liveRegions(container)[0]).not.toHaveTextContent("Clue found");
-    // The clue did land in the inventory — only the announcement is missing.
+    const regions = liveRegions(container);
+    expect(regions).toHaveLength(1);
+    expect(regions[0]).toHaveTextContent("The clock has stopped.");
+    expect(regions[0]).toHaveTextContent("Clue found: Stopped clock");
     expect(screen.getByRole("region", { name: "Inventory" })).toHaveTextContent(
       "Stopped clock",
     );
+  });
+
+  it("announces the find exactly once", async () => {
+    const user = userEvent.setup();
+    const { container } = render({ phase: "exploration" });
+
+    await user.click(screen.getByRole("button", { name: "Examine the clock" }));
+
+    const announced = liveRegions(container)
+      .map((region) => region.textContent ?? "")
+      .join(" ");
+
+    expect(announced.match(/Clue found/g) ?? []).toHaveLength(1);
+  });
+
+  it("says nothing about a clue the player already collected", async () => {
+    const user = userEvent.setup();
+    const { container } = render({
+      phase: "exploration",
+      collectedClueIds: ["stopped-clock"],
+    });
+
+    await user.click(screen.getByRole("button", { name: "Examine the clock" }));
+
+    expect(liveRegions(container)[0]).toHaveTextContent("The clock has stopped.");
+    expect(liveRegions(container)[0]).not.toHaveTextContent("Clue found");
   });
 
   it("keeps a single region when the typewriter effect is on in Visual Mode", () => {
