@@ -47,6 +47,9 @@ main{flex:1;width:100%;max-width:min(1600px,calc((100vh - 200px) * 16 / 9));marg
 .canvas img{max-width:none;display:block}
 /* flow content paints above pinned backdrops, as in the deck */
 .canvas>:not([style*="position:absolute"]){position:relative}
+.notes{margin-top:16px;border:1px solid var(--line);padding:0 16px;max-width:75ch}
+.notes summary{cursor:pointer;padding:12px 0;font-weight:600;min-height:44px}
+.notes p{margin:0 0 16px;line-height:1.6;color:var(--fg)}
 body.all .controls{display:none}
 body.all .slide{margin-bottom:56px}
 body.all .slide::before{content:attr(aria-label);display:block;font-family:"Press Start 2P",monospace;font-size:12px;line-height:1.6;color:var(--muted);margin-bottom:10px}
@@ -69,7 +72,7 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 <main id="deck" tabindex="-1">
   <p class="sr-only">Use the Previous and Next buttons, or the left and right arrow keys, to move between slides.</p>
 
-<section class="slide" id="slide-1" role="group" aria-roledescription="slide" aria-label="1 of 30: When the screen reader is the main character" data-chapter="The case: a mystery game you play with your ears">
+<section class="slide" id="slide-1" role="group" aria-roledescription="slide" aria-label="1 of 28: When the screen reader is the main character" data-chapter="The case: a mystery game you play with your ears">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="position:absolute; top:128px; left:50%; width:572px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:44px; line-height:1.4; text-align:center; color:#f2d649; transform:translateX(-50%)">The A11y Game</p>
@@ -77,83 +80,99 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 <h2 style="position:absolute; top:378.82px; left:128px; width:1664px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:72px; font-weight:400; line-height:1.4; text-align:center; color:#efeadf">When the screen reader is the main character</h2>
 <p style="position:absolute; top:628.82px; left:50%; width:520px; padding:24px 48px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:28px; line-height:1.5; color:#f2d649; border:2px solid #f2d649; transform:translateX(-50%)">Enter the talk.</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-2" role="group" aria-roledescription="slide" aria-label="2 of 30: It was a quiet Tuesday evening. Then, through the thin walls, voices began to rise. First calm, then sharp. A crash, metallic and final. A thud that shook the floor beneath your feet.">
+<section class="slide" id="slide-2" role="group" aria-roledescription="slide" aria-label="2 of 28: It was a quiet Tuesday evening. Then, through the thin walls, voices began to rise. First calm, then sharp. A crash, metallic and final. A thud that shook the floor beneath your feet.">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:50%; width:1920px; height:1080px; transform:translateX(-50%)" width="1920"/>
-<p style="position:absolute; top:calc(50% - 57.59px); left:50%; width:1664px; font-family:'Press Start 2P', sans-serif; font-size:44px; line-height:1.5; text-align:center; color:#f2d649; transform:translate(-50%, -50%)">It was a quiet Tuesday evening. Then, through the thin walls, voices began to rise. First calm, then sharp. A crash, metallic and final. A thud that shook the floor beneath your feet.</p>
-<p style="position:absolute; top:731.26px; left:calc(50% - 85.76px); width:743.51px; font-family:'Press Start 2P', sans-serif; font-size:44px; line-height:1.5; text-align:center; color:#f2d649; transform:translateX(-50%)">Then silence...</p>
+<p style="position:absolute; top:calc(50% - 57.59px); left:50%; width:1664px; font-family:'Press Start 2P', sans-serif; font-size:44px; line-height:1.5; text-align:center; color:#f2d649; transform:translate(-50%, -50%)">It was a quiet Tuesday evening. Then, through the thin walls, voices began to rise. First calm, then sharp. A crash, metallic and final. A thud that shook the floor beneath your feet.</p><p style="position:absolute; top:731.26px; left:calc(50% - 85.76px); width:743.51px; font-family:'Press Start 2P', sans-serif; font-size:44px; line-height:1.5; text-align:center; color:#f2d649; transform:translateX(-50%)">Then silence...</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-3" role="group" aria-roledescription="slide" aria-label="3 of 30: Why I built it">
+<section class="slide" id="slide-3" role="group" aria-roledescription="slide" aria-label="3 of 28: Why I built it">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE CASE</p>
 <h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">Why I built it</h2>
 </div>
-<div style="display:flex; flex-direction:row; gap:24px">
-<div style="display:flex; flex-direction:column; gap:12px; flex:1; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<div style="position:absolute; top:313px; left:128px; width:620px; height:639px; display:flex; flex-direction:column; gap:8px">
+<div style="display:flex; flex-direction:column; gap:8px; flex:none; padding:24px 32px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
 <h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#0c5c9b">Crime stories</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Murder mysteries in books and films. I always need to know who did it.</p>
 </div>
-<p style="align-self:center; font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1; color:#0c5c9b">+</p>
-<div style="display:flex; flex-direction:column; gap:12px; flex:1; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<p style="align-self:center; font-family:Montserrat, Verdana, sans-serif; font-size:40px; font-weight:700; line-height:1; color:#0c5c9b">+</p>
+<div style="display:flex; flex-direction:column; gap:8px; flex:none; padding:24px 32px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
 <h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#0c5c9b">Point &amp; click</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">I grew up with graphic adventures. Explore, examine, talk, solve.</p>
 </div>
-<p style="align-self:center; font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1; color:#0c5c9b">+</p>
-<div style="display:flex; flex-direction:column; gap:12px; flex:1; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<p style="align-self:center; font-family:Montserrat, Verdana, sans-serif; font-size:40px; font-weight:700; line-height:1; color:#0c5c9b">+</p>
+<div style="display:flex; flex-direction:column; gap:8px; flex:none; padding:24px 32px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
 <h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#0c5c9b">Accessibility</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Years as a frontend engineer focused on a11y, including the a11y teams at GitHub and Miro.</p>
 </div>
 </div>
-<div style="position:absolute; top:624.34px; left:50%; width:1664px; height:190px; display:flex; flex-direction:row; gap:40px; align-items:center; padding:40px 48px; background:#0c5c9b; border:1px solid #0c5c9b; border-radius:16px; box-shadow:0 4px 16px #13294b14; transform:translateX(-50%)">
-<p style="min-width:max-content; font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1; color:#fafafb">=</p>
-<div style="display:flex; flex-direction:column; gap:12px; flex:1">
-<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#fafafb">A game to educate how to use a screen reader</h3>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#d6e6f5">Learn to use one by playing, and see why accessibility and assistive technologies matter.</p>
-</div>
-</div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
+<div style="position:absolute; top:442.27px; left:787.87px; width:1079.05px; height:639.76px; overflow:hidden; display:block"><img alt="The A11y Game main menu: Episodes, How to play, Settings and About" decoding="async" height="1654" loading="lazy" src="/talk/assets/f4be8ceb33.webp" style="width:100%; height:100%; object-fit:cover; object-position:49.912% 49.809%; transform:scale(1.1405); transform-origin:49.912% 49.809%" width="2560"/></div>
+<img alt="" decoding="async" height="1664" loading="lazy" src="/talk/assets/22b20b5502.webp" style="position:absolute; top:calc(50% + 251.95px); left:calc(50% + 367.39px); width:1406.13px; height:913.98px; transform:translate(-50%, -50%)" width="2560"/>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-4" role="group" aria-roledescription="slide" aria-label="4 of 30: A mystery game you play with your senses">
-  <div class="frame"><div class="canvas" style="background:#f7f9fb">
+<section class="slide" id="slide-4" role="group" aria-roledescription="slide" aria-label="4 of 28: A mystery game you play with your senses">
+  <div class="frame"><div class="canvas" style="display:flex; flex-direction:row; gap:64px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
-<p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
-<div style="position:absolute; top:128px; left:128px; width:1664px; height:317px; display:flex; flex-direction:column; gap:24px">
+<div style="display:flex; flex-direction:column; gap:40px; justify-content:center; width:640px; flex:none">
+<div style="display:flex; flex-direction:column; gap:24px">
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE CASE</p>
 <h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">A mystery game you play with your senses</h2>
 </div>
-<div style="position:absolute; top:513px; left:128px; width:1664px; height:407px; display:flex; flex-direction:row; gap:32px">
-<div style="display:flex; flex-direction:column; gap:16px; flex:1; padding:32px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:120px; font-weight:700; line-height:1; color:#0c5c9b">0</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.3; color:#13294b">clues that need your eyes</p>
+<div style="display:flex; flex-direction:column; padding:32px 40px; background:#0c5c9b; border:1px solid #0c5c9b; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:28px; line-height:1.45; color:#fafafb">A screen-reader-first detective game. Explore rooms by sound, smell and touch, collect clues, interrogate suspects, accuse the killer.</p>
+</div>
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:32px; flex:1">
+<div style="display:flex; flex-direction:column; gap:16px; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+<div style="display:flex; align-items:center; justify-content:center; width:80px; height:80px; background:#0c5c9b; border-radius:16px"><svg aria-hidden="true" fill="none" focusable="false" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width:44px; height:44px; color:#ffffff" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" x2="21" y1="16.5" y2="21"></line></svg></div>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">EXHIBIT A</p>
+</div>
+<div style="flex:1"></div>
+<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:36px; font-weight:700; line-height:1.2; color:#13294b">Zero clues need your eyes</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Every clue lives in the text.</p>
 </div>
-<div style="display:flex; flex-direction:column; gap:16px; flex:1; padding:32px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:120px; font-weight:700; line-height:1; color:#0c5c9b">MIT</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.3; color:#13294b">open source, anyone can join</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Fix bugs, translate, write cases.</p>
+<div style="display:flex; flex-direction:column; gap:16px; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+<div style="display:flex; align-items:center; justify-content:center; width:80px; height:80px; background:#0c5c9b; border-radius:16px"><svg aria-hidden="true" fill="none" focusable="false" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width:44px; height:44px; color:#ffffff" viewbox="0 0 24 24"><polyline points="8 6 2 12 8 18"></polyline><polyline points="16 6 22 12 16 18"></polyline></svg></div>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">EXHIBIT B</p>
 </div>
-<div style="display:flex; flex-direction:column; gap:16px; flex:1; padding:32px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:120px; font-weight:700; line-height:1; color:#0c5c9b">2+</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.3; color:#13294b">languages, and counting</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">English and Spanish, for now.</p>
+<div style="flex:1"></div>
+<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:36px; font-weight:700; line-height:1.2; color:#13294b">Open Source</h3>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Anyone can join: fix bugs, translate, write cases.</p>
 </div>
-<div style="display:flex; flex-direction:column; gap:16px; flex:1; padding:32px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:120px; font-weight:700; line-height:1; color:#0c5c9b">2+</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.3; color:#13294b">episodes, and counting</p>
+<div style="display:flex; flex-direction:column; gap:16px; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+<div style="display:flex; align-items:center; justify-content:center; width:80px; height:80px; background:#0c5c9b; border-radius:16px"><svg aria-hidden="true" fill="none" focusable="false" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width:44px; height:44px; color:#ffffff" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><ellipse cx="12" cy="12" rx="4" ry="10"></ellipse><line x1="2" x2="22" y1="12" y2="12"></line></svg></div>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">EXHIBIT C</p>
+</div>
+<div style="flex:1"></div>
+<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:36px; font-weight:700; line-height:1.2; color:#13294b">Multi language support</h3>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">English and Spanish for now. Yours could be next.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:16px; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between">
+<div style="display:flex; align-items:center; justify-content:center; width:80px; height:80px; background:#0c5c9b; border-radius:16px"><svg aria-hidden="true" fill="none" focusable="false" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width:44px; height:44px; color:#ffffff" viewbox="0 0 24 24"><path d="M2 5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v15a2 2 0 0 0-2-2H2z"></path><path d="M22 5a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2v15a2 2 0 0 1 2-2h8z"></path></svg></div>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">EXHIBIT D</p>
+</div>
+<div style="flex:1"></div>
+<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:36px; font-weight:700; line-height:1.2; color:#13294b">Multiple episodes, infinite fun</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">A new case is just data.</p>
 </div>
 </div>
-<div style="position:absolute; top:332.77px; left:50%; width:1664px; height:156px; display:flex; flex-direction:column; padding:32px 40px; background:#0c5c9b; border:1px solid #0c5c9b; border-radius:16px; box-shadow:0 4px 16px #13294b14; transform:translateX(-50%)">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#fafafb">A screen-reader-first detective game. Explore rooms by sound, smell and touch, collect clues, interrogate suspects, accuse the killer.</p>
-</div>
+<p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-5" role="group" aria-roledescription="slide" aria-label="5 of 30: Designed around vs. designed for" data-chapter="The motive: why the screen reader is the platform, not an afterthought">
+<section class="slide" id="slide-5" role="group" aria-roledescription="slide" aria-label="5 of 28: Designed around vs. designed for" data-chapter="The motive: why the screen reader is the platform, not an afterthought">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -180,61 +199,65 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-6" role="group" aria-roledescription="slide" aria-label="6 of 30: Visual mode never adds information that is not in the text.">
+<section class="slide" id="slide-6" role="group" aria-roledescription="slide" aria-label="6 of 28: Visual mode never adds information that is not in the text.">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:56px; align-items:center; justify-content:center; padding:128px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff">THE ONE RULE</p>
 <h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:64px; font-weight:400; line-height:1.5; text-align:center; color:#f2d649">Visual mode never adds information that is not<br/>in the text.</h2>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.6; text-align:center; color:#efeadf">The pixel art is decoration.<br/>Switch it off and you lose zero clues.</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-7" role="group" aria-roledescription="slide" aria-label="7 of 30: Meet the detective">
-  <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:64px; align-items:center; justify-content:center; padding:128px 192px 160px; background:#08080a">
+<section class="slide" id="slide-7" role="group" aria-roledescription="slide" aria-label="7 of 28: Meet the detective">
+  <div class="frame"><div class="canvas" style="display:flex; flex-direction:row; gap:80px; align-items:center; padding:96px 128px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
-<div style="display:flex; flex-direction:column; gap:32px; align-items:center">
-<h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:44px; font-weight:400; line-height:1.4; text-align:center; color:#efeadf">Meet the detective</h2>
-</div>
-<div style="display:flex; flex-direction:column; gap:48px; align-items:center">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.8; text-align:center; color:#f2d649">You lost your sight years ago. In the darkness that followed, you discovered that the world never truly goes quiet — it simply asks to be listened to. You became an investigator because someone has to notice what others miss.<br/><br/>You investigate by <u>sound</u>, <u>smell</u>, <u>touch</u>, and the silences between words. Your screen reader is your main tool. Your senses are your weapons.</p>
+<img alt="Pixel art of the detective: a fedora, dark round glasses, a trench coat and a white cane with a red tip" decoding="async" height="630" loading="lazy" src="/talk/assets/5da8c82792.webp" style="width:392px; height:630px; flex:none" width="392"/>
+<div style="display:flex; flex-direction:column; gap:40px; flex:1">
+<h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:44px; font-weight:400; line-height:1.4; color:#efeadf">Meet the detective</h2>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:34px; line-height:1.5; color:#f2d649">You lost your sight years ago. In the darkness that followed, you discovered that the world never truly goes quiet, it simply asks to be listened to. You became an investigator because someone has to notice what others miss.<br/><br/>You investigate by <u>sound</u>, <u>smell</u>, <u>touch</u>, and the silences between words. <u>Your screen reader is your main tool</u>. Your senses are your weapons.</p>
 </div>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-8" role="group" aria-roledescription="slide" aria-label="8 of 30: Every detective needs a sidekick" data-chapter="The tool: what a screen reader does and how to start using one">
+<section class="slide" id="slide-8" role="group" aria-roledescription="slide" aria-label="8 of 28: Every detective needs a sidekick" data-chapter="The tool: what a screen reader does and how to start using one">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:56px; align-items:center; justify-content:center; padding:128px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff">THE TOOL</p>
 <h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:80px; font-weight:400; line-height:1.3; text-align:center; color:#f2d649">Every detective needs a sidekick</h2>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.6; text-align:center; color:#efeadf">"Your screen reader is your main tool.<br/>Your senses are your weapons."</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-9" role="group" aria-roledescription="slide" aria-label="9 of 30: A screen reader doesn’t read your pixels">
+<section class="slide" id="slide-9" role="group" aria-roledescription="slide" aria-label="9 of 28: A screen reader doesn’t read your pixels">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE TOOL</p>
 <h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">A screen reader doesn’t read your pixels</h2>
 </div>
-<div style="position:absolute; top:392px; left:128px; width:338px; height:200px; display:flex; flex-direction:column; gap:8px; justify-content:center; padding:24px 32px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<div style="position:absolute; top:344px; left:128px; width:338px; height:200px; display:flex; flex-direction:column; gap:8px; justify-content:center; padding:24px 32px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
 <h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#13294b">Your HTML</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.3; color:#44566c">the DOM you ship</p>
 </div>
-<span aria-hidden="true" style="position:absolute; top:478px; left:490px; width:56px; height:28px; background:#0c5c9b; display:block; clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></span>
-<div style="position:absolute; top:392px; left:570px; width:338px; height:200px; display:flex; flex-direction:column; gap:8px; justify-content:center; padding:24px 32px; background:#0c5c9b; border:1px solid #0c5c9b; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<span aria-hidden="true" style="position:absolute; top:430px; left:490px; width:56px; height:28px; background:#0c5c9b; display:block; clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></span>
+<div style="position:absolute; top:344px; left:570px; width:338px; height:200px; display:flex; flex-direction:column; gap:8px; justify-content:center; padding:24px 32px; background:#0c5c9b; border:1px solid #0c5c9b; border-radius:16px; box-shadow:0 4px 16px #13294b14">
 <h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#fafafb">Accessibility tree</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.3; color:#d6e6f5">built by the browser</p>
 </div>
-<span aria-hidden="true" style="position:absolute; top:478px; left:932px; width:56px; height:28px; background:#0c5c9b; display:block; clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></span>
-<div style="position:absolute; top:392px; left:1012px; width:338px; height:200px; display:flex; flex-direction:column; gap:8px; justify-content:center; padding:24px 32px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<span aria-hidden="true" style="position:absolute; top:430px; left:932px; width:56px; height:28px; background:#0c5c9b; display:block; clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></span>
+<div style="position:absolute; top:344px; left:1012px; width:338px; height:200px; display:flex; flex-direction:column; gap:8px; justify-content:center; padding:24px 32px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
 <h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#13294b">Screen reader</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.3; color:#44566c">VoiceOver, NVDA, JAWS…</p>
 </div>
-<span aria-hidden="true" style="position:absolute; top:478px; left:1374px; width:56px; height:28px; background:#0c5c9b; display:block; clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></span>
-<div style="position:absolute; top:392px; left:1454px; width:338px; height:200px; display:flex; flex-direction:column; gap:8px; justify-content:center; padding:24px 32px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<span aria-hidden="true" style="position:absolute; top:430px; left:1374px; width:56px; height:28px; background:#0c5c9b; display:block; clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></span>
+<div style="position:absolute; top:344px; left:1454px; width:338px; height:200px; display:flex; flex-direction:column; gap:8px; justify-content:center; padding:24px 32px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
 <h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#13294b">Speech or braille</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.3; color:#44566c">one thing at a time</p>
 </div>
-<div style="position:absolute; top:624px; left:128px; width:1664px; height:296px; display:flex; flex-direction:column; gap:24px; justify-content:center; padding:32px 48px; background:#0b1f35; border-radius:16px">
+<div style="position:absolute; top:576px; left:128px; width:1664px; height:344px; display:flex; flex-direction:column; gap:20px; justify-content:center; padding:28px 48px; background:#0b1f35; border-radius:16px">
+<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:36px; font-weight:700; line-height:1.2; color:#ffffff">Meaningful accessible names are the only clue</h3>
 <div style="display:flex; flex-direction:row; gap:48px">
 <div style="display:flex; flex-direction:column; gap:12px; flex:2">
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#ffffff">Out of context, means nothing</p>
@@ -245,82 +268,65 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:26px; line-height:1.5; color:#f2d649">“Examine The heavy footsteps, button”</p>
 </div>
 </div>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#ffffff">Name, role, state: that’s all it knows. The <b>accessible name</b> is the only clue, so make it describe the action.</p>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#ffffff">Name, role, state: that’s all it knows. Make the <b>name</b> describe the action.</p>
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-10" role="group" aria-roledescription="slide" aria-label="10 of 30: You already have one">
+<section class="slide" id="slide-10" role="group" aria-roledescription="slide" aria-label="10 of 28: Your sidekick was next to you all the time">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE TOOL</p>
-<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">You already have one</h2>
+<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">Your sidekick was next to you all the time</h2>
 </div>
-<div style="position:absolute; top:313px; left:128px; width:816px; height:400px; display:flex; flex-direction:column; gap:12px; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Mac and iPhone</p>
-<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">VoiceOver</h3>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.4; color:#13294b">Built in</p>
-<div style="flex:1"></div>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Mac: Cmd + F5. iPhone: Settings › Accessibility.</p>
+<div style="position:absolute; top:313px; left:128px; width:816px; height:112px; display:flex; flex-direction:row; gap:24px; align-items:center; padding:24px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<h3 style="min-width:max-content; font-family:Montserrat, Verdana, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#0c5c9b">VoiceOver</h3>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.35; color:#44566c">Built in on Mac and iPhone.<br/>Mac: Cmd + F5.</p>
 </div>
-<div style="position:absolute; top:313px; left:976px; width:816px; height:400px; display:flex; flex-direction:column; gap:12px; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Windows</p>
-<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">NVDA</h3>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.4; color:#13294b">Free, open source</p>
-<div style="flex:1"></div>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Get it at nvaccess.org. Or use the built-in Narrator.</p>
+<div style="position:absolute; top:313px; left:976px; width:816px; height:112px; display:flex; flex-direction:row; gap:24px; align-items:center; padding:24px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<h3 style="min-width:max-content; font-family:Montserrat, Verdana, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#0c5c9b">NVDA</h3>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.35; color:#44566c">Free and open source for Windows.<br/>Get it at nvaccess.org.</p>
 </div>
-<div style="position:absolute; top:745px; left:128px; width:1664px; height:175px; display:flex; flex-direction:column; justify-content:center; padding:24px 40px; background:#0c5c9b; border:1px solid #0c5c9b; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#fafafb"><b>Not sure where to start?</b> The game’s <i>How to Play</i> page has a short tutorial for VoiceOver, NVDA and the keyboard.</p>
-</div>
-<p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
-  </div></div>
-</section>
-<section class="slide" id="slide-11" role="group" aria-roledescription="slide" aria-label="11 of 30: How screen reader users find their way">
-  <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
-<img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
-<div style="display:flex; flex-direction:column; gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE TOOL</p>
-<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">How screen reader users find their way</h2>
-</div>
-<div style="position:absolute; top:382px; left:128px; width:533px; height:370px; display:flex; flex-direction:column; gap:16px; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">Headings</h3>
+<h3 style="position:absolute; top:457px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#13294b">How screen reader users find their way</h3>
+<div style="position:absolute; top:526px; left:128px; width:533px; height:262px; display:flex; flex-direction:column; gap:16px; padding:32px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#0c5c9b">Headings</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#13294b">The table of contents of your page. Users jump through them to skim.</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">NVDA: H · VoiceOver: rotor</p>
 </div>
-<div style="position:absolute; top:382px; left:693px; width:533px; height:370px; display:flex; flex-direction:column; gap:16px; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">Landmarks</h3>
+<div style="position:absolute; top:526px; left:693px; width:533px; height:262px; display:flex; flex-direction:column; gap:16px; padding:32px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#0c5c9b">Landmarks</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#13294b">main, nav, labelled sections. The rooms of your page.</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">NVDA: D · VoiceOver: rotor</p>
 </div>
-<div style="position:absolute; top:382px; left:1258px; width:533px; height:370px; display:flex; flex-direction:column; gap:16px; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">Interactive controls</h3>
+<div style="position:absolute; top:526px; left:1258px; width:533px; height:262px; display:flex; flex-direction:column; gap:16px; padding:32px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#0c5c9b">Interactive controls</h3>
 <p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#13294b">Tab through what you can act on: links, buttons, fields.</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">NVDA: B, F, K · Everyone: Tab</p>
 </div>
-<div style="position:absolute; top:776px; left:128px; width:1664px; height:144px; display:flex; flex-direction:column; justify-content:center; padding:24px 40px; background:#0c5c9b; border:1px solid #0c5c9b; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#fafafb"><b>In the game:</b> one h1 per page, an h2 per panel, a main, and skip links to Narration, Actions and Inventory.</p>
+<div style="position:absolute; top:820px; left:128px; width:1664px; height:79px; display:flex; flex-direction:column; justify-content:center; padding:16px 40px; background:#0c5c9b; border:1px solid #0c5c9b; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:28px; line-height:1.4; color:#fafafb"><b>Learn the keys while you play:</b> the game’s <a href="https://www.thea11ygame.com/en/how-to-play"><i>How to Play</i></a> page has a short tutorial.</p>
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-12" role="group" aria-roledescription="slide" aria-label="12 of 30: Let’s solve a murder">
+<section class="slide" id="slide-11" role="group" aria-roledescription="slide" aria-label="11 of 28: Let’s solve a murder">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <h2 style="position:absolute; top:50%; left:50%; width:1664px; font-family:'Press Start 2P', sans-serif; font-size:80px; font-weight:700; line-height:1.1; text-align:center; color:#f2d649; transform:translate(-50%, -50%)">Let’s solve a murder</h2>
 <p style="position:absolute; top:608.41px; left:128px; width:1664px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:40px; line-height:1.4; text-align:center; color:#f2d649">www.thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-13" role="group" aria-roledescription="slide" aria-label="13 of 30: Anatomy of a murder" data-chapter="The engine: a decoupled, data-driven architecture">
+<section class="slide" id="slide-12" role="group" aria-roledescription="slide" aria-label="12 of 28: Anatomy of a murder" data-chapter="The engine: a decoupled, data-driven architecture">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:56px; align-items:center; justify-content:center; padding:128px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff">THE AUTOPSY</p>
 <h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:80px; font-weight:400; line-height:1.3; text-align:center; color:#f2d649">Anatomy of a murder</h2>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.6; text-align:center; color:#efeadf">Let’s open up the game and see how it’s built, from the engine to the HTML.</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-14" role="group" aria-roledescription="slide" aria-label="14 of 30: From data file to screen reader">
+<section class="slide" id="slide-13" role="group" aria-roledescription="slide" aria-label="13 of 28: From data file to screen reader">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -379,29 +385,9 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-15" role="group" aria-roledescription="slide" aria-label="15 of 30: The engine is just a function">
-  <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
-<img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
-<div style="display:flex; flex-direction:column; gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE ENGINE</p>
-<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">The engine is just a function</h2>
-</div>
-<div style="display:flex; flex-direction:row; gap:48px; flex:1">
-<div style="display:flex; flex-direction:column; justify-content:center; flex:2; padding:40px 48px; background:#0b1f35; border-radius:16px">
-<p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:26px; line-height:1.5; color:#e6edf5"><span style="color:#8da2b8">// engine/reducer.ts</span><br/><span style="color:#7cc4f2">export function</span> gameReducer(<br/>  state: GameState, action: GameAction<br/>): GameState {<br/>  <span style="color:#7cc4f2">switch</span> (action.type) {<br/>    <span style="color:#7cc4f2">case</span> <span style="color:#f2d649">"MOVE_TO_ROOM"</span>:<br/>      <span style="color:#7cc4f2">return</span> { ...state, currentRoomId: action.roomId, … };<br/>    <span style="color:#7cc4f2">case</span> <span style="color:#f2d649">"EXAMINE_OBJECT"</span>:<br/>      <span style="color:#7cc4f2">return</span> { ...state, phase: <span style="color:#f2d649">"examining"</span>,<br/>               examinedObjectId: action.objectId };<br/>    <span style="color:#8da2b8">// ADVANCE_DIALOGUE, START_CONFRONTATION…</span><br/>  }<br/>}</p>
-</div>
-<div style="flex:1"></div>
-</div>
-<div style="position:absolute; top:313px; left:1253px; width:539px; height:607px; display:flex; flex-direction:column; gap:32px; justify-content:center; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">Pure TypeScript. No React, no DOM.</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#44566c">State and action in, new state out. Every move, clue and line of dialogue is just an action.</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Easy to test, no browser needed.</p>
-</div>
-<p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
-  </div></div>
-</section>
-<section class="slide" id="slide-16" role="group" aria-roledescription="slide" aria-label="16 of 30: A room is just data">
+<section class="slide" id="slide-14" role="group" aria-roledescription="slide" aria-label="14 of 28: A room is just data">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -420,21 +406,22 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-17" role="group" aria-roledescription="slide" aria-label="17 of 30: Catching liars, in data">
+<section class="slide" id="slide-15" role="group" aria-roledescription="slide" aria-label="15 of 28: Finding clues with your senses">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE ENGINE</p>
-<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">Catching liars, in data</h2>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE GAME</p>
+<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">Finding clues with your senses</h2>
 </div>
 <div style="display:flex; flex-direction:column; padding:40px 48px; background:#0b1f35; border-radius:16px">
 <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:28px; line-height:1.5; color:#e6edf5">{<br/>  <span style="color:#7cc4f2">text</span>: <span style="color:#f2d649">"Your shopping bag is bone dry. It's been raining all night."</span>,<br/>  <span style="color:#7cc4f2">nextNodeId</span>: <span style="color:#f2d649">"challenge_bag"</span>,<br/>  <span style="color:#7cc4f2">requiredClueIds</span>: [<span style="color:#f2d649">"store_bag_dry"</span>],<br/>}</p>
 </div>
 <div style="display:flex; flex-direction:row; gap:32px">
 <div style="display:flex; flex-direction:column; gap:12px; flex:1; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#0c5c9b">Hidden, not disabled</h3>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#44566c">The choice only joins the list once you hold the clue. No greyed-out button to stumble over.</p>
+<h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#0c5c9b">No evidence, no question</h3>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#44566c">The screen reader only lists the options you can actually use.</p>
 </div>
 <div style="display:flex; flex-direction:column; gap:12px; flex:1; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
 <h3 style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; font-weight:700; line-height:1.2; color:#0c5c9b">Senses as evidence</h3>
@@ -443,8 +430,9 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-18" role="group" aria-roledescription="slide" aria-label="18 of 30: Case closed? Not so fast...">
+<section class="slide" id="slide-16" role="group" aria-roledescription="slide" aria-label="16 of 28: Case closed? Not so fast...">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -464,59 +452,62 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-19" role="group" aria-roledescription="slide" aria-label="19 of 30: A new case without touching the engine">
-  <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
+<section class="slide" id="slide-17" role="group" aria-roledescription="slide" aria-label="17 of 28: A new case without touching the engine">
+  <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:40px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE ENGINE</p>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE GAME</p>
 <h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">A new case without touching the engine</h2>
 </div>
-<div style="display:flex; flex-direction:row; gap:48px; flex:1">
-<div style="display:flex; flex-direction:column; gap:24px; flex:3">
-<div style="display:flex; flex-direction:column; padding:40px 48px; background:#0b1f35; border-radius:16px">
-<p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:28px; line-height:1.5; color:#e6edf5"><span style="color:#8da2b8">// engine/registry.ts</span><br/><span style="color:#7cc4f2">const</span> episodes = <span style="color:#7cc4f2">new</span> Map&lt;string, Episode&gt;();<br/><br/><span style="color:#7cc4f2">export function</span> registerEpisode(ep: Episode) {<br/>  episodes.set(<span style="color:#f2d649">`${ep.id}:${ep.language}`</span>, ep);<br/>}</p>
+<div style="display:flex; flex-direction:row; gap:32px; flex:1">
+<div style="display:flex; flex-direction:column; justify-content:center; padding:28px 32px; background:#0b1f35; border-radius:16px; flex:1">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#e6edf5"><span style="color:#8da2b8">// episodes/earwitness/en.ts</span><br/><span style="color:#7cc4f2">import</span> { registerEpisode } <span style="color:#7cc4f2">from</span> <span style="color:#f2d649">"@/engine/registry"</span>;<br/><br/><span style="color:#7cc4f2">const</span> earwitness = {<br/>  id: <span style="color:#f2d649">"earwitness"</span>,<br/>  language: <span style="color:#f2d649">"en"</span>,<br/>  rooms: [ … ],<br/>  minCluesForConfrontation: 5,<br/>};<br/><br/>registerEpisode(earwitness);</p>
 </div>
-<div style="display:flex; flex-direction:column; padding:40px 48px; background:#0b1f35; border-radius:16px">
-<p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:28px; line-height:1.5; color:#e6edf5"><span style="color:#8da2b8">// episodes/index.ts</span><br/><span style="color:#7cc4f2">import</span> <span style="color:#f2d649">"./earwitness"</span>;<br/><span style="color:#7cc4f2">import</span> <span style="color:#f2d649">"./the-gathering"</span>;</p>
+<div style="display:flex; flex-direction:column; gap:24px; flex:1">
+<div style="display:flex; flex-direction:column; justify-content:center; padding:28px 32px; background:#0b1f35; border-radius:16px; flex:1">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#e6edf5"><span style="color:#8da2b8">// engine/registry.ts</span><br/><span style="color:#7cc4f2">const</span> episodes = <span style="color:#7cc4f2">new</span> Map&lt;string, Episode&gt;();<br/><span style="color:#7cc4f2">export function</span> registerEpisode(ep: Episode) {<br/>  episodes.set(<span style="color:#f2d649">`${ep.id}:${ep.language}`</span>, ep);<br/>}</p>
+</div>
+<div style="display:flex; flex-direction:column; justify-content:center; padding:28px 32px; background:#0b1f35; border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#e6edf5"><span style="color:#8da2b8">// episodes/index.ts</span><br/><span style="color:#7cc4f2">import</span> <span style="color:#f2d649">"./earwitness"</span>;<br/><span style="color:#7cc4f2">import</span> <span style="color:#f2d649">"./the-gathering"</span>;</p>
 </div>
 </div>
-<div style="display:flex; flex-direction:column; gap:32px; justify-content:center; flex:2; padding:48px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#13294b"><span style="color:#0c5c9b">1</span> Copy the _template folder</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#13294b"><span style="color:#0c5c9b">2</span> Write en.ts and es.ts</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#13294b"><span style="color:#0c5c9b">3</span> Add one import line</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#44566c">Every new episode inherits the keyboard support, live regions and focus handling for free.</p>
 </div>
+<div style="display:flex; flex-direction:row; align-items:center; padding:20px 40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:28px; line-height:1.4; color:#13294b"><b>It’s open source.</b> Want to write the next case? Read the <a href="https://github.com/bolonio/thea11ygame/blob/main/CONTRIBUTING.md"><span style="color:#0c5c9b">contributing guide</span></a> on GitHub.</p>
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-20" role="group" aria-roledescription="slide" aria-label="20 of 30: The state never lies">
+<section class="slide" id="slide-18" role="group" aria-roledescription="slide" aria-label="18 of 28: The engine is just a function">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE ENGINE</p>
-<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">The state never lies</h2>
+<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">The engine is just a function</h2>
 </div>
 <div style="display:flex; flex-direction:row; gap:48px; flex:1">
-<div style="display:flex; flex-direction:column; justify-content:center; flex:2; padding:40px 48px; background:#0b1f35; border-radius:16px">
-<p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:28px; line-height:1.5; color:#e6edf5"><span style="color:#8da2b8">// contexts/GameContext.tsx</span><br/><span style="color:#7cc4f2">const</span> saved = loadGame(episode.id, episode.language);<br/><span style="color:#7cc4f2">const</span> initial = saved?.gameState<br/>  ?? createInitialState(episode.id,<br/>       episode.startingRoomId);<br/><span style="color:#7cc4f2">const</span> [state, rawDispatch] =<br/>  useReducer(gameReducer, initial);<br/><br/><span style="color:#8da2b8">// engine/reducer.ts</span><br/><span style="color:#7cc4f2">case</span> <span style="color:#f2d649">"START_CONFRONTATION"</span>:<br/>  <span style="color:#7cc4f2">return</span> { ...state, phase: <span style="color:#f2d649">"confrontation"</span> };</p>
+<div style="display:flex; flex-direction:column; justify-content:center; flex:2; padding:32px 48px; background:#0b1f35; border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#e6edf5"><span style="color:#8da2b8">// contexts/GameContext.tsx</span><br/><span style="color:#7cc4f2">const</span> initial = loadGame(episode.id, episode.language)?.gameState<br/>  ?? createInitialState(episode.id, episode.startingRoomId);<br/><span style="color:#7cc4f2">const</span> [state, dispatch] = useReducer(gameReducer, initial);<br/><br/><span style="color:#8da2b8">// engine/reducer.ts</span><br/><span style="color:#7cc4f2">export function</span> gameReducer(state, action): GameState {<br/>  <span style="color:#7cc4f2">switch</span> (action.type) {<br/>    <span style="color:#7cc4f2">case</span> <span style="color:#f2d649">"MOVE_TO_ROOM"</span>:<br/>      <span style="color:#7cc4f2">return</span> { ...state, currentRoomId: action.roomId, … };<br/>    <span style="color:#7cc4f2">case</span> <span style="color:#f2d649">"START_CONFRONTATION"</span>:<br/>      <span style="color:#7cc4f2">return</span> { ...state, phase: <span style="color:#f2d649">"confrontation"</span> };<br/>    <span style="color:#8da2b8">// EXAMINE_OBJECT, ADVANCE_DIALOGUE…</span><br/>  }<br/>}</p>
 </div>
 <div style="flex:1"></div>
 </div>
 <div style="position:absolute; top:313px; left:1253px; width:539px; height:607px; display:flex; flex-direction:column; gap:32px; justify-content:center; padding:40px; background:#ffffff; border:1px solid #d5dee8; border-radius:16px; box-shadow:0 4px 16px #13294b14">
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">Context holds it. The engine changes it.</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#44566c">GameContext loads your save or starts a fresh case. The reducer turns state plus action into the new state.</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">No React inside the engine.</p>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">Context holds the state. The engine changes it.</p>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#44566c">State and action in, new state out. Pure TypeScript: no React, no DOM.</p>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:24px; line-height:1.4; color:#44566c">Easy to test, no browser needed. Saved per episode and language.</p>
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-21" role="group" aria-roledescription="slide" aria-label="21 of 30: Semantic HTML is the best feature" data-chapter="The evidence: semantics, live regions, focus, display modes and language">
+<section class="slide" id="slide-19" role="group" aria-roledescription="slide" aria-label="19 of 28: Semantic HTML is the best feature" data-chapter="The evidence: semantics, live regions, focus, display modes and language">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE ENGINE</p>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE GAME</p>
 <h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">Semantic HTML is the best feature</h2>
 </div>
 <div style="display:flex; flex-direction:row; gap:48px; flex:1">
@@ -535,12 +526,13 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-22" role="group" aria-roledescription="slide" aria-label="22 of 30: Typewriter text, one announcement">
+<section class="slide" id="slide-20" role="group" aria-roledescription="slide" aria-label="20 of 28: Typewriter text, one announcement">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE ENGINE</p>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE GAME</p>
 <h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">Typewriter text, one announcement</h2>
 </div>
 <div style="display:flex; flex-direction:row; gap:48px; flex:1">
@@ -564,13 +556,14 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-23" role="group" aria-roledescription="slide" aria-label="23 of 30: When content swaps, focus has to move">
+<section class="slide" id="slide-21" role="group" aria-roledescription="slide" aria-label="21 of 28: New room? Take the focus with you">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE ENGINE</p>
-<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">When content swaps, focus has to move</h2>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#0c5c9b">THE GAME</p>
+<h2 style="font-family:Montserrat, Verdana, sans-serif; font-size:72px; font-weight:700; line-height:1.1; color:#13294b">New room? Take the focus with you</h2>
 </div>
 <div style="display:flex; flex-direction:column; padding:40px 48px; background:#0b1f35; border-radius:16px">
 <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:28px; line-height:1.5; color:#e6edf5"><span style="color:#7cc4f2">const</span> narrationRef = useRef&lt;HTMLDivElement&gt;(<span style="color:#7cc4f2">null</span>);<br/><br/>useEffect(() =&gt; {<br/>  narrationRef.current?.focus();<br/>}, [state.currentRoomId, state.examinedObjectId, state.phase]);<br/><br/>&lt;<span style="color:#7cc4f2">section</span> id=<span style="color:#f2d649">"narration"</span> tabIndex={-1} ref={narrationRef}&gt;</p>
@@ -587,13 +580,14 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-24" role="group" aria-roledescription="slide" aria-label="24 of 30: Route changes need focus too">
+<section class="slide" id="slide-22" role="group" aria-roledescription="slide" aria-label="22 of 28: New page? Let the h1 break the silence">
   <div class="frame"><div class="canvas" style="background:#F7F9FB;color:#13294B;font-family:Montserrat, Verdana, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover" width="1920"/>
 <div style="display:flex;flex-direction:column;gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#0C5C9B">THE ENGINE</p>
-<h2 style="font-size:72px;font-weight:700;line-height:1.1;color:#13294B">Route changes need focus too</h2>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#0C5C9B">THE GAME</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1;color:#13294B">New page? Let the h1 break the silence</h2>
 </div>
 <div style="display:flex;gap:32px">
 <div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FFFFFF;padding:32px;border-radius:16px;border:1px solid #D5DEE8;box-shadow:0 4px 16px rgba(19,41,75,0.08)">
@@ -617,12 +611,13 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#44566C">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-25" role="group" aria-roledescription="slide" aria-label="25 of 30: Two display modes, one accessibility tree">
+<section class="slide" id="slide-23" role="group" aria-roledescription="slide" aria-label="23 of 28: Two display modes, one accessibility tree">
   <div class="frame"><div class="canvas" style="background:#F7F9FB;color:#13294B;font-family:Montserrat, Verdana, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover" width="1920"/>
 <div style="display:flex;flex-direction:column;gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#0C5C9B">THE ENGINE</p>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#0C5C9B">THE GAME</p>
 <h2 style="font-size:72px;font-weight:700;line-height:1.1;color:#13294B">Two display modes, one accessibility tree</h2>
 </div>
 <div style="display:flex;flex-direction:column;gap:24px;flex:1">
@@ -648,12 +643,13 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#44566C">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-26" role="group" aria-roledescription="slide" aria-label="26 of 30: Speak the right language">
+<section class="slide" id="slide-24" role="group" aria-roledescription="slide" aria-label="24 of 28: Speak the right language">
   <div class="frame"><div class="canvas" style="background:#F7F9FB;color:#13294B;font-family:Montserrat, Verdana, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover" width="1920"/>
 <div style="display:flex;flex-direction:column;gap:24px">
-<p style="font-family:'Press Start 2P', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#0C5C9B">THE ENGINE</p>
+<p style="font-family:'Press Start 2P', 'Courier New', monospace;font-size:24px;line-height:1.4;color:#0C5C9B">THE GAME</p>
 <h2 style="font-size:72px;font-weight:700;line-height:1.1;color:#13294B">Speak the right language</h2>
 </div>
 <div style="display:flex;gap:32px">
@@ -680,16 +676,18 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#44566C">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-27" role="group" aria-roledescription="slide" aria-label="27 of 30: Your turn,detective." data-chapter="The verdict: what to take home on Monday">
+<section class="slide" id="slide-25" role="group" aria-roledescription="slide" aria-label="25 of 28: Your turn, detective." data-chapter="The verdict: what to take home on Monday">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:56px; align-items:center; justify-content:center; padding:128px; background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff">THE VERDICT</p>
-<h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:80px; font-weight:400; line-height:1.3; color:#f2d649">Your turn,detective.</h2>
+<h2 style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:80px; font-weight:400; line-height:1.3; text-align:center; color:#f2d649">Your turn, detective.</h2>
 <p style="font-family:'Press Start 2P', 'Courier New', monospace; font-size:32px; line-height:1.6; text-align:center; color:#efeadf">Five things you can do on Monday, no new library or game needed.</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-28" role="group" aria-roledescription="slide" aria-label="28 of 30: Investigate your own product">
+<section class="slide" id="slide-26" role="group" aria-roledescription="slide" aria-label="26 of 28: Investigate your own product">
   <div class="frame"><div class="canvas" style="display:flex; flex-direction:column; gap:48px; padding:128px 128px 160px; background:#f7f9fb">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/6f070170f3.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <div style="display:flex; flex-direction:column; gap:24px">
@@ -712,7 +710,7 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <div style="position:absolute; top:694px; left:176px; width:1568px; display:flex; flex-direction:row; gap:40px; align-items:baseline">
 <p style="min-width:max-content; font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">04</p>
-<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#13294b"><b>Listen for silences.</b> Every update announce needs a live region.</p>
+<p style="font-family:Montserrat, Verdana, sans-serif; font-size:32px; line-height:1.4; color:#13294b"><b>Listen for silences.</b> An update nobody hears needs a live region.</p>
 </div>
 <div style="position:absolute; top:799px; left:176px; width:1568px; display:flex; flex-direction:row; gap:40px; align-items:baseline">
 <p style="min-width:max-content; font-family:Montserrat, Verdana, sans-serif; font-size:44px; font-weight:700; line-height:1.2; color:#0c5c9b">05</p>
@@ -720,27 +718,31 @@ footer{padding:16px clamp(16px,3vw,32px) 24px;border-top:1px solid var(--line);f
 </div>
 <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:Montserrat, Verdana, sans-serif; font-size:24px; color:#44566c">thea11ygame.com</p>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-29" role="group" aria-roledescription="slide" aria-label="29 of 30: Design for the screen reader, not around it.">
+<section class="slide" id="slide-27" role="group" aria-roledescription="slide" aria-label="27 of 28: Design for the screen reader, not around it.">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="position:absolute; top:360.34px; left:50%; width:264px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff; transform:translateX(-50%)">CASE CLOSED</p>
 <h2 style="position:absolute; top:458.34px; left:128px; width:1664px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:64px; font-weight:400; line-height:1.5; text-align:center; color:#f2d649">Design <u>for</u> the screen reader, not around it.</h2>
   </div></div>
+  
 </section>
-<section class="slide" id="slide-30" role="group" aria-roledescription="slide" aria-label="30 of 30: Thank you">
+<section class="slide" id="slide-28" role="group" aria-roledescription="slide" aria-label="28 of 28: Thank you">
   <div class="frame"><div class="canvas" style="background:#08080a">
 <img alt="" decoding="async" height="1080" loading="lazy" src="/talk/assets/a2fe43940c.webp" style="position:absolute; top:0; left:0; width:1920px; height:1080px" width="1920"/>
 <p style="position:absolute; top:156.99px; left:50%; width:192px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:24px; line-height:1.4; text-align:center; color:#ffffff; transform:translateX(-50%)">THE END?</p>
 <h2 style="position:absolute; top:371px; left:510px; width:900px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:100px; font-weight:400; line-height:1.2; text-align:center; color:#f2d649">Thank you</h2>
 <p style="position:absolute; top:547px; left:50%; width:1280px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:40px; line-height:1.6; text-align:center; color:#f2d649; transform:translateX(-50%)">Now go play: www.thea11ygame.com<br/>and contribute</p>
+<p style="position:absolute; top:802.07px; left:50%; width:1200px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:30px; line-height:1.4; text-align:center; color:#ffffff; transform:translateX(-50%)">Slides: www.thea11ygame.com/talk</p>
 <p style="position:absolute; top:864.07px; left:50%; width:1200px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:30px; line-height:1.4; text-align:center; color:#ffffff; transform:translateX(-50%)">Code: www.github.com/bolonio/thea11ygame</p>
 <p style="position:absolute; top:926.07px; left:585px; width:750px; font-family:'Press Start 2P', 'Courier New', monospace; font-size:30px; line-height:1.4; text-align:center; color:#ffffff">Me: www.adrianbolonio.com</p>
   </div></div>
+  
 </section>
   <nav class="controls" aria-label="Slides">
     <button type="button" id="prev">Previous<span class="sr-only"> slide</span></button>
-    <span class="counter" id="counter" aria-hidden="true">1 / 30</span>
+    <span class="counter" id="counter" aria-hidden="true">1 / 28</span>
     <button type="button" id="next">Next<span class="sr-only"> slide</span></button>
   </nav>
   <div class="sr-only" aria-live="polite" id="status"></div>
